@@ -45,22 +45,24 @@ This command will start the NodeJS server running on port 3344.
 
 ## Capture signin creds
 
-For the life of me I have not been able to get the server app to accept any other signininfo.json
-than the one it creates. That means I have to commit an image once it's set up. So while the
-wabde-unsigned image is running, I connect via browser and give it the URL and AppId from Portal.
-
-Then I run this command to capture the new image.
+For the life of me I have not been able to get the server app to
+accept any other signininfo.json than the one it creates. That means I
+have to commit an image once it's set up. So while the wabde-unsigned
+image is running, I connect via browser and give it the URL and AppId
+from Portal.  That creates a new signininfo.json file, which I need to
+persist. So then I run this command to capture the new image.
 
     docker commit wabde-unsigned wabde
 
+Having done this I can now run wabde and it won't ask for AppId again.
 
 ### Volumes for storage
 
 You will want a couple volumes hooked up to the container, one for
-widgets and one for the output files that will be shared with a web
+widgets and one for the app files that will be shared with a web
 server.
 
-    tbd
+In development I am keeping them here in the folder, widgets and apps.
 
 ## Deployment
 
@@ -95,8 +97,8 @@ That gets you the AppId which you can take back to the WAB web page.
 To change the client ID later, I had to delete signininfo.json
 file from the Docker and restart it.
 With the docker running from another command line I do this:
-```
-docker exec -it webappbuilder "rm signininfo.json"
-```
+
+    docker exec -it webappbuilder "rm signininfo.json"
+
 Then refresh the browser connection to WAB and it should prompt again for AppId.
 

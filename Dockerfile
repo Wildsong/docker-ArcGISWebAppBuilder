@@ -9,9 +9,16 @@ WORKDIR /home/node
 RUN mkdir widgets && \
     cd client/stemapp && \
     rm -rf widgets && \
-    ln -s ../../widgets 
+    ln -s ../../widgets
+
+# Make a place for the apps so our web server can see them
+RUN mkdir apps && \
+    cd server && \
+    rm -rf apps && \
+    ln -s ../../apps
 
 VOLUME /home/node/widgets
+VOLUME /home/node/apps
 EXPOSE 3344/tcp 3345/tcp 3346/tcp
 
 WORKDIR /home/node/server
