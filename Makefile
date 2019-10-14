@@ -10,7 +10,7 @@ build:	Dockerfile
 	docker build -t wabde-unsigned .
 
 unsigned:
-	docker run -it --rm -p 3344:3344 -v ${PWD}/widgets:/home/node/widgets --name=wabde-unsigned wabde-unsigned
+	docker run -it --rm -p 3344:3344 -v ${PWD}/widgets:/home/node/widgets --network=host --name=wabde-unsigned wabde-unsigned
 
 signed:
 	docker run -it --rm -p 3344:3344 -v ${PWD}/widgets:/home/node/widgets wabde
@@ -22,7 +22,7 @@ commit:
 	docker commit wabde-unsigned wabde
 
 exec:
-	docker exec -it wabde bash
+	docker exec -it wabde-unsigned bash
 
 clean:
 	docker stop wabde
