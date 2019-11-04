@@ -1,6 +1,8 @@
 # docker-WebAppBuilderForArcGIS
 Runs ESRI "Web AppBuilder For ArcGIS (Developer edition)" (WABDE) in a Docker container.
 
+I have tested this process with versions 2.13 and 2.14
+
 ## Prerequisites 
 
 * A working copy of ArcGIS Enterprise Portal or an ArcGIS Online "organizational" account.
@@ -15,7 +17,8 @@ Use your ESRI account to do the download first. (A free account works.)
 
 ## Download and unzip.
 
-Find the ZIP file at the ESRI site [Web App Builder](https://developers.arcgis.com/web-appbuilder/) under Getting Started and download it. Unzip it here in this folder.
+Find the ZIP file at the ESRI site [Web App Builder](https://developers.arcgis.com/web-appbuilder/) under Getting Started and download it.
+Unzip it here in this folder.
 
 When done you should have a folder "WebAppBuilderForArcGIS".
 
