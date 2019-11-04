@@ -15,7 +15,7 @@ RUN mkdir widgets && \
 RUN mkdir apps && \
     cd server && \
     rm -rf apps && \
-    ln -s ../../apps
+    ln -s ../apps
 
 VOLUME /home/node/widgets
 VOLUME /home/node/apps
