@@ -33,26 +33,28 @@ line in the Dockerfile to expose the ports that it uses.
 If you have "make" installed you can just invoke it, it will do the build
 and then start a container, for testing. 
 
-Otherwise the command to build could be
+Otherwise the commands to build could be
 
-docker build -t wabde-unsigned .
+   cp WebAppBuilderForArcGIS/client/stemapp/widgets/* widgets/
+   docker build -t wabde-unsigned .
 
 You can use your own name instead of "wabde" if you want.
 (It has to be all lowercase.)
 
 ## Run
 
-This command will start the NodeJS server running on port 3344.
+Use "make unsigned" or use this command to start the NodeJS server running on port 3344
+in unconfigured mode. You will need the App ID from Portal to do the next step.
 
     docker run -it --rm -p 3344:3344 wabde-unsigned
 
 ## Capture signin creds
 
-For the life of me I have not been able to get the server app to
-accept any other signininfo.json than the one it creates. That means I
-have to commit an image once it's set up. So while the wabde-unsigned
-image is running, I connect via browser and give it the URL and AppId
-from Portal.  That creates a new signininfo.json file, which I need to
+I have not been able to get the server app to accept any other
+signininfo.json than the one it creates. That means I have to commit
+an image once it's set up. So while the wabde-unsigned image is
+running, I connect via browser and give it the URL and AppId from
+Portal.  That creates a new signininfo.json file, which I need to
 persist. So then I run this command to capture the new image.
 
     docker commit wabde-unsigned wabde
