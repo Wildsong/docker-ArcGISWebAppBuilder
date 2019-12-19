@@ -1,8 +1,9 @@
 version: '3.6'
 services:
+
   webappbuilder:
     container_name: esri_wabde
-    image: webappbuilderforarcgis
+    image: wabde
     env_file: .env
 #    environment:
 #      VIRTUAL_HOST: ${WAB_VIRTUAL_HOST}
@@ -10,35 +11,33 @@ services:
 #      NETWORK_ACCESS: internal
 #      LETSENCRYPT_HOST: ${WAB_VIRTUAL_HOST}
 #      LETSENCRYPT_MAIL: ${MY_EMAIL}
-    networks:
-      - esri_net
     ports:
       - 3344:3344
     volumes:
       - esri_apps:/home/node/apps
       - esri_widgets:/home/node/widgets
     restart: unless-stopped
-    build:
-      context: .
-      dockerfile: Dockerfile
+# Because of the weird requirements to build manually see the Makefile and README, don't build here
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
 
-# This will be a microserver to allow add and remove widgets and apps
-#  widget_server:
-#    container_name: esri_widget_server
-#    networks:
-#      - esri_net
+
+# I am thinking about adding a microserver to allow add and remove widgets and apps
+# I briefly tested "filebrowser" and decided not to use it. It works but it's not what I want.
+#  filebrowser:
+#    container_name: esri_filebrowser
+#    image: filebrowser/filebrowser:latest
+#    ports:
+#      - 80:80
 #    volumes:
 #      - esri_apps:/srv/apps
 #      - esri_widgets:/srv/widgets
+#      - ~/source/docker-WebAppBuilderForArcGIS/filebrowser_database.db:/database.db
+#      - ~/source/docker-WebAppBuilderForArcGIS/filebrowser.json:/.filebrowser.json
    
 volumes:
   esri_apps:
     name: esri_apps
   esri_widgets:
     name: esri_widgets
-  
-networks:
-  # This is a network we share with our reverse proxy
-  proxy_net:
-    # Won't be created or destroyed with docker-compose up|down
-    external: true
