@@ -17,29 +17,20 @@ Use your ESRI account to do the download first. (A free account works.)
 
 ## Download and unzip.
 
-Find the ZIP file at the ESRI site [Web App Builder](https://developers.arcgis.com/web-appbuilder/) under Getting Started and download it.
-Unzip it here in this folder.
+Find the ZIP file at the ESRI site
+[Web App Builder](https://developers.arcgis.com/web-appbuilder/)
+under "Getting Started" and download it.  Unzip it here in this folder.
 
 When done you should have a folder "WebAppBuilderForArcGIS".
 
 ## Networking note
 
 I run my WebAppBuilder directly on the network (no proxy) at port
-3344, the default. You might do it some other way.  There is an EXPOSE
-line in the Dockerfile to expose the ports that it uses.
+3344, the default. You might do it some other way.
 
 ## Build image
 
-If you have "make" installed you can just invoke it, it will do the build
-and then start a container, for testing. 
-
-Otherwise the commands to build could be
-
-   cp WebAppBuilderForArcGIS/client/stemapp/widgets/* widgets/
-   docker build -t wabde-unsigned .
-
-You can use your own name instead of "wabde" if you want.
-(It has to be all lowercase.)
+Use "make build".
 
 ## Run
 
@@ -63,17 +54,12 @@ Having done this I can now run wabde and it won't ask for AppId again.
 
 ### Volumes for storage
 
-You will want a couple volumes hooked up to the container, one for
-widgets and one for the app files that will be shared with a web
-server.
+There are two volumes used by WABDE, they are /home/node/apps and /home/node/widgets
+and they are mounted at esri_widgets and esri_apps
 
-In development I am keeping them here in the folder, widgets and apps.
+### Deployment
 
-## Deployment
-
-Once convinced it's running you can make it stick around with:
-
-    docker run -d --restart=always --name=wabde -p 3344:3344 wabde
+    docker-compose up -d
 
 ## Portal set up
 

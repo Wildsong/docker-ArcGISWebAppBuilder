@@ -1,28 +1,42 @@
 version: '3.6'
 services:
   webappbuilder:
-    container_name: webappbuilder
+    container_name: esri_wabde
     image: webappbuilderforarcgis
     env_file: .env
-    environment:
-      VIRTUAL_HOST: ${WAB_VIRTUAL_HOST}
-      VIRTUAL_PORT: 3344
-      NETWORK_ACCESS: internal
+#    environment:
+#      VIRTUAL_HOST: ${WAB_VIRTUAL_HOST}
+#      VIRTUAL_PORT: 3344
+#      NETWORK_ACCESS: internal
 #      LETSENCRYPT_HOST: ${WAB_VIRTUAL_HOST}
 #      LETSENCRYPT_MAIL: ${MY_EMAIL}
     networks:
-      - proxy_net
+      - esri_net
     ports:
       - 3344:3344
-#    volumes:
-#
+    volumes:
+      - esri_apps:/home/node/apps
+      - esri_widgets:/home/node/widgets
     restart: unless-stopped
     build:
       context: .
       dockerfile: Dockerfile
+
+# This will be a microserver to allow add and remove widgets and apps
+#  widget_server:
+#    container_name: esri_widget_server
+#    networks:
+#      - esri_net
+#    volumes:
+#      - esri_apps:/srv/apps
+#      - esri_widgets:/srv/widgets
    
-#volumes:
-#
+volumes:
+  esri_apps:
+    name: esri_apps
+  esri_widgets:
+    name: esri_widgets
+  
 networks:
   # This is a network we share with our reverse proxy
   proxy_net:

@@ -3,25 +3,36 @@ all:	WebAppBuilderForArcGIS widgets build
 WebAppBuilderForArcGIS: arcgis-web-appbuilder-2.14.zip
 	unzip arcgis-web-appbuilder-2.14.zip 
 
-widgets:
-	cp -r WebAppBuilderForArcGIS/client/stemapp/widgets/* widgets
+# Copy the widgets from source. ***Note use of -n=no-clobber*** -u=update might be good instead?
+widgets: WebAppBuilderForArcGIS/client/stemapp/widgets
+	docker run --rm -v $<:/src -v esri_widgets:/widgets busybox cp -rn /src/* /widgets
+
+# Backup and restore for widgets and apps; container can be stopped or running.
+backup: 
+	docker cp wabde:/home/node/widgets - > widgets.tar
+	docker cp wabde:/home/node/apps - > apps.tar
+restore: widgets.tar apps.tar
+	cat widgets.tar | docker cp - wabde:/home/node
+	cat apps.tar | docker cp - wabde:/home/node
+
 
 # The signed image is created by connecting to Delta for authentication.
 # So, first build the unsigned image with "make build".
-# Then, connect, then stop the container and save it as the signed container by doing "make commit".
+# Then run the unsigned container with "make unsigned" and connect to its URL.
+# Then stop the container and save it as the signed container by doing "make commit".
 # Then you can run "make daemon".
 
 build:	Dockerfile
 	docker build -t wabde-unsigned .
 
 unsigned:
-	docker run -it --rm -p 3344:3344 -v ${PWD}/widgets:/home/node/widgets -v ${PWD}/apps:/home/node/apps --network=host --name=wabde-unsigned wabde-unsigned
+	docker run -it --rm -p 3344:3344 -v esri_widgets:/home/node/widgets -v esri_apps:/home/node/apps --network=host --name=wabde-unsigned wabde-unsigned
 
-signed:
-	docker run -it --rm -p 3344:3344 -v ${PWD}/widgets:/home/node/widgets -v ${PWD}/apps:/home/node/apps wabde
+local:
+	docker run -it --rm -p 3344:3344 -v ${PWD}/widgets:/home/node/widgets -v ${PWD}/apps:/home/node/apps --name=wabde wabde
 
 daemon:
-	docker run -d --restart=always -p 3344:3344 -v ${PWD}/widgets:/home/node/widgets -v ${PWD}/apps:/home/node/apps --name=wabde wabde
+	docker run -d --restart=always -p 3344:3344 -v esri_widgets:/home/node/widgets -v esri_apps:/home/node/apps --name=wabde wabde
 
 commit:
 	docker commit wabde-unsigned wabde
