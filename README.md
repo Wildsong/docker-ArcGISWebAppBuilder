@@ -27,9 +27,9 @@ If you are upgrading, remove the WebAppBuilderForArcGIS folder.
 
 ## Networking note
 
-I run my WebAppBuilder directly on the network (no proxy) at port
-3344, the default. You might do it some other way. I don't expose
-it to the internet so I don't need to proxy it.
+I run my WebAppBuilder directly on the local network (no proxy) at
+port 3344, the default. I don't expose it to the internet so I don't
+need to proxy it.
 
 ## Build image
 
@@ -75,34 +75,35 @@ The command "make widgets" copies the widget files that you downloaded
 as part of "WebAppBuilderForArcGIS" into the esri_widgets volume. I
 might make this part of the Dockerfile eventually.
 
-### Deployment
-
-You have several options now, I am currently migrating everything
-to Docker Swarm but still have a docker-compose.yml and also two make
-commands.
-
-Run this script will start it as a "docker service"
-If you use this script I assume you are using only one node, because
-it uses volumes that are local. 
-
-    ./swarm.sh
-
-OR run it in Docker Compose.
-
-    docker-compose up -d
-
-OR you can accomplish the exact same thing with docker alone with
-
-    make daemon
-
 For now, it's up to you to figure out how to get files into your widgets folder.
 Once they are on your server you can use docker's cp commad, for example
 
     unzip mynewwidget.zip
     docker cp mynewwidget/ wabde:/home/node/widgets
 
-In a moment or two the running wabde will see new files and the widget will show up there.
+(The docker command is probably not accurate if you use Docker Swarm. Needs updating.)
+
+In a moment or two the running wabde will see new files and the widgets will show up there.
 You will have to refresh your browser, if you are looking at the widgets page.
+
+### Deployment
+
+You have several options now, I recently migrated from Docker Compose
+to Docker Swarm and also two 'make' commands.
+
+#### Option 1. Using Swarm (preferred)
+
+A few warnings will be generated because there are options only intended for Compose. Ignore them.
+
+   docker stack deploy -c docker-compose.yml wabde
+
+#### Option 2. Using Compose.
+
+    docker-compose up -d
+
+#### Option 3. Just using Docker.
+
+    make daemon
 
 ## Getting the App Id from Portal
 
