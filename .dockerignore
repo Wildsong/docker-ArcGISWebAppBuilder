@@ -6,9 +6,9 @@
 LICENSE
 README.md
 
-# This will be a volume
+# These will be test volumes
+apps
 widgets
-
 
 # Avoid copying these into the image since they will be in the volume
 WebAppBuilderForArcGIS/client/stemapp/widgets/

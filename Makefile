@@ -1,11 +1,13 @@
-all:	WebAppBuilderForArcGIS widgets build
+VERSION=2.16
 
-WebAppBuilderForArcGIS: arcgis-web-appbuilder-2.14.zip
-	unzip arcgis-web-appbuilder-2.14.zip 
+all:	build
 
-# Copy the widgets from source. ***Note use of -n=no-clobber*** -u=update might be good instead?
+WebAppBuilderForArcGIS: arcgis-web-appbuilder-${VERSION}.zip
+	unzip arcgis-web-appbuilder-${VERSION}.zip 
+
+# Copy the widgets from source. 
 widgets: WebAppBuilderForArcGIS/client/stemapp/widgets
-	docker run --rm -v $<:/src -v esri_widgets:/widgets busybox cp -rn /src/* /widgets
+	docker run --rm -v $<:/src -v esri_widgets:/widgets busybox cp -r /src/* /widgets
 
 # Backup and restore for widgets and apps; container can be stopped or running.
 backup: 
@@ -22,7 +24,7 @@ restore: widgets.tar apps.tar
 # Then stop the container and save it as the signed container by doing "make commit".
 # Then you can run "make daemon".
 
-build:	Dockerfile
+build:	WebAppBuilderForArcGIS Dockerfile
 	docker build -t wabde-unsigned .
 
 unsigned:

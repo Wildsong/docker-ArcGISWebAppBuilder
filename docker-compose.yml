@@ -2,7 +2,7 @@ version: '3.6'
 services:
 
   webappbuilder:
-    container_name: esri_wabde
+    container_name: wabde
     image: wabde
     env_file: .env
 #    environment:

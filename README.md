@@ -1,12 +1,14 @@
 # docker-WebAppBuilderForArcGIS
 Runs ESRI "Web AppBuilder For ArcGIS (Developer edition)" (WABDE) in a Docker container.
 
-I have tested this process with versions 2.13 and 2.14 on Debian Linux.
+I have tested the process described here with versions 2.13-2.16 on
+Debian Linux.  I am sorry for how awkward it is, but that's ESRI for
+you. They don't always make things easy.
 
 ## Prerequisites 
 
 * A working ArcGIS Enterprise Portal with admin access or an ArcGIS Online "organizational" account.
-* A server that has Docker, "make", and optionally Docker Compose installed.
+* A server that has Docker and "make" installed.
 
 ## License
 
@@ -14,25 +16,27 @@ This project will not download licensed code WABDE from Esri, you have
 to sign in to do that. (A free ESRI developer account works.)  Use
 your ESRI account to do the download first.
 
-## Download and unzip.
+## Download.
 
 Find the ZIP file at the ESRI site, look here 
 [Web App Builder](https://developers.arcgis.com/web-appbuilder/)
-under "Getting Started" and download it.  Unzip it in this folder.
+under "Getting Started" and download it. The link is "Download the SDK".
 
-When done you should have a folder called "WebAppBuilderForArcGIS".
+You don't need to unzip it, the Makefile will do that.
+If you are upgrading, remove the WebAppBuilderForArcGIS folder.
 
 ## Networking note
 
 I run my WebAppBuilder directly on the network (no proxy) at port
-3344, the default. You might do it some other way.
+3344, the default. You might do it some other way. I don't expose
+it to the internet so I don't need to proxy it.
 
 ## Build image
 
-Use "make build".
-This builds the image "wabde-unsigned".
+1. Use "make". This will unzip the archive, and then build
+the image "wabde-unsigned".
 
-Use "make unsigned" to start the NodeJS server running on port 3344 in
+2. Use "make unsigned" to start the NodeJS server running on port 3344 in
 unconfigured mode.  This starts a container running wabde-unsigned.
 You will need to obtain an App ID from Portal to connect WABDE with
 Portal. (Obtaining the id is covered below in a separate section.)
@@ -44,15 +48,18 @@ At this point you will be able to see the new WABDE running, look at
 where "server" is the right name for you of course. It should be prompting
 you for initial credentials now.
 
-## Capture signin creds
+3. Capture signin creds
 
 I have not been able to get the server app to accept any other
 signininfo.json than the one it creates. That means I have to commit
-an image once it's set up. So while the "wabde-unsigned" container is
-running, I connect via browser and give it the URL and AppId from
-Portal.  That creates a new signininfo.json file, which I need to
-persist. So then run "make commit" this command to capture the new
-image called "wabde".
+an image once it's set up.
+
+While the "wabde-unsigned" container is running, connect via browser
+and give it the URL and AppId from Portal.  That creates a new
+signininfo.json file, which I need to persist.
+
+To capture the signed image, run "make commit". This command creates
+the new image called "wabde".
     
 Having done this you can run wabde and it won't ask for AppId again.
 
@@ -64,19 +71,27 @@ when you run "make unsigned" if they don't already exist.
 
 ### Copy widgets to storage
 
-The command "make widgets" will copy the widget files downloaded in
-"WebAppBuilderForArcGIS" into the esri_widgets volume. I will make
-this part of the Dockerfile eventually.
+The command "make widgets" copies the widget files that you downloaded
+as part of "WebAppBuilderForArcGIS" into the esri_widgets volume. I
+might make this part of the Dockerfile eventually.
 
 ### Deployment
 
-You have options now, I have a docker-compose.yml and also two make
-commands.  Eventually I plan to add a file manager into the Docker
-Compose setup but for now all it launches is a wabde container.
+You have several options now, I am currently migrating everything
+to Docker Swarm but still have a docker-compose.yml and also two make
+commands.
+
+Run this script will start it as a "docker service"
+If you use this script I assume you are using only one node, because
+it uses volumes that are local. 
+
+    ./swarm.sh
+
+OR run it in Docker Compose.
 
     docker-compose up -d
 
-You can accomplish the exact same thing with
+OR you can accomplish the exact same thing with docker alone with
 
     make daemon
 
@@ -104,13 +119,17 @@ In Portal,
 * Type of application: Web Mapping
 * Purpose: Ready to use
 * API: Javascript
-* URL: http://yourdocker:3344/webappbuilder
+* URL: https://yourdocker:3344/webappbuilder
 * Title: whatever you like
 * Tags: whatever...
 Then you have to co into the settings for the new "Web Mapping Application"
 and "register" to get an AppId. Under "App Registration",
 * App Type: Browser
-* Redirect URI: I used http://yourdocker.yourdomain
+* Redirect URI: I wrestle with this everytime so I enter all variations, one of them works,
+http://name:3344/ 
+https://name:3344/ 
+http://name.domain:3344/ 
+https://name.domain:3344/ 
 
 That gets you the App Id which you can take back to the WAB web page in the "unsigned" step above,
 using cut and paste to copy it into the browser.
@@ -121,6 +140,13 @@ To change the client ID later, I had to delete signininfo.json
 file from the Docker and restart it. This basically takes it back to the "unsigned state".
 With the wabde container running from another command line I did this:
 
-    docker exec -it wabde "rm signininfo.json"
+    docker exec -it wabde-unsigned rm /home/node/server/signininfo.json
 
 Then refresh the browser connection to WAB and it should prompt again for AppId.
+
+## Future enhancements
+
+I have played with adding a web-based file manager so that users could directly
+transfer files but I have not found one that I like yet. Please send suggestions.
+
+Personally I use the command line all the time so it's not a requirement for me.
