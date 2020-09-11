@@ -59,13 +59,7 @@ This builds the image "wildsong/wabde".
 
 ### Volumes for storage
 
-There is one volume used by WABDE, mounted in the contaier at
-/home/node/widgets. It will if it does not already exist.
-
-### Copy widgets to storage
-
-The command "make widgets" will copy the widget files downloaded in
-"WebAppBuilderForArcGIS" into the esri_widgets volume.
+Just the apps storage for now. 
 
 ### Deployment
 
@@ -76,21 +70,47 @@ or
   
     docker stack deploy -c docker-compose.yml wabde
 
-For now, it's up to you to figure out how to get files into your widgets folder.
-Once they are on your server you can use docker's cp commad, for example
+## Getting the App Id from Portal
 
-    unzip mynewwidget.zip
-    docker cp mynewwidget/ wabde:/home/node/widgets
+Once it is up and running you still have to connect it to Portal.
+Connect to WAB first from a browser (e.g. http://yourdockerserver:3344/webappbuilder/) and
+enter the URL of your Portal and an AppId (from Portal). On the Portal
+side you have to set up a new App and get the AppId. Complete
+relatively good instructions are on the ESRI web site under Quick Start.
 
-In a moment or two the running wabde will see new files and the widget will show up there.
-You will have to refresh your browser, if you are looking at the widgets page.
+In Portal,
 
-## Re-signing WABDE
+* Content tab->My Content
+* Add Item->Application
+* Type of application: Web Mapping
+* Purpose: Ready to use
+* API: Javascript
+* URL: https://yourdocker:3344/webappbuilder
+* Title: whatever you like
+* Tags: whatever...
+Then you have to co into the settings for the new "Web Mapping Application"
+and "register" to get an AppId. Under "App Registration",
+* App Type: Browser
+* Redirect URI: I wrestle with this everytime so I enter all variations, one of them works,
+http://name:3344/ 
+https://name:3344/ 
+http://name.domain:3344/ 
+https://name.domain:3344/ 
+
+That gets you the App Id which you can take back to the WAB web page in the "unsigned" step above,
+using cut and paste to copy it into the browser.
+
+### Signing WABDE again should you ever need to
 
 You can create a new container or you can shell in to the running one
 and remove server/signininfo.json to disconnect from your Portal and
 trigger the web page that prompts for the key again. This basically
 takes the image back to the "unsigned state".
 
-Then refresh the browser connection to WAB and it should prompt for AppId.
+## Future enhancements
+
+I have played with adding a web-based file manager so that users could directly
+transfer files but I have not found one that I like yet. Please send suggestions.
+
+Personally I use the command line all the time so it's not a requirement for me.
 
