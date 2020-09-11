@@ -1,8 +1,16 @@
 version: '3.7'
 
 volumes:
+
+# You have to keep the apps and db folders synced together.
+# Apps that you have saved will live here. 
   esri_apps:
     name: esri_apps
+# JSON files live here and the file "apps" is used to track what's in the apps/ folder.
+  esri_db:
+    name: esri_db
+
+# I am trying to keep the widgets in git so they don't need a volume of their own right now. I hope.
 #  esri_widgets:
 #    name: esri_widgets
 
@@ -16,9 +24,10 @@ services:
     ports:
       - 3344:3344
     volumes:
-      - esri_apps:/home/node/WebAppBuilderForArcGIS/server/apps
       - "/etc/timezone:/etc/timezone:ro"
       - "/etc/localtime:/etc/localtime:ro"
+#      - esri_apps:/home/node/WebAppBuilderForArcGIS/server/apps
+      - esri_db:/home/node/WebAppBuilderForArcGIS/server/db
 #      - esri_widgets:/home/node/widgets
     restart: unless-stopped
     build:
