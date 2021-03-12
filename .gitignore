@@ -5,3 +5,4 @@ apps/[0-9]*
 db/repos
 db/repoitems
 db/apps
+ArcGISWebAppBuilder/server/logs/appbuilder.log
