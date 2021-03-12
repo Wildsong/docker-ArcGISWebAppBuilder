@@ -1,4 +1,4 @@
-# docker-WebAppBuilderForArcGIS
+# docker-ArcGISWebAppBuilder
 
 Runs Esri "ArcGIS Web AppBuilder (Developer edition)" (aka WABDE) in a Docker container.
 
@@ -10,7 +10,13 @@ The folder "ArcGISWebAppBuilder" contains a complete unmodified copy of
 Esri "ArcGIS Web AppBuilder (Developer edition)". Per Esri licensing,
 Esri allows redistribution without modification.
 
-The rest of the project is covered under the permissive MIT
+Esri widgets - all the code in the widgets directory (inside
+ArcGISWebAppBuilder) is covered by a permissive [Apache 2.0
+license](http://www.apache.org/licenses/LICENSE-2.0).  You can change
+it anyway you want but don't sent pull requests to me because I will
+be keeping the code in sync with Esri's. Send them to Esri.
+
+The rest of the project (the parts I wrote) are covered under the permissive MIT
 license as described in the file LICENSE.
 
 ## Prerequisites 
@@ -77,10 +83,16 @@ ArcGISWebAppBuilder/server/signininfo.json to disconnect from your
 Portal and trigger the web page that prompts for the key again. This
 basically takes the image back to the "unsigned state".
 
-## Future enhancements
+## Future enhancements 
 
 I have played with adding a web-based file manager so that users could directly
 transfer files but I have not found one that I like yet. Please send suggestions.
 
 Personally I use the command line all the time so it's not a requirement for me.
 
+### Widget management
+
+I am working out the best way to work with 3rd party widgets. They
+need to be copied into clients/stemapp/widgets where the existing
+widgets live. This is confusing, I don't know why they don't have 2
+spaces. But that's life.
