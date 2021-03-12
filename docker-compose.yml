@@ -12,9 +12,22 @@ services:
       - 3344:3344
       - 3345:3345
       - 3346:3346
+    user: node:node
     volumes:
-      - ./ArcGISWebAppBuilder:/home/node
-      - ./apps:/home/node/ArcGISWebAppBuilder/server/apps
+
+      # If you have installed your own signininfo.json file this can be mounted read-only.
+      - ./ArcGISWebAppBuilder:/home/node:ro
+
+      # You should create apps and db.
+      # If you let Docker create them, root will own them; WABDE won't be able to write.
+      - ./db:/home/node/server/db
+      - ./apps:/home/node/server/apps
+      # and optionally this one
+      # - ./logs:/home/node/server/logs
+
+      # You have to populate this yourself. See README.md
+      - ./widgets:/home/node/client/stemapp/widgets
+
     working_dir: /home/node/server
     command: [ "node", "server.js" ]
 

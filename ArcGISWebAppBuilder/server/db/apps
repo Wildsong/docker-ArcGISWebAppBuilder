@@ -16,3 +16,9 @@
 {"k":"0000000093","o":"0000000388","v":"001"}
 {"_id":"HTML3D_default","_uid":1,"_dt":1615529835998,"_s":"c7fcc05d146e639ad1c4f509ba4833da"}
 {"name":"Default","description":"_Default","createdTime":1439337600000,"lastUpdated":1439337600000,"creator":"Esri","appType":"HTML3D","_id":"HTML3D_default","id":"HTML3D_default","predefinedId":"default","thumbnail":"images/thumbnail.jpg","stemappPath":"client/stemapp3d/","stemappUrl":"/webappbuilder/stemapp3d/","isTemplate":false,"isPredefined":true,"portalUrl":"*","modified":"Esri"}
+{"k":"0000000078","o":"0000000354","v":"001"}
+{"_id":2,"_uid":1,"_dt":1615571419520,"_s":"31bf73f75b61a80313c3c071beac9331"}
+{"_id":2,"id":2,"name":"jjj","description":"","lastUpdated":1615571419516,"createdTime":1615571419520,"appType":"HTML","stemappPath":"client/stemapp/","stemappUrl":"/webappbuilder/stemapp/","creator":"bwilson@CLATSOP","modified":"bwilson@CLATSOP","portalUrl":"//delta.co.clatsop.or.us/portal","isTemplateApp":true,"isTemplate":false,"isPredefined":false}
+{"k":"0000000078","o":"0000000405","v":"001"}
+{"_id":2,"_uid":1,"_dt":1615571420178,"_s":"7a923abb8ad368cc316cd74b0897a9ef"}
+{"_id":2,"id":2,"name":"jjj","description":"","lastUpdated":1615571420177,"createdTime":1615571419520,"appType":"HTML","stemappPath":"client/stemapp/","stemappUrl":"/webappbuilder/stemapp/","creator":"bwilson@CLATSOP","modified":"bwilson@CLATSOP","portalUrl":"//delta.co.clatsop.or.us/portal","isTemplateApp":true,"isTemplate":false,"isPredefined":false,"styleColor":"#d07d0e","themeName":"FoldableTheme"}

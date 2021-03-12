@@ -1,0 +1,22 @@
+define({
+  "feedbackStyleLabel": "Štýl spätnej väzby vzdialenosti a smeru",
+  "showTabLabel": "Zobraziť panel",
+  "feedbackShapeLabel": "Tvar spätnej väzby",
+  "lineColorLabel": "Farba línie",
+  "lineWidthLabel": "Šírka línie",
+  "feedbackLabel": "Popis spätnej väzby",
+  "textColorLabel": "Farba textu",
+  "textSizeLabel": "Veľkosť textu",
+  "tabErrorMessage": "Widget musí byť konfigurovaný s aspoň jedným zobrazeným panelom",
+  "lineLabel": "Línia",
+  "circleLabel": "Kruh",
+  "ellipseLabel": "Elipsa",
+  "ringsLabel": "Kruhy",
+  "transparency": "Priehľadnosť",
+  "ddFeedbackStyleTabLabel": "Symbolika",
+  "miscellaneousTabLabel": "Zmiešané",
+  "operationalLineLayerSelectLabel": "Pre líniové a kruhové výsledky vyberte operačnú vrstvu lomenej čiary",
+  "operationalPolygonLayerSelectLabel": "Pre líniové a eliptické výsledky vyberte operačnú vrstvu polygónov",
+  "helpIconPolylineTooltip": "Zoznam operačných vrstiev je vyplnený vrstvami z aktuálnej webovej mapy, ktoré sú typom geometrie lomenej čiary.",
+  "helpIconPolygonTooltip": "Zoznam operačných vrstiev je vyplnený vrstvami z aktuálnej webovej mapy, ktoré sú typom geometrie polygónu."
+});

@@ -1,0 +1,21 @@
+define({
+  "_widgetLabel": "Aplikačná šablóna \"Edit\"",
+  "_featureAction_Edit": "Aplikačná šablóna \"Edit\"",
+  "title": "Vybrať šablónu na vytvorenie prvkov",
+  "pressStr": "Stlačiť ",
+  "ctrlStr": " CTRL ",
+  "snapStr": " na povolenie prichytávania",
+  "close": "Zatvoriť",
+  "featureLayers": "Vrstvy prvkov",
+  "searchTemplates": "Vyhľadávacie šablóny",
+  "noAvailableTempaltes": "Nie sú dostupné žiadne šablóny",
+  "noCanCreateLayerAreCurrentlyVisible": "Momentálne nie sú viditeľné žiadne vytvoriteľné vrstvy.",
+  "layersAreInvisibleOrOutOfScaleRange": "Vrstvy sú neviditeľné alebo mimo rozsahu mierky.",
+  "relatedTables": "Súvisiace tabuľky:",
+  "relatedRecords": "Súvisiace záznamy:",
+  "noRelatedRecotds": "Neboli nájdené žiadne súvisiace záznamy.",
+  "startToDraw": "Kliknite pre spustenie kreslenia",
+  "startToAddPoint": "Kliknite pre pridanie bodu",
+  "editRelatedFeature": "Prvok súvisiaci s úpravou",
+  "duplicateValueWarning": " Nie je možné zadať duplicitnú hodnotu v ${fieldName} z ${tableName}. Duplicitná hodnota je: ${value}"
+});

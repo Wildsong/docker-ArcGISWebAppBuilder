@@ -28,9 +28,39 @@ Note that you can set up a developer account for free.
 
 ## Volumes for storage
 
-The Esri code is in ArcGISWebAppBuilder/
+The Esri code is in ArcGISWebAppBuilder/x
 
-The apps that are generated will be in apps/
+### apps and db volumes
+
+The apps that are generated will be in apps/. There is a separate
+folder that has to be kept in sync, db/. Let WABDE do that part.
+
+The app and db folders have to be writeable by the 'node' user, but if
+you let Docker create them then they will be owned by root and
+therefore not writeable.
+
+### widgets volume
+
+Supposedly I could let Docker create widgets on its first run
+and it would copy the files for me, but for some reason it's not working.
+
+SOOOO... I copy them when I create the git repository and update it.
+Brute force approach.
+
+Widgets are stored in the "client" side of WABDE then copied to
+"server" side into the apps folder when you create an app in WABDE.
+I mount the widgets/ folder from Docker.
+
+You can add your own or 3rd party widgets there. It's up to you to
+preserve them in your own way. Doing "git pull" will not overwrite
+them unless you modify Esri's widgets. Don't do that, make copies
+instead and modify the copies.
+
+### logs volume
+
+If your server folder is mounted read-only you will get a complaint about
+logs folder. You can either mount read-write, create and mount a logs directory,
+or do what I do, ignore the error. Log messages will still go to STDOUT if you do.
 
 ## Running it
 
@@ -68,6 +98,7 @@ Then you have to co into the settings for the new "Web Mapping Application"
 and "register" to get an AppId. Under "App Registration",
 * App Type: Browser
 * Redirect URI: I wrestle with this everytime so I enter all variations, one of them works,
+I have no idea which one, move along nothing to see here. Avoid stupid redirect errors.
 http://name:3344/ \
 https://name:3344/ \
 http://name.domain:3344/ \
@@ -76,12 +107,31 @@ https://name.domain:3344/ \
 That gets you the App Id which you can take back to the WAB web page in the "unsigned" step above,
 using cut and paste to copy it into the browser.
 
-### Signing WABDE again should you ever need to
+### Saving the signin file
 
-You can create a new container or you can remove the file
-ArcGISWebAppBuilder/server/signininfo.json to disconnect from your
-Portal and trigger the web page that prompts for the key again. This
+Once you have successfully connected you can copy the file out and put it back
+after upgrades, if you want. Instead of re-entering the ID you copy the file.
+Same amount of work, either way.
+
+```bash
+cp ArcGISWebAppBuilder/server/signininfo.json .
+```
+
+The file should look like signininfo.json.SAMPLE with the fields properly filled in.
+
+### Force signing in WABDE again should you ever need to
+
+If you can remove the file ArcGISWebAppBuilder/server/signininfo.json
+and restart the container, it will disconnect WABDE from your Portal
+and trigger the web page that prompts for the key again. This
 basically takes the image back to the "unsigned state".
+
+## Backups
+
+Note that the ArcGISWebAppBuilder/ folder is mounted read-only in the Docker.
+Only the apps/ and db/ folders are writable. If you want to back up your
+apps folder, make sure you also backup (and restore) the db/apps file. They
+have to match.
 
 ## Future enhancements 
 
