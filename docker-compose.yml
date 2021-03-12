@@ -16,7 +16,8 @@ services:
     volumes:
 
       # If you have installed your own signininfo.json file this can be mounted read-only.
-      - ./ArcGISWebAppBuilder:/home/node:ro
+      # (FIXME -- something is still failing when I do!!)
+      - ./ArcGISWebAppBuilder:/home/node:rw
 
       # You should create apps and db.
       # If you let Docker create them, root will own them; WABDE won't be able to write.
