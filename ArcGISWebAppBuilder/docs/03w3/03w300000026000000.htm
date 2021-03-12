@@ -1,0 +1,136 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn about the configurable attributes of the Query
+widget."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>ArcGIS Web AppBuilder | Help - 
+Query</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-29A34C83-3279-4E93-B4F9-2ABAE947412A]--><body><div id="content"><div class="header"><h1>
+Query</h1><div id="breadcrumb"></div></div>
+<p id="GUID-5DD4D1AE-83F2-4159-950A-D32106003416">
+The Query widget enables you to query information from a map service, a feature service, or an image service by executing a predefined query. It is performed on a single layer.
+</p>
+
+
+<div class="section1" id="ESRI_SECTION1_C1BFDBDC556E41BEAC648F43FCB7C298" purpose="section1"><h2>Configurable attributes</h2><p id="GUID-2459EE26-A84B-4020-875B-858BFC158A21">The following table describes the configurable attributes of the Query widget.</p><p id="GUID-D81D0C8B-FE11-4BBB-8C2D-3AD4F6E4ADBD"><div class="block_table" id="TABLE_DFCCB594718349C586E15BC15FF311A8" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.00*"></colgroup><colgroup width="1.85*"></colgroup><tr purpose="thead"><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-B45DD3C9-D2EA-48A8-AB61-6AF1BCFDC4D1">Attribute</p></th><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-2FD4DDB5-351F-421F-9C85-F3B461551496">Description</p></th></tr><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-11D5548F-00CA-4FD0-A75B-7E339163BD79"><span class="usertext">queries</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-48FF2AE6-D909-4C0C-9C8A-6CC372030EBB">Array of query task. Each element has the following child attributes:<ul purpose="ul" id="UL_DD9BA14209D646C2A3CDD55B40300400"><li purpose="li" id="LI_7570FC84D6534B5FBDD5B142F93D8E21"><span class="usertext">name</span>—String. The name of the query task. There is no default.</li><li purpose="li" id="LI_E96E57F1554E48659D69386294AF6945"><span class="usertext"> url</span>—String. A feature layer or an image service URL for the layer you want to query. There is no default.</li><li purpose="li" id="LI_4DE27FDCFF73487B99193931F933A606"><span class="usertext">icon</span>—String. The icon of the query task. It is a Base64 string. If empty, the default icon is applied.</li><li purpose="li" id="LI_FC99DFD0C77641B08E06D0958F757578"><span class="usertext"> filter</span>—Object. The <span class="usertext">expr</span> attribute of <span class="usertext">filter</span>  takes the form of a basic SQL statement and uses it to filter features. There is no default.</li><li purpose="li" id="LI_7C9F5174221B4A298E7EBF897DDEE5C7"><span class="usertext">showSQL</span>—Boolean. If true, the Query widget will display an SQL expression for end users. There is no default.</li><li purpose="li" id="LI_C9D49F9D060A4AF7BFA96EC6BCD95FCD"><span class="usertext">spatialFilter</span>—Object. There is no default. This object has the following four attributes: <ul purpose="ul" id="UL_8EFED934BFC6490E98C172008A763753"><li purpose="li" id="LI_EA3AB01AFA444BB5A77D759579F54E64">currentMapExtent—Returns features within current map extent </li><li purpose="li" id="LI_E7A21264AE504DE7A2200F178EDDB1E4">drawing—Returns features that intersect the shape drawn on the map</li><li purpose="li" id="LI_2858C01D86F44649977E0EF3669EE4AB">useFeatures—Returns features that have a spatial relationship with features in another layer</li><li purpose="li" id="LI_D111F69AC6E8442B9C6300CE71351CE4">fullLayerExtent—Returns features within the full extent of the map</li></ul> </li><li purpose="li" id="LI_7552030338034FB7A47EA12E41F6EF79"><span class="usertext">popupInfo</span>—Object. This object is used for PopupTemplate. If the subattribute readFromWebMap is true, the Query widget will use the pop-up defined in the web map. There is no default. See <a target="_blank" class="xref" href="https://developers.arcgis.com/javascript/3/jshelp/intro_popuptemplate.html" rel="https://developers.arcgis.com/javascript/3/jshelp/intro_popuptemplate.html">Format Popup Content</a> for more information.</li><li purpose="li" id="LI_6832A33C899341B4991A5723002DF8E4"><span class="usertext">useLayerSymbol</span>—Boolean. If true, <span class="usertext">resultsSymbol</span> is ignored and the renderer defined by the REST service is used as the symbol of query results. There is no default.</li><li purpose="li" id="LI_2C2029DBC845486E9D0F77E072D69219"><span class="usertext">resultsSymbol</span>—Object. This is the symbol of query results. There is no default.</li><li purpose="li" id="LI_4B5F5581F64E4D1282DDDB74A138E4A5"><span class="usertext">enableExport</span>—Boolean. If true, query results can be exported as CSV, FeatureCollection, and GeoJSON files. There is no default.</li><li purpose="li" id="LI_0BAEBDEB8B8B46ADA248C41F8BEFB08F"><span class="usertext">singleResultLayer</span>—Boolean. If true, only one result layer is created regardless of the number of times the query task executes. If false, the Query widget creates a new result layer each time the query task executes. There is no default.</li><li purpose="li" id="LI_F3AD46CF7E34452885761A18D23C11E9"><span class="usertext">webMapLayerId</span>—String. If the query layer exists in the web  map, <span class="usertext">webMapLayerId</span> is the layer ID. If the query layer doesn’t exist in the web map, <span class="usertext">webMapLayerId</span> is empty. There is no default.</li><li purpose="li" id="LI_A70DD07D7A2A46FD80A518D63D860EB9"><span class="usertext">orderByFields</span>—String array. Use one or more field names to order  the query results. There is no default.</li></ul>  </p></td></tr></tbody><caption class="table_desc"></caption></table></div></p></div><div class="section1" id="ESRI_SECTION1_12EB1FA00BFB4A618528D7A8D29EC753" purpose="section1"><h2>Example</h2><div class="codeblock" purpose="codeblock"><div class="codeblockbody"><pre><code class="json">{
+    Example:
+{
+  "queries": [
+    {
+      "url": "http://sampleserver6.arcgisonline.com/arcgis/rest/services/SampleWorldCities/MapServer/0",
+      "name": "SampleWorldCities - Cities",
+      "icon": "",
+      "filter": {
+        "logicalOperator": "AND",
+        "parts": [
+          {
+            "fieldObj": {
+              "name": "POP_CLASS",
+              "label": "POP_CLASS",
+              "shortType": "string",
+              "type": "esriFieldTypeString"
+            },
+            "operator": "stringOperatorIs",
+            "valueObj": {
+              "isValid": true,
+              "type": "unique",
+              "value": "250,000 to 499,999"
+            },
+            "interactiveObj": "",
+            "caseSensitive": false,
+            "expr": "POP_CLASS = '250,000 to 499,999'"
+          }
+        ],
+        "expr": "POP_CLASS = '250,000 to 499,999'"
+      },
+      "showSQL": true,
+      "spatialFilter": {
+        "currentMapExtent": {
+          "default": true
+        },
+        "drawing": {
+          "default": false,
+          "geometryTypes": [
+            "POINT",
+            "POLYLINE",
+            "EXTENT"
+          ],
+          "buffer": {
+            "defaultDistance": 100,
+            "defaultUnit": "MILES"
+          }
+        },
+        "useFeatures": {
+          "default": false,
+          "relationships": [
+            {
+              "relationship": "SPATIAL_REL_INTERSECTS",
+              "label": "intersect"
+            },
+            {
+              "relationship": "SPATIAL_REL_WITHIN",
+              "label": "contain"
+            },
+            {
+              "relationship": "SPATIAL_REL_CONTAINS",
+              "label": "within"
+            }
+          ],
+          "buffer": {
+            "defaultDistance": 100,
+            "defaultUnit": "MILES"
+          }
+        },
+        "fullLayerExtent": {
+          "default": false
+        }
+      },
+      "popupInfo": {
+        "readFromWebMap": true
+      },
+      "orderByFields": [],
+      "useLayerSymbol": false,
+      "resultsSymbol": {
+        "color": [
+          0,
+          0,
+          128,
+          128
+        ],
+        "size": 18,
+        "angle": 0,
+        "xoffset": 0,
+        "yoffset": 0,
+        "type": "esriSMS",
+        "style": "esriSMSCircle",
+        "outline": {
+          "color": [
+            0,
+            0,
+            128,
+            255
+          ],
+          "width": 0.75,
+          "type": "esriSLS",
+          "style": "esriSLSSolid"
+        }
+      },
+      "keepResultsOnMapAfterCloseWidget": false,
+      "enableExport": true,
+      "singleResultLayer": true,
+      "webMapLayerId": "SampleWorldCities_3008"
+    }
+  ]
+}</code></pre></div></div></div><div class="footer"> Copyright © 1995-2020 Esri. All rights reserved. </div></div></body></html>

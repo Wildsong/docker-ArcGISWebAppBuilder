@@ -1,0 +1,22 @@
+define({
+  "drsSOEURL": "URL Data Reviewer servera",
+  "chartSection": "Počet kusov/panelov v grafe",
+  "selectByGeography": "Zahrnúť filter podľa geografie",
+  "selectUrl": "Vrstva zo služby pre filter podľa geografie",
+  "selectMapUrl": "Služba pre filter podľa geografie",
+  "geometryServiceURL": "URL geometrickej služby",
+  "includeFieldNames": "Zvoliť stĺpce",
+  "fieldNames": "Mená stĺpcov",
+  "lifecyclePhaseFieldName": "LIFECYCLEPHASE",
+  "setSource": "Nastaviť",
+  "defaultFieldName": "závažnosť",
+  "warning": "Nesprávny vstup",
+  "includeDefaultFieldName": "Musí byť zvolené predvolené meno stĺpca",
+  "selectFieldWarning": "Musí byť viditeľný aspoň jeden stĺpec",
+  "defaultFieldNotVisible": "Predvolený stĺpec musí byť viditeľný",
+  "batchJobCheckGroup": "batchjobcheckgroup",
+  "defaultColumn": "Predvolené",
+  "visibleColumn": "Viditeľný",
+  "fieldNameColumn": "Meno stĺpca pre dashboard",
+  "aliasColumn": "Alias"
+});

@@ -1,7 +1,0 @@
-# Files to ignore, to keep the context size from running away on us.
-
-.git
-.gitignore
-LICENSE
-README.md
-WebAppBuilderForArcGIS

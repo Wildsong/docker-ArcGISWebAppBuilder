@@ -1,79 +1,49 @@
 # docker-WebAppBuilderForArcGIS
-Runs ESRI "Web AppBuilder For ArcGIS (Developer edition)" (WABDE) in a Docker container.
 
-I have tested this process with versions 2.13, 2.14, 2.15, 2.17 on Debian Linux.
+Runs Esri "ArcGIS Web AppBuilder (Developer edition)" (aka WABDE) in a Docker container.
+
+I have tested this process with WABDE versions 2.13-2.19 on Debian Linux.
+
+## Licenses
+
+The folder "ArcGISWebAppBuilder" contains a complete unmodified copy of 
+Esri "ArcGIS Web AppBuilder (Developer edition)". Per Esri licensing,
+Esri allows redistribution without modification.
+
+The rest of the project is covered under the permissive MIT
+license as described in the file LICENSE.
 
 ## Prerequisites 
 
 * A working ArcGIS Enterprise Portal with admin access or an ArcGIS Online "organizational" account.
-* A server that has Docker and Docker Compose installed.
+* A computer that has Docker and Docker Compose installed.
 
-## License
+Note that you can set up a developer account for free.
 
-This project will not download licensed code WABDE from Esri, you have
-to sign in to do that. (A free ESRI developer account works.)
-Use your ESRI account to do the download first.
+## Volumes for storage
 
-## Download the SDK.
+The Esri code is in ArcGISWebAppBuilder/
 
-Find the ZIP file at the ESRI site, look here 
-[Web App Builder](https://developers.arcgis.com/web-appbuilder/)
-under "Getting Started" and download it. You don't need to unzip it.
+The apps that are generated will be in apps/
 
-## Networking note
+## Running it
 
-I run my WebAppBuilder directly on the network (no proxy) at port
-3344, the default. You might do it some other way. It is only accessible
-on our intranet so there is no proxy for it.
+Run this if you use Docker Compose,
 
-## Getting the App Id from Portal
+```bash
+docker-compose up -d
+```
 
-On the Portal side you have to set up a new App and get the AppId. Complete
-relatively good instructions are on the ESRI web site under Quick Start.
+Or if you use Docker Swarm,
 
-In Portal,
-
-* Content tab->My Content
-* Add Item->Application
-* Type of application: Web Mapping
-* Purpose: Ready to use
-* API: Javascript
-* URL: https://yourdocker:3344/webappbuilder   NOTE YOU MUST USE HTTPS not HTTP!!!!!!
-* Title: whatever you like
-* Tags: whatever...
-Then you have to co into the settings for the new "Web Mapping Application"
-and "register" to get an AppId. Under "App Registration",
-* App Type: Browser
-* Redirect URI: I used https://yourdocker.yourdomain
-
-That gets you the App Id which you need for the next step.
-
-## Build image
-
-NOTE: You have to set the AppId first (previous step) because the file
-will be copied into the image that is built in this step.
-
-   docker-compose build
-   
-This builds the image "wildsong/wabde".
-
-### Volumes for storage
-
-Just the apps storage for now. 
-
-### Deployment
-
-Run this
-
-    docker-compose up -d
-or
-  
+```bash
     docker stack deploy -c docker-compose.yml wabde
+```
 
-## Getting the App Id from Portal
+## Setting the App Id from Portal
 
-Once it is up and running you still have to connect it to Portal.
-Connect to WAB first from a browser (e.g. http://yourdockerserver:3344/webappbuilder/) and
+Once the container is up and running you still have to connect it to Portal (or ArcGIS Online)..
+Connect to WABDE from a browser (e.g. <http://localhost:3344/webappbuilder/>) and
 enter the URL of your Portal and an AppId (from Portal). On the Portal
 side you have to set up a new App and get the AppId. Complete
 relatively good instructions are on the ESRI web site under Quick Start.
@@ -92,20 +62,20 @@ Then you have to co into the settings for the new "Web Mapping Application"
 and "register" to get an AppId. Under "App Registration",
 * App Type: Browser
 * Redirect URI: I wrestle with this everytime so I enter all variations, one of them works,
-http://name:3344/ 
-https://name:3344/ 
-http://name.domain:3344/ 
-https://name.domain:3344/ 
+http://name:3344/ \
+https://name:3344/ \
+http://name.domain:3344/ \
+https://name.domain:3344/ \
 
 That gets you the App Id which you can take back to the WAB web page in the "unsigned" step above,
 using cut and paste to copy it into the browser.
 
 ### Signing WABDE again should you ever need to
 
-You can create a new container or you can shell in to the running one
-and remove server/signininfo.json to disconnect from your Portal and
-trigger the web page that prompts for the key again. This basically
-takes the image back to the "unsigned state".
+You can create a new container or you can remove the file
+ArcGISWebAppBuilder/server/signininfo.json to disconnect from your
+Portal and trigger the web page that prompts for the key again. This
+basically takes the image back to the "unsigned state".
 
 ## Future enhancements
 

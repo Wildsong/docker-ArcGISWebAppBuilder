@@ -1,0 +1,12 @@
+{"k":"0000000078","o":"0000000225","v":"001"}
+{"_id":2,"_uid":2,"_dt":1615529835393,"_s":"f42ec6b8c0ce37e008daa463a3612391"}
+{"name":"HTML widgets","type":"local_folder","url":"/webappbuilder/builder/plugins/stemapps/web2d/../../../../stemapp//widgets/","location":"/home/node/client/stemapp/widgets","category":"widget","_id":{"$wrap":"$oid","v":2}}
+{"k":"0000000078","o":"0000000221","v":"001"}
+{"_id":3,"_uid":3,"_dt":1615529836049,"_s":"65758fbb45cc8eb3b869668b44e931d9"}
+{"name":"HTML themes","type":"local_folder","url":"/webappbuilder/builder/plugins/stemapps/web2d/../../../../stemapp//themes/","location":"/home/node/client/stemapp/themes","category":"theme","_id":{"$wrap":"$oid","v":3}}
+{"k":"0000000078","o":"0000000231","v":"001"}
+{"_id":4,"_uid":4,"_dt":1615529836325,"_s":"19f28c9c04494b92e54bfc6909744bbc"}
+{"name":"HTML3D widgets","type":"local_folder","url":"/webappbuilder/builder/plugins/stemapps/web3d/../../../../stemapp3d//widgets/","location":"/home/node/client/stemapp3d/widgets","category":"widget","_id":{"$wrap":"$oid","v":4}}
+{"k":"0000000078","o":"0000000227","v":"001"}
+{"_id":5,"_uid":5,"_dt":1615529836710,"_s":"c29455df4d793924f6fc4e353d947c7e"}
+{"name":"HTML3D themes","type":"local_folder","url":"/webappbuilder/builder/plugins/stemapps/web3d/../../../../stemapp3d//themes/","location":"/home/node/client/stemapp3d/themes","category":"theme","_id":{"$wrap":"$oid","v":5}}

@@ -1,0 +1,109 @@
+[2021-03-12T06:17:15.363] [INFO] repo - Read repository items: /home/node/client/stemapp/widgets
+[2021-03-12T06:17:16.006] [INFO] app - Find 6 predfinded apps.
+[2021-03-12T06:17:16.011] [INFO] repo - insert HTML.About
+[2021-03-12T06:17:16.012] [INFO] repo - insert HTML.AddData
+[2021-03-12T06:17:16.012] [INFO] repo - insert HTML.Analysis
+[2021-03-12T06:17:16.013] [INFO] repo - insert HTML.AttributeTable
+[2021-03-12T06:17:16.014] [INFO] repo - insert HTML.BasemapGallery
+[2021-03-12T06:17:16.014] [INFO] repo - insert HTML.BatchAttributeEditor
+[2021-03-12T06:17:16.015] [INFO] repo - insert HTML.Bookmark
+[2021-03-12T06:17:16.015] [INFO] repo - insert HTML.BusinessAnalyst
+[2021-03-12T06:17:16.016] [INFO] repo - insert HTML.Chart
+[2021-03-12T06:17:16.016] [INFO] repo - insert HTML.Coordinate
+[2021-03-12T06:17:16.017] [INFO] repo - insert HTML.CoordinateConversion
+[2021-03-12T06:17:16.018] [INFO] repo - insert HTML.CostAnalysis
+[2021-03-12T06:17:16.018] [INFO] repo - insert HTML.DataAggregation
+[2021-03-12T06:17:16.019] [INFO] repo - insert HTML.Directions
+[2021-03-12T06:17:16.019] [INFO] repo - insert HTML.DistanceAndDirection
+[2021-03-12T06:17:16.020] [INFO] repo - insert HTML.DistrictLookup
+[2021-03-12T06:17:16.020] [INFO] repo - insert HTML.Draw
+[2021-03-12T06:17:16.021] [INFO] repo - insert HTML.Edit
+[2021-03-12T06:17:16.022] [INFO] repo - insert HTML.EmergencyResponseGuide
+[2021-03-12T06:17:16.023] [INFO] repo - insert HTML.ExtentNavigate
+[2021-03-12T06:17:16.023] [INFO] repo - insert HTML.Filter
+[2021-03-12T06:17:16.024] [INFO] repo - insert HTML.FullScreen
+[2021-03-12T06:17:16.024] [INFO] repo - insert HTML.GeoLookup
+[2021-03-12T06:17:16.025] [INFO] repo - insert HTML.Geoprocessing
+[2021-03-12T06:17:16.025] [INFO] repo - insert HTML.GridOverlay
+[2021-03-12T06:17:16.026] [INFO] repo - insert HTML.GriddedReferenceGraphic
+[2021-03-12T06:17:16.026] [INFO] repo - insert HTML.GroupFilter
+[2021-03-12T06:17:16.027] [INFO] repo - insert HTML.HomeButton
+[2021-03-12T06:17:16.027] [INFO] repo - insert HTML.ImageMeasurement
+[2021-03-12T06:17:16.028] [INFO] repo - insert HTML.IncidentAnalysis
+[2021-03-12T06:17:16.028] [INFO] repo - insert HTML.InfoSummary
+[2021-03-12T06:17:16.029] [INFO] repo - insert HTML.Infographic
+[2021-03-12T06:17:16.029] [INFO] repo - insert HTML.LayerList
+[2021-03-12T06:17:16.030] [INFO] repo - insert HTML.Legend
+[2021-03-12T06:17:16.030] [INFO] repo - insert HTML.Measurement
+[2021-03-12T06:17:16.030] [INFO] repo - insert HTML.MyLocation
+[2021-03-12T06:17:16.031] [INFO] repo - insert HTML.NearMe
+[2021-03-12T06:17:16.032] [INFO] repo - insert HTML.NetworkTrace
+[2021-03-12T06:17:16.032] [INFO] repo - insert HTML.ObliqueViewer
+[2021-03-12T06:17:16.033] [INFO] repo - insert HTML.OverviewMap
+[2021-03-12T06:17:16.033] [INFO] repo - insert HTML.ParcelDrafter
+[2021-03-12T06:17:16.033] [INFO] repo - insert HTML.Print
+[2021-03-12T06:17:16.034] [INFO] repo - insert HTML.PublicNotification
+[2021-03-12T06:17:16.034] [INFO] repo - insert HTML.Query
+[2021-03-12T06:17:16.035] [INFO] repo - insert HTML.RelatedTableCharts
+[2021-03-12T06:17:16.035] [INFO] repo - insert HTML.ReportFeature
+[2021-03-12T06:17:16.036] [INFO] repo - insert HTML.ReviewerDashboard
+[2021-03-12T06:17:16.036] [INFO] repo - insert HTML.Scalebar
+[2021-03-12T06:17:16.037] [INFO] repo - insert HTML.Screening
+[2021-03-12T06:17:16.037] [INFO] repo - insert HTML.Search
+[2021-03-12T06:17:16.038] [INFO] repo - insert HTML.Select
+[2021-03-12T06:17:16.038] [INFO] repo - insert HTML.Share
+[2021-03-12T06:17:16.039] [INFO] repo - insert HTML.SituationAwareness
+[2021-03-12T06:17:16.039] [INFO] repo - insert HTML.SmartEditor
+[2021-03-12T06:17:16.040] [INFO] repo - insert HTML.Splash
+[2021-03-12T06:17:16.040] [INFO] repo - insert HTML.Stream
+[2021-03-12T06:17:16.041] [INFO] repo - insert HTML.SuitabilityModeler
+[2021-03-12T06:17:16.041] [INFO] repo - insert HTML.Summary
+[2021-03-12T06:17:16.042] [INFO] repo - insert HTML.Swipe
+[2021-03-12T06:17:16.042] [INFO] repo - insert HTML.ThreatAnalysis
+[2021-03-12T06:17:16.043] [INFO] repo - insert HTML.TimeSlider
+[2021-03-12T06:17:16.043] [INFO] repo - insert HTML.Visibility
+[2021-03-12T06:17:16.043] [INFO] repo - insert HTML.ZoomSlider
+[2021-03-12T06:17:16.045] [INFO] repo - Read repository items: /home/node/client/stemapp/themes
+[2021-03-12T06:17:16.315] [INFO] repo - insert HTML.BillboardTheme
+[2021-03-12T06:17:16.316] [INFO] repo - insert HTML.BoxTheme
+[2021-03-12T06:17:16.317] [INFO] repo - insert HTML.DartTheme
+[2021-03-12T06:17:16.318] [INFO] repo - insert HTML.DashboardTheme
+[2021-03-12T06:17:16.318] [INFO] repo - insert HTML.FoldableTheme
+[2021-03-12T06:17:16.320] [INFO] repo - insert HTML.JewelryBoxTheme
+[2021-03-12T06:17:16.321] [INFO] repo - insert HTML.LaunchpadTheme
+[2021-03-12T06:17:16.322] [INFO] repo - insert HTML.TabTheme
+[2021-03-12T06:17:16.323] [INFO] repo - insert HTML.PocketTheme
+[2021-03-12T06:17:16.324] [INFO] repo - insert HTML.PlateauTheme
+[2021-03-12T06:17:16.324] [INFO] repo - Read repository items: /home/node/client/stemapp3d/widgets
+[2021-03-12T06:17:16.700] [INFO] repo - insert HTML3D.About
+[2021-03-12T06:17:16.701] [INFO] repo - insert HTML3D.3DFx
+[2021-03-12T06:17:16.701] [INFO] repo - insert HTML3D.BasemapGallery
+[2021-03-12T06:17:16.702] [INFO] repo - insert HTML3D.Compass
+[2021-03-12T06:17:16.702] [INFO] repo - insert HTML3D.Coordinate
+[2021-03-12T06:17:16.703] [INFO] repo - insert HTML3D.Daylight
+[2021-03-12T06:17:16.703] [INFO] repo - insert HTML3D.FullScreen
+[2021-03-12T06:17:16.704] [INFO] repo - insert HTML3D.LayerList
+[2021-03-12T06:17:16.704] [INFO] repo - insert HTML3D.Home
+[2021-03-12T06:17:16.705] [INFO] repo - insert HTML3D.Legend
+[2021-03-12T06:17:16.705] [INFO] repo - insert HTML3D.Measurement3D
+[2021-03-12T06:17:16.706] [INFO] repo - insert HTML3D.MyLocation
+[2021-03-12T06:17:16.706] [INFO] repo - insert HTML3D.Navigate
+[2021-03-12T06:17:16.707] [INFO] repo - insert HTML3D.Search
+[2021-03-12T06:17:16.707] [INFO] repo - insert HTML3D.Share
+[2021-03-12T06:17:16.708] [INFO] repo - insert HTML3D.Slides
+[2021-03-12T06:17:16.708] [INFO] repo - insert HTML3D.Splash
+[2021-03-12T06:17:16.709] [INFO] repo - insert HTML3D.ZoomSlider
+[2021-03-12T06:17:16.709] [INFO] repo - Read repository items: /home/node/client/stemapp3d/themes
+[2021-03-12T06:17:16.888] [INFO] repo - insert HTML3D.BillboardTheme
+[2021-03-12T06:17:16.889] [INFO] repo - insert HTML3D.BoxTheme
+[2021-03-12T06:17:16.890] [INFO] repo - insert HTML3D.DartTheme
+[2021-03-12T06:17:16.890] [INFO] repo - insert HTML3D.DashboardTheme
+[2021-03-12T06:17:16.891] [INFO] repo - insert HTML3D.FoldableTheme
+[2021-03-12T06:17:16.891] [INFO] repo - insert HTML3D.JewelryBoxTheme
+[2021-03-12T06:17:16.892] [INFO] repo - insert HTML3D.LaunchpadTheme
+[2021-03-12T06:17:16.892] [INFO] repo - insert HTML3D.TabTheme
+[2021-03-12T06:18:44.390] [INFO] default - No portal URL is set, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2021-03-12T06:39:41.128] [INFO] repo - Read repository items: /home/node/client/stemapp/widgets
+[2021-03-12T06:39:42.422] [INFO] repo - Read repository items: /home/node/client/stemapp/themes
+[2021-03-12T06:39:42.612] [INFO] repo - Read repository items: /home/node/client/stemapp3d/widgets
+[2021-03-12T06:39:42.854] [INFO] repo - Read repository items: /home/node/client/stemapp3d/themes
