@@ -1,21 +1,21 @@
-
-I used to load these right into a Docker image via a Dockerfile.
-I will finish setting this up tomorrow. It's late.
-
+#!/bin/bash -x
 
 # This part won't work outside our intranet
 
+# define this in your .env file, only fer real.
+#GITSERVER=https://USERNAME:PASSWORD@cc-codebase.clatsop.co.clatsop.or.us/git
+source .env
+
+#cd widgets
+
 GIT_SSL_NO_VERIFY=true
 
-GITSERVER=https://USERNAME:PASSWORD@cc-codebase.clatsop.co.clatsop.or.us/git
+# I name them all with a "_CC" so I can tell they are our additions.
 
-cd ArcGISWebAppBuilder/client/stemapp/widgets
-
-git clone ${GITSERVER}/widget-eSearch.git eSearch
-git clone ${GITSERVER}/widget-PopupPanel.git PopupPanel
-git clone ${GITSERVER}/widget-PrintCC.git PrintCC
-git clone ${GITSERVER}/widget-Search.git SearchCC
-git clone ${GITSERVER}/widget-Traverse.git Traverse
+git clone ${GITSERVER}/widget-eSearch.git CC_eSearch
+git clone ${GITSERVER}/widget-PopupPanel.git CC_PopupPanel
+git clone ${GITSERVER}/widget-Search.git CC_Search
+git clone ${GITSERVER}/widget-Traverse.git CC_Traverse
 
 
 
