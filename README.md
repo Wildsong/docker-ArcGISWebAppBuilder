@@ -1,8 +1,10 @@
 # docker-ArcGISWebAppBuilder
 
 Runs Esri "ArcGIS Web AppBuilder (Developer edition)" (aka WABDE) in a Docker container.
+This version is based on version 2.19.
 
 I have tested this process with WABDE versions 2.13-2.19 on Debian Linux.
+I have tested the current version on Windows 10.
 
 ## Licenses
 
