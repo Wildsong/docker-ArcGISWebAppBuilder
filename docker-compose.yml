@@ -7,7 +7,7 @@ volumes:
       
 services:
   wabde:
-    image: wildsong/wabde
+    image: wildsong/wabde:2.19
     build:
       context: .
       dockerfile: Dockerfile
