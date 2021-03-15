@@ -6,8 +6,8 @@ This version is based on version 2.19.
 The main purpose of this Docker is to facilitate developing widgets and I describe my
 workflow in this README. You can just use it to run WABDE and build apps, too.
 
-I have tested this process with WABDE versions 2.13-2.19 on Debian Linux
-and version 2.19 on Windows 10.
+I have tested this process with WABDE versions 2.13-2.19 on Debian Linux.
+
 
 ## Licenses
 
@@ -31,6 +31,11 @@ be keeping the code in sync with Esri's. Send them to Esri. ;-)
 The wildsong part of the project is covered under the permissive MIT
 license as described in the file LICENSE in this repository.
 
+## Node version
+
+The base image is node:11. Everything here works fine with Node 12,
+but I found source for a sample widget that flipped out with Node 12
+so I backed off to 11 for now.
 ## Prerequisites 
 
 * A working ArcGIS Enterprise Portal with admin access or an ArcGIS Online "organizational" account.
@@ -91,10 +96,15 @@ Just using docker commands, it's
 ```bash
 docker build -t wildsong/wabde:2.19 .
 docker run -d --name wabde \
-   -v apps:/home/node/ArcGISWebAppBuilder/server/apps \
-   -v db:/home/node/ArcGISWebAppBuilder/server/db \
-   -v widgets:/home/node/ArcGISWebAppBuilder/client/stemapp/widgets \
+   -v wabde_apps:/home/node/ArcGISWebAppBuilder/server/apps \
+   -v wabde_db:/home/node/ArcGISWebAppBuilder/server/db \
+   -v wabde_widgets:/home/node/ArcGISWebAppBuilder/client/stemapp/widgets \
    -p 3344:3344 wildsong/wabde:2.19
+```
+
+Sigh, Windows, I don't know where it puts the volumes,
+they are hidden in a virtual machine somewhere. In Linux I cheat and directly
+access them. I should not but it's easy.
 
 Run this if you use Docker Compose,
 
