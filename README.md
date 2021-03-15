@@ -2,16 +2,30 @@
 
 Runs Esri "ArcGIS Web AppBuilder (Developer edition)" (aka WABDE) in a Docker container.
 
-I have tested this process with WABDE versions 2.13-2.19 on Debian Linux.
+The main purpose of this Docker is to facilitate developing widgets and I describe my
+workflow in this README. You can just use it to run WABDE and build apps, too.
+
+I have tested this process with WABDE versions 2.13-2.19 on Debian Linux
+and version 2.19 on Windows 10.
 
 ## Licenses
 
-The folder "ArcGISWebAppBuilder" contains a complete unmodified copy of 
-Esri "ArcGIS Web AppBuilder (Developer edition)". Per Esri licensing,
-Esri allows redistribution without modification.
+The github repo contains a complete unmodified copy of Esri "ArcGIS
+Web AppBuilder (Developer edition)" in the file
+arcgis-web-appbuilder-2.19.zip. The file will be unpacked into a
+Docker image by the build process.
 
-The rest of the project is covered under the permissive MIT
-license as described in the file LICENSE.
+Per Esri licensing, Esri allows redistribution of this software
+without modification.  For details, you can refer to these Esri
+licenses as referenced in their code:
+<http://js.arcgis.com/3.15/esri/copyright.txt> and
+<http://www.arcgis.com/apps/webappbuilder/copyright.txt>.
+
+The source code in the Esri "widgets" folders all appears to be covered by
+the Apache 2.0 license.
+
+The wildsong part of the project is covered under the permissive MIT
+license as described in the file LICENSE in this repository.
 
 ## Prerequisites 
 
@@ -21,8 +35,6 @@ license as described in the file LICENSE.
 Note that you can set up a developer account for free.
 
 ## Volumes for storage
-
-The Esri code is in ArcGISWebAppBuilder/
 
 The apps that are generated will be in apps/
 

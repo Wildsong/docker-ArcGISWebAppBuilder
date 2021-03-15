@@ -1,32 +1,19 @@
 version: '3.7'
 
+volumes:
+  apps:
+  widgets:
+      
 services:
-
-# See the README (or Makefile) for the image build instructions.
-
   wabde:
-    image: node:12
+    image: wildsong/wabde
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       - TZ:Americas/Los_Angeles
     ports:
       - 3344:3344
-      - 3345:3345
-      - 3346:3346
     volumes:
-      - ./ArcGISWebAppBuilder:/home/node
-      - ./apps:/home/node/ArcGISWebAppBuilder/server/apps
-    working_dir: /home/node/server
-    command: [ "node", "server.js" ]
-
-# I have been thinking about adding a microserver to allow adding and removing widgets and apps via browser.
-# I briefly tested "filebrowser" and decided not to use it. It works but it's not what I want.
-#  filebrowser:
-#    image: filebrowser/filebrowser:latest
-#    ports:
-#      - 80:80
-#    volumes:
-#      - esri_apps:/srv/apps
-#      - esri_widgets:/srv/widgets
-#      - ~/source/docker-WebAppBuilderForArcGIS/filebrowser_database.db:/database.db
-#      - ~/source/docker-WebAppBuilderForArcGIS/filebrowser.json:/.filebrowser.json
-   
+      - apps:/home/node/ArcGISWebAppBuilder/server/apps
+      - widgets:/home/node/ArcGISWebAppBuilder/client/stemapp/widgets

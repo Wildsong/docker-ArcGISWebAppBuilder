@@ -1,3 +1,0 @@
-define({
-  "defaultTimeZone": "Angiv standardtidszone:"
-});

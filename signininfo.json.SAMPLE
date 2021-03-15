@@ -1,6 +1,6 @@
 [
   {
-    "portalUrl": "https://delta.co.clatsop.or.us/portal",
+    "portalUrl": "https://YOUR PORTAL",
     "appId": "PUT YOUR APP ID FROM PORTAL HERE",
     "supportsOAuth": true,
     "isWebTier": false
