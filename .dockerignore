@@ -1,0 +1,5 @@
+# Keep this out of the Docker hub.  It's not the end of the world if
+# it sneaks in because access to the server is blocked at the
+# firewall, and it requires credentials anyway.
+#
+signininfo.json
