@@ -116,14 +116,22 @@ Run this if you use Docker Compose,
 docker-compose up -d --build
 ```
 
-You can do a bind mount of the apps folder instead which allows
+This example YML file shows a bind mount of the apps folder instead of a volume, which allows
 directly accessing the widgets folders for development in apps/*/widgets.
+It also bind mounts the signininfo.json file.
 
 ```
 docker-compose -f docker-bind.yml up 
 ```
 
+Here is an example YML file shows that you can have the configuration set up
+for an ArcGIS Online account at the same time, and start whichever one you want to use.
+It bind mounts apps_agol instead of apps, and keeps a separate db/ volume for the databases.
+It also bind mounts the signininfo-agol.json onto the container's signininfo.json file.
 
+```
+docker-compose -f docker-bind.yml up 
+```
 
 ### Setting the App Id from Portal
 

@@ -1,8 +1,9 @@
 *~
 .env
-signininfo.json
+signininfo*.json
 apps/[0-9]*
+apps_agol/[0-9]*
 db/repos
 db/repoitems
 db/apps
-ArcGISWebAppBuilder/server/logs/appbuilder.log
+

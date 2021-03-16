@@ -1,16 +1,16 @@
 version: '3.7'
 
-# I am sharing everything with docker-clatsopcounty.yml
-# so I intentionally do not run on a separate port
-# so that both versions cannot run at the same time.
-# Though you probably COULD run both at the same time...
-# but... K.I.S.S.
+# The db/apps file has the portal url embedded in it
+# so I need to have separate apps and db volumes.
+# I think I can still share the widgets though.
 
 volumes:
   db:
+    name: wabde_agol_db
   widgets:
       
 services:
+
   wabde:
     image: wildsong/wabde
     environment:
@@ -18,12 +18,12 @@ services:
     ports:
       - 3344:3344
     volumes:
-      - ./apps:/srv/server/apps
+      - ./apps_agol:/srv/server/apps
       - db:/srv/server/db
       - widgets:/srv/client/stemapp/widgets
 
       # This is a sample of using a bind mount for the json file.
-      # The file "signininfo.json" has to exist
+      # The file "signininfo-agol.json" has to exist
       # in the local directory for this to work.
 
-      - ./signininfo.json:/srv/server/signininfo.json
+      - ./signininfo-agol.json:/srv/server/signininfo.json
