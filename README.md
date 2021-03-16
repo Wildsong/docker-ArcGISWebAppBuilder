@@ -196,3 +196,6 @@ and then using git to manage the code in apps/2/widgets/"MyCustomWidget".
 I need to have write access to the volume.
 I could break down and use a bind mount, it's just easier for this.
 
+```bash
+docker run -it --rm -v wabde_apps:/srv/apps -v wabde_widgets:/srvwidgets debian:latest bash
+```

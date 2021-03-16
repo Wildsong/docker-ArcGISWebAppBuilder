@@ -24,5 +24,13 @@ services:
 #      - ./widgets:/home/node/ArcGISWebAppBuilder/client/stemapp/widgets
 
 
-
+  shell:
+    image: debian:latest
+    environment:
+      - TZ:Americas/Los_Angeles
+    volumes:
+      - apps:/srv/apps
+      - widgets:/srv/widgets
+    working_dir: /srv
+    
 
