@@ -175,7 +175,17 @@ basically takes the image back to the "unsigned state".
 ## Backups
 
 If you want to back up your apps folder, make sure you also backup (and restore) the db/apps file. They
-have to match. 
+have to match.
+
+## Docker Hub
+
+I tried automated builds but the ZIP file is stored in github LFS (Large File Store),
+and apparently they are not supporting that yet. So I do a manual push,
+
+```bash
+docker push wildsong/wabde:latest
+docker push wildsong/wabde:2.19
+```
 
 ## Future enhancements 
 
