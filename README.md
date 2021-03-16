@@ -50,8 +50,8 @@ only the Docker volumes work properly for that.
 
 ### apps and db volumes
 
-The apps that are generated will be in apps/. There is a separate
-folder that has to be kept in sync, db/.
+The apps that are generated will be in "apps". There is a separate
+folder that has to be kept in sync, "db".
 
 I am trying to put the data that needs to be persisted into volumes
 so that it can be upgraded across version updates from Esri, which happen
@@ -64,13 +64,14 @@ There's also "widgets".
 
 Widgets are stored in the "client" side of WABDE then copied to
 "server" side into the apps folder when you create an app in WABDE.
-Normally any widgets you see in apps/ folders started life in widgets/.
+Normally any widgets you see in "apps" folders started life in the
+client "widgets" collection and they were copied during app creation.
 
 On first run, the container will copy the internal widgets folder
 into a fresh new Docker volume called wabde_widgets.
 
 Once that's happened then you can install third party widgets into it
-and they will be visible in the app builder.
+and they will be available in the app builder.
 
 ### logs 
 
@@ -89,7 +90,7 @@ docker volume rm wabde_widgets
 If you have altered anything in there or added extra widgets, it's
 up to you to preserve them.
 
-## Running it
+## Running WABDE
 
 Just using docker commands, it's
 
@@ -103,8 +104,9 @@ docker run -d --name wabde \
 ```
 
 Sigh, Windows, I don't know where it puts the volumes,
-they are hidden in a virtual machine somewhere. In Linux I cheat and directly
-access them. I should not but it's easy.
+they are hidden in a virtual machine somewhere. You can still access them
+using the docker commands. (I have to break the habit of
+accessing them directly on Linux systems.)
 
 Run this if you use Docker Compose,
 
@@ -153,17 +155,19 @@ using cut and paste to copy it into the browser.
 
 Once you have successfully connected you can copy the file out and put it back
 after upgrades, if you want. Instead of re-entering the ID you copy the file.
-Same amount of work, either way.
+Same amount of work, either way. Here is an example of how to back it up.
 
 ```bash
-cp ArcGISWebAppBuilder/server/signininfo.json .
+docker cp wabde:/srv/server/signininfo.json .
 ```
 
-The file should look like signininfo.json.SAMPLE with the fields properly filled in.
+The file should look like the signininfo.json.SAMPLE with the fields properly filled in.
+
+BTW you can copy files into and out of containers, even when they are stopped.
 
 ### Force signing in WABDE again should you ever need to
 
-If you can remove the file ArcGISWebAppBuilder/server/signininfo.json
+If you can remove the file /srv/server/signininfo.json
 and restart the container, it will disconnect WABDE from your Portal
 and trigger the web page that prompts for the key again. This
 basically takes the image back to the "unsigned state".

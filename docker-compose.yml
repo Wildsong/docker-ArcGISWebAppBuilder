@@ -16,21 +16,6 @@ services:
     ports:
       - 3344:3344
     volumes:
-      - apps:/home/node/ArcGISWebAppBuilder/server/apps
-      - db:/home/node/ArcGISWebAppBuilder/server/db
-      - widgets:/home/node/ArcGISWebAppBuilder/client/stemapp/widgets
-
-#      - ./apps:/home/node/ArcGISWebAppBuilder/server/apps
-#      - ./widgets:/home/node/ArcGISWebAppBuilder/client/stemapp/widgets
-
-
-  shell:
-    image: debian:latest
-    environment:
-      - TZ:Americas/Los_Angeles
-    volumes:
-      - apps:/srv/apps
-      - widgets:/srv/widgets
-    working_dir: /srv
-    
-
+      - apps:/srv/server/apps
+      - db:/srv/server/db
+      - widgets:/srv/client/stemapp/widgets
