@@ -116,11 +116,14 @@ Run this if you use Docker Compose,
 docker-compose up -d --build
 ```
 
-If you use Docker Swarm,
+You can do a bind mount of the apps folder instead which allows
+directly accessing the widgets folders for development in apps/*/widgets.
 
-```bash
-    docker stack deploy -c docker-compose.yml wabde
 ```
+docker-compose -f docker-bind.yml up 
+```
+
+
 
 ### Setting the App Id from Portal
 

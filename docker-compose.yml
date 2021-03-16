@@ -12,7 +12,7 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      - TZ:Americas/Los_Angeles
+      - TZ=Americas/Los_Angeles
     ports:
       - 3344:3344
     volumes:
