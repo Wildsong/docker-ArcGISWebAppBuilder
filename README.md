@@ -92,15 +92,16 @@ up to you to preserve them.
 
 ## Running WABDE
 
-Just using docker commands, it's
+Just using docker commands, you could do this. (Skip the "build" step
+if you want to pull the image from Docker Hub.)x
 
 ```bash
-docker build -t wildsong/wabde:2.19 .
+docker build -t wildsong/wabde .
 docker run -d --name wabde \
-   -v wabde_apps:/home/node/ArcGISWebAppBuilder/server/apps \
-   -v wabde_db:/home/node/ArcGISWebAppBuilder/server/db \
-   -v wabde_widgets:/home/node/ArcGISWebAppBuilder/client/stemapp/widgets \
-   -p 3344:3344 wildsong/wabde:2.19
+   -v wabde_apps:/srv/server/apps \
+   -v wabde_db:/srv/server/db \
+   -v wabde_widgets:/srv/client/stemapp/widgets \
+   -p 3344:3344 wildsong/wabde
 ```
 
 Sigh, Windows, I don't know where it puts the volumes,
@@ -109,9 +110,10 @@ using the docker commands. (I have to break the habit of
 accessing them directly on Linux systems.)
 
 Run this if you use Docker Compose,
+(again, skip the "--build" if you want to pull the image from Docker Hub.)
 
 ```bash
-docker-compose up -d
+docker-compose up -d --build
 ```
 
 If you use Docker Swarm,
@@ -210,6 +212,4 @@ and then using git to manage the code in apps/2/widgets/"MyCustomWidget".
 I need to have write access to the volume.
 I could break down and use a bind mount, it's just easier for this.
 
-```bash
-docker run -it --rm -v wabde_apps:/srv/apps -v wabde_widgets:/srvwidgets debian:latest bash
-```
+
