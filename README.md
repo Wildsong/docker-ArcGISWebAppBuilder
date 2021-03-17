@@ -1,7 +1,8 @@
 # docker-ArcGISWebAppBuilder
 
-Runs [Esri "ArcGIS Web AppBuilder (Developer edition)"]
-(https://developers.arcgis.com/web-appbuilder/) (aka WABDE) in a
+Runs
+[Esri "ArcGIS Web AppBuilder (Developer edition)"](https://developers.arcgis.com/web-appbuilder/)
+(aka WABDE) in a
 [Docker container](https://hub.docker.com/repository/docker/wildsong/wabde).
 This version is based on version 2.19.
 
@@ -21,7 +22,7 @@ Docker image by the build process.
 
 Per Esri licensing, Esri allows redistribution of this software
 without modification.  For details, you can refer to these Esri
-licenses as referenced in their code:
+licenses as referenced in their code. Look at 
 <http://js.arcgis.com/3.15/esri/copyright.txt> and
 <http://www.arcgis.com/apps/webappbuilder/copyright.txt>.
 
@@ -31,7 +32,7 @@ license](http://www.apache.org/licenses/LICENSE-2.0).  You can change
 it anyway you want but don't send pull requests to me because I will
 be keeping the code in sync with Esri's. Send them to Esri. ;-)
 
-The wildsong part of the project is covered under the permissive MIT
+The Wildsong part of the project is covered under the permissive MIT
 license as described in the file LICENSE in this repository.
 
 ## Version of NodeJS
@@ -177,16 +178,18 @@ Then you have to co into the settings for the new "Application"
 and "register" to get an AppId. Under "App Registration",
 * App Type: Browser
 * Redirect URI: I wrestle with this everytime so I enter all variations, one of them works,
-I have no idea which one, move along nothing to see here. Avoid stupid redirect errors.
+I have no idea which one. Avoid stupid frustrating URI redirect errors. It does not hurt
+to have too many.
+
 https://localhost:3344/ \
 https://hostname:3344/ \
-https://hostname.domain:3344/ \
+https://hostname.domain:3344/
 
 "hostname" can be "localhost" if you are only working on your local desktop.
 Otherwise it needs to be the name of the machine as you access it, that is, on my network
 "testmaps" is only accessible inside my network but it still works to create an AppId.
 
-Once you have that App Id, you can take back to the initial WABDE web page,
+Once you have that precicous App Id, you can take back to the initial WABDE web page,
 using cut and paste to copy it into the browser.
 
 ### Saving the signin file
