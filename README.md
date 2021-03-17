@@ -4,7 +4,7 @@ Runs
 [Esri "ArcGIS Web AppBuilder (Developer edition)"](https://developers.arcgis.com/web-appbuilder/)
 (aka WABDE) in a
 [Docker container](https://hub.docker.com/repository/docker/wildsong/wabde).
-This version is based on version 2.19.
+This version is based on version 2.19 (released January 2021).
 
 The main purpose of this Docker is to facilitate developing widgets and I describe my
 workflow in this README. You can just use it to run WABDE and build apps, too.
@@ -39,7 +39,7 @@ license as described in the file LICENSE in this repository.
 
 The base Docker image is "node:11". Everything here works fine with Node 12,
 but I found source for a sample widget that flipped out with Node 12
-so I backed off to 11 for now.
+so I backed off to 11 for now. WABDE requires at least 4.2 so we're good there.
 
 ## Prerequisites 
 
@@ -232,22 +232,32 @@ docker push wildsong/wabde:latest
 docker push wildsong/wabde:2.19
 ```
 
-## Future enhancements 
+## Future enhancements
+
+### Development workflow
+
+I just started with this part today, stay tuned. It's the whole reason the project exists.
+
+My idea is to create an app in WABDE,
+then add my own widget into the app by editing config.json,
+and then using git to manage the code in apps/2/widgets/"MyCustomWidget".
+
+I need to have write access to the volume, so I switched to 
+using a bind mount for apps, it's just easier for this.
+
+### 3D
+
+I have not thought about 3D apps yet so nothing here addresses it. It would
+at a minimum probably require a separate widgets volume.
+
+### File management
 
 I have played with adding a web-based file manager so that users could directly
 transfer files but I have not found one that I like yet. Please send suggestions.
 
-Deployment is a whole chore that should be automated, too.
+### App deployment
 
-### Development workflow
-
-I just started with this part today, stay tuned.
-
-My idea is to create an app in WABDE,
-then add my own widget into it by editing config.json,
-and then using git to manage the code in apps/2/widgets/"MyCustomWidget".
-
-I need to have write access to the volume.
-I could break down and use a bind mount, it's just easier for this.
+App deployment is a whole chore that should be automated but probably beyond the scope
+of this project. 
 
 
