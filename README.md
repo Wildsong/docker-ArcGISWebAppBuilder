@@ -238,12 +238,33 @@ docker push wildsong/wabde:2.19
 
 I just started with this part today, stay tuned. It's the whole reason the project exists.
 
-My idea is to create an app in WABDE,
-then add my own widget into the app by editing config.json,
-and then using git to manage the code in apps/2/widgets/"MyCustomWidget".
+Step 1, create an app in WABDE. Use the default template, because it's
+the only one that allows you to adjust themes and widgets. If it's the
+first one in your WABDE instance then the app will be "2". Subsequent
+apps will be incremented.
 
-I need to have write access to the volume, so I switched to 
-using a bind mount for apps, it's just easier for this.
+Step 2, using a template, create a new widget in git. I have a very
+simple template now, Wildsong/arcgis-wab-widget-template.
+
+Step 3, you can put the template into the widgets volume if you want,
+to avoid hand editing apps/2/config.json or you can break down and
+just edit that file. It's not that hard.
+
+I needed to have write access to the apps/ volume, so I switched to
+using a bind mount for apps, it's just easier for this. On Linux you
+probably have to change ownership because things created by WABDE will
+be owned by root. For example, "sudo chown -R bwilson apps/2/widgets".
+
+Step 4, run your app. You should be able to open the widget and see
+its generic HTML code.
+
+Step 5, edit, test, repeat, you know this endless cycle. Push changes
+to git as needed.
+
+Once you have perfected your widget you can use git to deploy a copy
+into the widgets/ volume for inclusion into future projects directly
+via WABDE.
+
 
 ### 3D
 
