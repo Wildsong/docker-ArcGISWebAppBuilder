@@ -28,9 +28,7 @@ licenses as referenced in their code. Look at
 
 Esri widgets - all the code in the widgets directory (inside
 ArcGISWebAppBuilder) is covered by a permissive [Apache 2.0
-license](http://www.apache.org/licenses/LICENSE-2.0).  You can change
-it anyway you want but don't send pull requests to me because I will
-be keeping the code in sync with Esri's. Send them to Esri. ;-)
+license](http://www.apache.org/licenses/LICENSE-2.0).  
 
 The Wildsong part of the project is covered under the permissive MIT
 license as described in the file LICENSE in this repository.
@@ -69,6 +67,12 @@ roughly quarterly I think.
 
 Apps and db are empty at first run so they are pretty easy to deal with.
 There's also "widgets".
+
+For editing, I put apps into a bind (local) mounted directory, called
+"apps".  I've also tried putting it in a Docker volume but then it
+gets lost in Docker space, which I think is a pain in Linux.
+
+The volume db is in Docker space but it's fine.
 
 ### Widgets volume
 
@@ -110,10 +114,11 @@ be directly edited by (for example) Visual Studio Code, and they are
 under full revision control. Each widget can be managed separately
 and you can fork and modify them for your own purposes.
 
-```bash
-docker build -t wildsong/git -c Dockerfile.git .
-docker run -it --rm -v wabde_widgets:/widgets wildsong/git bash
-```
+In fact, when you create an app, copies of the widgets happen and that
+includes the git version info. That means that if you want to modify
+a widget that's part of an app, you can always check changes back into
+git hub and then do a "git pull" in the widgets folder to resync them.
+I think this is pretty cool. 
 
 ### logs 
 

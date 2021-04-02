@@ -3,8 +3,7 @@ version: '3.7'
 volumes:
   apps:
   db:
-# use this one to use only the standard widget set
-#  widgets:
+  widgets:
       
 services:
   wabde:
@@ -17,10 +16,17 @@ services:
     ports:
       - 3344:3344
     volumes:
-      - apps:/srv/server/apps
       - db:/srv/server/db
+
+    # I think this might be for Windows, but then again I don't use Windows. ;-) 
+    #  - apps:/srv/server/apps
+    # use this to allow access via Visual Studio Code.
+      - ./apps:/srv/server/apps
 
     # use this one to use only the standard widget set
     #  - widgets:/srv/client/stemapp/widgets
     # use this one to use the github widget set
       - ./widgets:/srv/client/stemapp/widgets
+
+    # This saves me from having to reenter the API key
+      - ./signininfo.json:/srv/server/signininfo.json
