@@ -6,12 +6,12 @@ Runs
 [Docker container](https://hub.docker.com/repository/docker/wildsong/wabde).
 This version is based on version 2.19 (released January 2021).
 
-The main purpose of this Docker is to facilitate developing widgets and I describe my
-workflow in this README. You can just use it to run WABDE and build apps, too.
+The main purpose of this Docker is to facilitate developing widgets
+and I intend to describe my workflow in this README. You can just use
+it to run WABDE and build apps, too.
 
 I have tested this process with WABDE versions 2.13-2.19 on Debian Linux.
 I've also done some limited testing on Windows 10 Desktop using Docker WSL2.
-
 
 ## Licenses
 
@@ -70,21 +70,50 @@ roughly quarterly I think.
 Apps and db are empty at first run so they are pretty easy to deal with.
 There's also "widgets".
 
-### widgets volume
+### Widgets volume
 
-Widgets are stored in the "client" side of WABDE then copied to
-"server" side into the apps folder when you create an app in WABDE.
-Normally any widgets you see in "apps" folders started life in the
-client "widgets" collection and they were copied during app creation.
+Feel free to write to me and ask questions about this as I am still
+making it up as I go.
 
-On first run, the container will copy the internal widgets folder
-into a fresh new Docker volume called wabde_widgets.
+I have a separate git project for widgets, this allows me to fork them
+and add third party widgets as needed.
 
-Once that's happened then you can install third party widgets into it
-and they will be available in the app builder.
+In normal operation WABDE expects to find widgets in the "client" side
+of WABDE then copies them to "server" side into the apps folder when
+use WABDE to create an app.  Normally any widgets you see in "apps"
+folders started life in the client "widgets" collection and they were
+copied during app creation.
 
-If you use a bind mount for widgets instead of a Docker volume, the
-automatic copy fails and you won't have any widgets!
+There are two ways to get a complete copy of the WABDE widgets. One is
+just to run this docker. On first run, the new container will copy the
+internal widgets folder (which came from the unpacked Esri ZIP file
+included in this archive) into a fresh new Docker volume called
+wabde_widgets.
+
+Once that's happened then you can install third party widgets into the
+Docker volume and they will be available in the app builder.
+
+#### Git version of Widgets
+
+The other way is to clone the widgets github archive and bind mount
+the volume. You can do that with this.
+
+**The docker-compose.yml assumes you will use the github widgets.**
+
+
+```bash
+git clone https://github.com/Wildsong/wabde-widgets widgets
+```
+
+This is ideal for development because all the widgets can
+be directly edited by (for example) Visual Studio Code, and they are
+under full revision control. Each widget can be managed separately
+and you can fork and modify them for your own purposes.
+
+```bash
+docker build -t wildsong/git -c Dockerfile.git .
+docker run -it --rm -v wabde_widgets:/widgets wildsong/git bash
+```
 
 ### logs 
 
@@ -111,9 +140,9 @@ them. It's up to you to manage any code you change.
 
 ## Running WABDE
 
-Just using docker commands, you could do this. (Skip the "build" step
-if you want to pull the image from Docker Hub.) This puts all volumes in Docker volumes,
-creating them if they don't exist.
+Just using plain docker commands, you could do this. (Skip the "build"
+step if you want to pull the prebuilt image from Docker Hub.) This
+puts all volumes in Docker volumes, creating them if they don't exist.
 
 ```bash
 docker build -t wildsong/wabde .
@@ -126,8 +155,7 @@ docker run -d --name wabde \
 
 Sigh, on Windows, I don't know where it puts the volumes, they are
 hidden in a WSL2 virtual machine somewhere. You can still access them
-using the docker commands. (I have to break the habit of accessing
-them directly on Linux systems.)
+using the docker commands.
 
 Run this if you use Docker Compose,
 (again, skip the "--build" if you want to pull the image from Docker Hub.)
@@ -136,9 +164,11 @@ Run this if you use Docker Compose,
 docker-compose up -d --build
 ```
 
-This example YML file shows a bind mount of the apps folder instead of a volume, which allows
-directly accessing the widgets folders for development in apps/*/widgets.
-It also bind mounts the signininfo.json file.
+This example YML file users bind mounts of the apps and widgets
+folders instead of Docker volumes.  This allows adding more widgets
+directly into ./widgets, and allows accessing the widgets folders for
+development in apps/*/widgets.  It also bind mounts the
+signininfo.json file to store the server and api key information.
 
 ```
 docker-compose -f docker-bind.yml up 
@@ -278,7 +308,7 @@ transfer files but I have not found one that I like yet. Please send suggestions
 
 ### App deployment
 
-App deployment is a whole chore that should be automated but probably beyond the scope
-of this project. 
+App deployment should be automated but at this time, sadly I just use "copy" at this time.
+
 
 

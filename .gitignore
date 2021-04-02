@@ -2,8 +2,6 @@
 .env
 signininfo*.json
 apps/[0-9]*
+apps/zips
 apps_agol/[0-9]*
-db/repos
-db/repoitems
-db/apps
-
+widgets/

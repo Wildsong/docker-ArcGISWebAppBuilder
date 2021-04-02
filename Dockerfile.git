@@ -1,0 +1,7 @@
+FROM debian:latest
+MAINTAINER Brian H Wilson "brian@wildsong.biz"
+RUN apt-get update && apt-get -y install git
+RUN apt-get -y install vim emacs-nox
+
+VOLUME /widgets
+WORKDIR /widgets

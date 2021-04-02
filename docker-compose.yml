@@ -3,7 +3,8 @@ version: '3.7'
 volumes:
   apps:
   db:
-  widgets:
+# use this one to use only the standard widget set
+#  widgets:
       
 services:
   wabde:
@@ -18,4 +19,8 @@ services:
     volumes:
       - apps:/srv/server/apps
       - db:/srv/server/db
-      - widgets:/srv/client/stemapp/widgets
+
+    # use this one to use only the standard widget set
+    #  - widgets:/srv/client/stemapp/widgets
+    # use this one to use the github widget set
+      - ./widgets:/srv/client/stemapp/widgets

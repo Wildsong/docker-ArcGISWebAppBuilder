@@ -1,5 +1,10 @@
-# Keep this out of the Docker hub.  It's not the end of the world if
-# it sneaks in because access to the server is blocked at the
-# firewall, and it requires credentials anyway.
-#
+# Keep this stuff out of the Docker hub.
+
+# These files contains app keys so should be kept out of repositories
 signininfo*.json
+
+# These just take up tons of space
+*.zip
+apps/
+apps_agol/
+widgets/
