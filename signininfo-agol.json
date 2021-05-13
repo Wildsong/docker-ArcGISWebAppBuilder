@@ -1,0 +1,8 @@
+[
+  {
+    "portalUrl": "https://YOURAGOLACCOUNT.maps.arcgis.com",
+    "appId": "YOUR_APP_ID",
+    "supportsOAuth": true,
+    "isWebTier": false
+  }
+]

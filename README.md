@@ -1,12 +1,17 @@
 # docker-ArcGISWebAppBuilder
 
-Runs Esri "ArcGIS Web AppBuilder (Developer edition)" (aka WABDE) in a Docker container.
-This version is based on version 2.20.
+Runs
+[Esri "ArcGIS Web AppBuilder (Developer edition)"](https://developers.arcgis.com/web-appbuilder/)
+(aka WABDE) in a
+[Docker container](https://hub.docker.com/repository/docker/wildsong/wabde).
+This version is based on version 2.20 (released May 2021).
 
-The main purpose of this Docker is to facilitate developing widgets and I describe my
-workflow in this README. You can just use it to run WABDE and build apps, too.
+The main purpose of this Docker is to facilitate developing widgets
+and I intend to describe my workflow in this README. You can just use
+it to run WABDE and build apps, too.
 
 I have tested this process with WABDE versions 2.13-2.20 on Debian Linux.
+I've also done some limited testing on Windows 10 Desktop using Docker WSL2.
 
 
 ## Licenses
@@ -18,24 +23,22 @@ Docker image by the build process.
 
 Per Esri licensing, Esri allows redistribution of this software
 without modification.  For details, you can refer to these Esri
-licenses as referenced in their code:
+licenses as referenced in their code. Look at 
 <http://js.arcgis.com/3.15/esri/copyright.txt> and
 <http://www.arcgis.com/apps/webappbuilder/copyright.txt>.
 
 Esri widgets - all the code in the widgets directory (inside
 ArcGISWebAppBuilder) is covered by a permissive [Apache 2.0
-license](http://www.apache.org/licenses/LICENSE-2.0).  You can change
-it anyway you want but don't send pull requests to me because I will
-be keeping the code in sync with Esri's. Send them to Esri. ;-)
+license](http://www.apache.org/licenses/LICENSE-2.0).  
 
-The wildsong part of the project is covered under the permissive MIT
+The Wildsong part of the project is covered under the permissive MIT
 license as described in the file LICENSE in this repository.
 
-## Node version
+## Version of NodeJS
 
-The base image is node:11. Everything here works fine with Node 12,
+The base Docker image is "node:11". Everything here works fine with Node 12,
 but I found source for a sample widget that flipped out with Node 12
-so I backed off to 11 for now.
+so I backed off to 11 for now. WABDE requires at least 4.2 so we're good there.
 
 ## Prerequisites 
 
@@ -49,6 +52,11 @@ Note that you can set up a developer account for free, and that will work.
 I tried using 'bind' mounts but they don't work for widgets; 
 only the Docker volumes work properly for that.
 
+You can use either bind mounts or volumes for apps and db. Currently
+I use bind mounts for apps because it lets me easily develop widgets
+using Visual Studio Code. (VS Code can see directly into the apps/
+folder.)
+
 ### apps and db volumes
 
 The apps that are generated will be in "apps". There is a separate
@@ -61,22 +69,63 @@ roughly quarterly I think.
 Apps and db are empty at first run so they are pretty easy to deal with.
 There's also "widgets".
 
-### widgets volume
+For editing, I put apps into a bind (local) mounted directory, called
+"apps".  I've also tried putting it in a Docker volume but then it
+gets lost in Docker space, which I think is a pain in Linux.
 
-Widgets are stored in the "client" side of WABDE then copied to
-"server" side into the apps folder when you create an app in WABDE.
-Normally any widgets you see in "apps" folders started life in the
-client "widgets" collection and they were copied during app creation.
+The volume db is in Docker space but it's fine.
 
-On first run, the container will copy the internal widgets folder
-into a fresh new Docker volume called wabde_widgets.
+### Widgets volume
 
-Once that's happened then you can install third party widgets into it
-and they will be available in the app builder.
+Feel free to write to me and ask questions about this as I am still
+making it up as I go.
+
+I have a separate git project for widgets, this allows me to fork them
+and add third party widgets as needed.
+
+In normal operation WABDE expects to find widgets in the "client" side
+of WABDE then copies them to "server" side into the apps folder when
+use WABDE to create an app.  Normally any widgets you see in "apps"
+folders started life in the client "widgets" collection and they were
+copied during app creation.
+
+There are two ways to get a complete copy of the WABDE widgets. One is
+just to run this docker. On first run, the new container will copy the
+internal widgets folder (which came from the unpacked Esri ZIP file
+included in this archive) into a fresh new Docker volume called
+wabde_widgets.
+
+Once that's happened then you can install third party widgets into the
+Docker volume and they will be available in the app builder.
+
+#### Git version of Widgets
+
+The other way is to clone the widgets github archive and bind mount
+the volume. You can do that with this.
+
+**The docker-compose.yml assumes you will use the github widgets.**
+
+
+```bash
+git clone https://github.com/Wildsong/wabde-widgets widgets
+```
+
+This is ideal for development because all the widgets can
+be directly edited by (for example) Visual Studio Code, and they are
+under full revision control. Each widget can be managed separately
+and you can fork and modify them for your own purposes.
+
+In fact, when you create an app, copies of the widgets happen and that
+includes the git version info. That means that if you want to modify
+a widget that's part of an app, you can always check changes back into
+git hub and then do a "git pull" in the widgets folder to resync them.
+I think this is pretty cool. 
 
 ### logs 
 
-You can create a separate logs folder if you want. I ignore it.
+You can create a separate logs folder if you want. I have not worked
+with WABDE long enough in one container to know what happens over
+time. Log files might grow endlessly. Caveat emptor.
 
 ## Upgrades
 
@@ -88,13 +137,18 @@ old widgets volume and let Docker create and populate a new one.
 docker volume rm wabde_widgets
 ```
 
-If you have altered anything in there or added extra widgets, it's
-up to you to preserve them.
+If you have altered anything in there or added extra custom or 3rd party
+widgets, it's up to you to preserve them.
+
+Warning: WABDE tries to update widgets in apps when it's started, if
+you have an old app with standard widgets WABDE will overwrite
+them. It's up to you to manage any code you change.
 
 ## Running WABDE
 
-Just using docker commands, you could do this. (Skip the "build" step
-if you want to pull the image from Docker Hub.)
+Just using plain docker commands, you could do this. (Skip the "build"
+step if you want to pull the prebuilt image from Docker Hub.) This
+puts all volumes in Docker volumes, creating them if they don't exist.
 
 ```bash
 docker build -t wildsong/wabde .
@@ -105,10 +159,9 @@ docker run -d --name wabde \
    -p 3344:3344 wildsong/wabde
 ```
 
-Sigh, Windows, I don't know where it puts the volumes,
-they are hidden in a virtual machine somewhere. You can still access them
-using the docker commands. (I have to break the habit of
-accessing them directly on Linux systems.)
+Sigh, on Windows, I don't know where it puts the volumes, they are
+hidden in a WSL2 virtual machine somewhere. You can still access them
+using the docker commands.
 
 Run this if you use Docker Compose,
 (again, skip the "--build" if you want to pull the image from Docker Hub.)
@@ -117,49 +170,71 @@ Run this if you use Docker Compose,
 docker-compose up -d --build
 ```
 
-You can do a bind mount of the apps folder instead which allows
-directly accessing the widgets folders for development in apps/*/widgets.
+This example YML file users bind mounts of the apps and widgets
+folders instead of Docker volumes.  This allows adding more widgets
+directly into ./widgets, and allows accessing the widgets folders for
+development in apps/*/widgets.  It also bind mounts the
+signininfo.json file to store the server and api key information.
 
 ```
 docker-compose -f docker-bind.yml up 
 ```
 
+Here is an example YML file shows that you can have the configuration
+set up for an ArcGIS Online account at the same time, and start
+whichever one you want to use.  It bind mounts "apps_agol" instead of
+"apps", and keeps a separate db/ volume for the databases.  It also
+bind mounts the signininfo-agol.json onto the container's
+signininfo.json file.
 
+```
+docker-compose -f docker-agol.yml up 
+```
 
 ### Setting the App Id from Portal
 
-Once the container is up and running you still have to connect it to Portal (or ArcGIS Online)..
-Connect to WABDE from a browser (e.g. <http://localhost:3344/webappbuilder/>) and
-enter the URL of your Portal and an AppId (from Portal). On the Portal
-side you have to set up a new App and get the AppId. Complete
-relatively good instructions are on the ESRI web site under Quick Start.
+Once the container is up and running you still have to connect it to
+Portal (or ArcGIS Online)..  Connect to WABDE from a browser
+(e.g. <http://localhost:3344/webappbuilder/>) and enter the URL of
+your Portal and an AppId (from Portal). On the Portal side you have to
+set up a new App and get the AppId. Complete relatively good
+instructions are on the ESRI web site under Quick Start.
 
 In Portal,
 
 * Content tab->My Content
 * Add Item->Application
-* Type of application: Web Mapping
+* Type of application: Application
 * Purpose: Ready to use
 * API: Javascript
-* URL: https://yourdocker:3344/webappbuilder
+* URL: https://hostname:3344/webappbuilder
 * Title: whatever you like
 * Tags: whatever...
-Then you have to co into the settings for the new "Web Mapping Application"
+Then you have to co into the settings for the new "Application"
 and "register" to get an AppId. Under "App Registration",
 * App Type: Browser
 * Redirect URI: I wrestle with this everytime so I enter all variations, one of them works,
-I have no idea which one, move along nothing to see here. Avoid stupid redirect errors.
-http://name:3344/ \
-https://name:3344/ \
-http://name.domain:3344/ \
-https://name.domain:3344/ \
+I have no idea which one. Avoid stupid frustrating URI redirect errors. It does not hurt
+to have too many.
 
-That gets you the App Id which you can take back to the WAB web page in the "unsigned" step above,
+https://localhost:3344/ \
+https://hostname:3344/ \
+https://hostname.domain:3344/
+
+"hostname" can be "localhost" if you are only working on your local desktop.
+Otherwise it needs to be the name of the machine as you access it, that is, on my network
+"testmaps" is only accessible inside my network but it still works to create an AppId.
+
+Once you have that precicous App Id, you can take back to the initial WABDE web page,
 using cut and paste to copy it into the browser.
 
 ### Saving the signin file
 
-Once you have successfully connected you can copy the file out and put it back
+I use a bind mount in the "bind" examples above, so I keep the signininfo.json
+file in the local filesystem.
+
+You can also just leave it inside the Docker container. 
+Once you have successfully connected you can copy the file out to save it and put it back
 after upgrades, if you want. Instead of re-entering the ID you copy the file.
 Same amount of work, either way. Here is an example of how to back it up.
 
@@ -173,15 +248,15 @@ BTW you can copy files into and out of containers, even when they are stopped.
 
 ### Force signing in WABDE again should you ever need to
 
-If you can remove the file /srv/server/signininfo.json
-and restart the container, it will disconnect WABDE from your Portal
-and trigger the web page that prompts for the key again. This
-basically takes the image back to the "unsigned state".
+If you remove the file /srv/server/signininfo.json and reload the web
+page, it will disconnect WABDE from your Portal and trigger the web
+page that prompts for the key again. This basically takes the image
+back to the "unsigned state".
 
 ## Backups
 
-If you want to back up your apps folder, make sure you also backup (and restore) the db/apps file. They
-have to match.
+If you want to back up your apps folder, make sure you also backup
+(and restore) the db/apps file. They have to match.
 
 ## Docker Hub
 
@@ -193,27 +268,53 @@ docker push wildsong/wabde:latest
 docker push wildsong/wabde:2.19
 ```
 
-## Future enhancements 
+## Future enhancements
+
+### Development workflow
+
+I just started with this part today, stay tuned. It's the whole reason the project exists.
+
+Step 1, create an app in WABDE. Use the default template, because it's
+the only one that allows you to adjust themes and widgets. If it's the
+first one in your WABDE instance then the app will be "2". Subsequent
+apps will be incremented.
+
+Step 2, using a template, create a new widget in git. I have a very
+simple template now, Wildsong/arcgis-wab-widget-template.
+
+Step 3, you can put the template into the widgets volume if you want,
+to avoid hand editing apps/2/config.json or you can break down and
+just edit that file. It's not that hard.
+
+I needed to have write access to the apps/ volume, so I switched to
+using a bind mount for apps, it's just easier for this. On Linux you
+probably have to change ownership because things created by WABDE will
+be owned by root. For example, "sudo chown -R bwilson apps/2/widgets".
+
+Step 4, run your app. You should be able to open the widget and see
+its generic HTML code.
+
+Step 5, edit, test, repeat, you know this endless cycle. Push changes
+to git as needed.
+
+Once you have perfected your widget you can use git to deploy a copy
+into the widgets/ volume for inclusion into future projects directly
+via WABDE.
+
+
+### 3D
+
+I have not thought about 3D apps yet so nothing here addresses it. It would
+at a minimum probably require a separate widgets volume.
+
+### File management
 
 I have played with adding a web-based file manager so that users could directly
 transfer files but I have not found one that I like yet. Please send suggestions.
 
-### Widget management
+### App deployment
 
-I am working out the best way to work with 3rd party widgets. They
-need to be copied into clients/stemapp/widgets where the existing
-widgets live. This is confusing, I don't know why they don't have 2
-spaces. But that's life.
+App deployment should be automated but at this time, sadly I just use "copy" at this time.
 
-### Development workflow
-
-I just started with this part today, stay tuned.
-
-My idea is to create an app in WABDE,
-then add my own widget into it by editing config.json,
-and then using git to manage the code in apps/2/widgets/"MyCustomWidget".
-
-I need to have write access to the volume.
-I could break down and use a bind mount, it's just easier for this.
 
 
