@@ -1,14 +1,14 @@
 FROM node:11
-MAINTAINER Brian H Wilson "brian@wildsong.biz"
+LABEL MAINTAINER="Brian H Wilson brian@wildsong.biz"
 
 RUN apt-get update && apt-get -y install unzip
 
 WORKDIR /srv
 
 # Unzip WABDE into /srv
-ADD arcgis-web-appbuilder-2.19.zip .
-RUN unzip -q arcgis-web-appbuilder-2.19.zip && \
-    rm arcgis-web-appbuilder-2.19.zip && \
+ADD arcgis-web-appbuilder-2.20.zip .
+RUN unzip -q arcgis-web-appbuilder-2.20.zip && \
+    rm arcgis-web-appbuilder-2.20.zip && \
     mv ArcGISWebAppBuilder/* .
 
 # Just a convenient shortcut,"/srv/widgets".

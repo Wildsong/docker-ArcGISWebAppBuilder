@@ -1,19 +1,19 @@
 # docker-ArcGISWebAppBuilder
 
 Runs Esri "ArcGIS Web AppBuilder (Developer edition)" (aka WABDE) in a Docker container.
-This version is based on version 2.19.
+This version is based on version 2.20.
 
 The main purpose of this Docker is to facilitate developing widgets and I describe my
 workflow in this README. You can just use it to run WABDE and build apps, too.
 
-I have tested this process with WABDE versions 2.13-2.19 on Debian Linux.
+I have tested this process with WABDE versions 2.13-2.20 on Debian Linux.
 
 
 ## Licenses
 
 The github repo contains a complete unmodified copy of Esri "ArcGIS
 Web AppBuilder (Developer edition)" in the file
-arcgis-web-appbuilder-2.19.zip. The file will be unpacked into a
+arcgis-web-appbuilder-2.20.zip. The file will be unpacked into a
 Docker image by the build process.
 
 Per Esri licensing, Esri allows redistribution of this software
@@ -36,12 +36,13 @@ license as described in the file LICENSE in this repository.
 The base image is node:11. Everything here works fine with Node 12,
 but I found source for a sample widget that flipped out with Node 12
 so I backed off to 11 for now.
+
 ## Prerequisites 
 
 * A working ArcGIS Enterprise Portal with admin access or an ArcGIS Online "organizational" account.
 * A computer that has Docker and Docker Compose installed.
 
-Note that you can set up a developer account for free.
+Note that you can set up a developer account for free, and that will work.
 
 ## Volumes for storage
 
@@ -93,7 +94,7 @@ up to you to preserve them.
 ## Running WABDE
 
 Just using docker commands, you could do this. (Skip the "build" step
-if you want to pull the image from Docker Hub.)x
+if you want to pull the image from Docker Hub.)
 
 ```bash
 docker build -t wildsong/wabde .
