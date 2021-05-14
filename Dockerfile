@@ -3,7 +3,11 @@ LABEL MAINTAINER="Brian H Wilson brian@wildsong.biz"
 
 RUN apt-get update && apt-get -y install unzip
 
+# The node server will run as user 1000
+# so it will need permissions to write into /srv
+RUN chown 1000:1000 /srv
 WORKDIR /srv
+USER 1000:1000
 
 # Unzip WABDE into /srv
 ADD arcgis-web-appbuilder-2.20.zip .
