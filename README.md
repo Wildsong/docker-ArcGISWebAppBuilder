@@ -107,7 +107,7 @@ the volume. You can do that with this.
 
 
 ```bash
-git clone https://github.com/Wildsong/wabde-widgets widgets
+git clone --recurse-submodules https://github.com/Wildsong/wabde-widgets widgets
 ```
 
 This is ideal for development because all the widgets can
