@@ -265,7 +265,7 @@ and apparently they are not supporting that yet. So I do a manual push,
 
 ```bash
 docker push wildsong/wabde:latest
-docker push wildsong/wabde:2.19
+docker push wildsong/wabde:2.20
 ```
 
 ## Future enhancements

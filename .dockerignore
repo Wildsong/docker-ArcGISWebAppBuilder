@@ -4,7 +4,6 @@
 signininfo*.json
 
 # These just take up tons of space
-*.zip
 apps/
 apps_agol/
 widgets/
