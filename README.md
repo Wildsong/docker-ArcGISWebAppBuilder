@@ -127,7 +127,7 @@ You can create a separate logs folder if you want. I have not worked
 with WABDE long enough in one container to know what happens over
 time. Log files might grow endlessly. Caveat emptor.
 
-## Upgrades
+## Server upgrades
 
 When doing upgrades, I have found I can leave apps and db volumes
 alone. To get widgets from the new version, it's easiest to delete the
@@ -139,10 +139,6 @@ docker volume rm wabde_widgets
 
 If you have altered anything in there or added extra custom or 3rd party
 widgets, it's up to you to preserve them.
-
-Warning: WABDE tries to update widgets in apps when it's started, if
-you have an old app with standard widgets WABDE will overwrite
-them. It's up to you to manage any code you change.
 
 ## Running WABDE
 
@@ -268,6 +264,16 @@ docker push wildsong/wabde:latest
 docker push wildsong/wabde:2.20
 ```
 
+## Application upgrades
+
+After building a new server, you can try the upgrade script that comes with each release.
+Figure out which apps you want to upgrade.
+
+```bash
+docker-compose down
+docker-compose -w /srv/server/apps --rm upgrade APPDIRECTORY
+``` 
+
 ## Future enhancements
 
 ### Development workflow
@@ -315,6 +321,16 @@ transfer files but I have not found one that I like yet. Please send suggestions
 ### App deployment
 
 App deployment should be automated but at this time, sadly I just use "copy" at this time.
+
+## Upgrading apps
+
+```bash
+docker exec wabde_wabde_1 bash
+node upgrade < previous_version > app_id
+```
+
+except I don't happen to have the previous version, sigh.
+
 
 
 

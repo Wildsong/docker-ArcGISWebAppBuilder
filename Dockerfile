@@ -26,4 +26,6 @@ EXPOSE 3344/tcp 3345/tcp 3346/tcp
 
 # Server will not start unless current directory is "server".
 WORKDIR /srv/server
-CMD [ "node", "server.js" ]
+
+# Not putting a command here allows using one image
+# for both the server and for upgrades.

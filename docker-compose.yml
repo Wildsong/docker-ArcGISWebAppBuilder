@@ -11,6 +11,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    command: [ "node", "server.js" ]
     environment:
       - TZ=Americas/Los_Angeles
     ports:
@@ -30,3 +31,11 @@ services:
 
     # This saves me from having to reenter the API key
       - ./signininfo.json:/srv/server/signininfo.json
+
+    deploy:
+      mode: global
+      restart_policy:
+        condition: any
+        delay: 5s
+        window: 15s
+        max_attempts: 10
