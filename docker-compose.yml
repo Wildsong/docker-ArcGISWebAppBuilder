@@ -7,7 +7,7 @@ volumes:
       
 services:
   wabde:
-    image: wildsong/wabde
+    image: wildsong/wabde:latest
     build:
       context: .
       dockerfile: Dockerfile
@@ -23,6 +23,8 @@ services:
     #  - apps:/srv/server/apps
     # use this to allow access via Visual Studio Code.
       - ./apps:/srv/server/apps
+    # this is only used at upgrades, see the README.
+      - ./apps_old:/srv/server/apps_old
 
     # use this one to use only the standard widget set
     #  - widgets:/srv/client/stemapp/widgets
@@ -32,10 +34,11 @@ services:
     # This saves me from having to reenter the API key
       - ./signininfo.json:/srv/server/signininfo.json
 
-    deploy:
-      mode: global
-      restart_policy:
-        condition: any
-        delay: 5s
-        window: 15s
-        max_attempts: 10
+    # For Docker Swarm, which I am not overly fond of at this time.
+#    deploy:
+#      mode: global
+#      restart_policy:
+#        condition: any
+#        delay: 5s
+#        window: 15s
+#        max_attempts: 10

@@ -10,10 +10,11 @@ WORKDIR /srv
 USER 1000:1000
 
 # Unzip WABDE into /srv
-ADD arcgis-web-appbuilder-2.20.zip .
-RUN unzip -q arcgis-web-appbuilder-2.20.zip && \
-    rm arcgis-web-appbuilder-2.20.zip && \
-    mv ArcGISWebAppBuilder/* .
+ADD arcgis-web-appbuilder-2.22.zip .
+RUN unzip -q arcgis-web-appbuilder-2.22.zip && \
+    rm arcgis-web-appbuilder-2.22.zip && \
+    mv ArcGISWebAppBuilder/* . && \
+    touch /srv/000_this_is_version_2.22
 
 # Just a convenient shortcut,"/srv/widgets".
 RUN ln -s /srv/client/stemapp/widgets

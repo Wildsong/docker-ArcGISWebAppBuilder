@@ -4,13 +4,13 @@ Runs
 [Esri "ArcGIS Web AppBuilder (Developer edition)"](https://developers.arcgis.com/web-appbuilder/)
 (aka WABDE) in a
 [Docker container](https://hub.docker.com/repository/docker/wildsong/wabde).
-This version is based on version 2.20 (released May 2021).
+This version is based on version 2.22 (released October 2021).
 
 The main purpose of this Docker is to facilitate developing widgets
 and I intend to describe my workflow in this README. You can just use
 it to run WABDE and build apps, too.
 
-I have tested this process with WABDE versions 2.13-2.20 on Debian Linux.
+I have tested this process with WABDE versions 2.13-2.21 on Debian Linux.
 I've also done some limited testing on Windows 10 Desktop using Docker WSL2.
 
 
@@ -40,7 +40,7 @@ The base Docker image is "node:11". Everything here works fine with Node 12,
 but I found source for a sample widget that flipped out with Node 12
 so I backed off to 11 for now. WABDE requires at least 4.2 so we're good there.
 
-## Prerequisites 
+## Prerequisites
 
 * A working ArcGIS Enterprise Portal with admin access or an ArcGIS Online "organizational" account.
 * A computer that has Docker and Docker Compose installed.
@@ -121,60 +121,63 @@ a widget that's part of an app, you can always check changes back into
 git hub and then do a "git pull" in the widgets folder to resync them.
 I think this is pretty cool. 
 
-### logs 
+### logs
 
 You can create a separate logs folder if you want. I have not worked
 with WABDE long enough in one container to know what happens over
 time. Log files might grow endlessly. Caveat emptor.
 
-## Server upgrades
+## Upgrades
+
+### Server upgrades
+
+Download the ZIP, edit the version number in Dockerfile, build a new image.
 
 When doing upgrades, I have found I can leave apps and db volumes
-alone. To get widgets from the new version, it's easiest to delete the
+alone. To get widgets from the new version, it's easiest to move aside the
 old widgets volume and let Docker create and populate a new one.
 
 ```bash
-docker volume rm wabde_widgets
+mv widgets widgets-OLD
+mkdir widgets
 ```
 
 If you have altered anything in there or added extra custom or 3rd party
 widgets, it's up to you to preserve them.
 
+### App upgrades
+
+Refer to https://developers.arcgis.com/web-appbuilder/guide/upgrade-apps.htm
+
+This is screwy, you need to have the complete old installation available to do this.
+I need to think about it some...
+
+I was thinking something like this but it won't work based on those instructions.
+
+```bash
+docker-compose down
+mv apps apps_old
+docker-compose run wabde bash
+```
+
 ## Running WABDE
 
-Just using plain docker commands, you could do this. (Skip the "build"
-step if you want to pull the prebuilt image from Docker Hub.) This
-puts all volumes in Docker volumes, creating them if they don't exist.
+I don't use Windows because on Windows, I don't know where it puts the volumes, they are hidden in a WSL2 virtual machine somewhere. You can
+still access them using the docker commands.
+
+I tried running WABDE in Docker Swarm but I've decided it is just too much trouble.
 
 ```bash
-docker build -t wildsong/wabde .
-docker run -d --name wabde \
-   -v wabde_apps:/srv/server/apps \
-   -v wabde_db:/srv/server/db \
-   -v wabde_widgets:/srv/client/stemapp/widgets \
-   -p 3344:3344 wildsong/wabde
+docker-compose build
+# dont do this, docker stack deploy -c docker-compose.yml wabde
+docker-compose up -d
 ```
 
-Sigh, on Windows, I don't know where it puts the volumes, they are
-hidden in a WSL2 virtual machine somewhere. You can still access them
-using the docker commands.
-
-Run this if you use Docker Compose,
-(again, skip the "--build" if you want to pull the image from Docker Hub.)
-
-```bash
-docker-compose up -d --build
-```
-
-This example YML file users bind mounts of the apps and widgets
+The docker-compose.yml file uses bind mounts of the apps and widgets
 folders instead of Docker volumes.  This allows adding more widgets
 directly into ./widgets, and allows accessing the widgets folders for
 development in apps/*/widgets.  It also bind mounts the
 signininfo.json file to store the server and api key information.
-
-```
-docker-compose -f docker-bind.yml up 
-```
 
 Here is an example YML file shows that you can have the configuration
 set up for an ArcGIS Online account at the same time, and start
@@ -226,13 +229,10 @@ using cut and paste to copy it into the browser.
 
 ### Saving the signin file
 
-I use a bind mount in the "bind" examples above, so I keep the signininfo.json
-file in the local filesystem.
+I use a bind mount in the "bind" examples above, so I keep the signininfo.json file in the local filesystem.
 
 You can also just leave it inside the Docker container. 
-Once you have successfully connected you can copy the file out to save it and put it back
-after upgrades, if you want. Instead of re-entering the ID you copy the file.
-Same amount of work, either way. Here is an example of how to back it up.
+Once you have successfully connected you can copy the file out to save it and put it back after upgrades, if you want. Instead of re-entering the ID you copy the file. Same amount of work, either way. Here is an example of how to back it up.
 
 ```bash
 docker cp wabde:/srv/server/signininfo.json .
@@ -263,16 +263,6 @@ and apparently they are not supporting that yet. So I do a manual push,
 docker push wildsong/wabde:latest
 docker push wildsong/wabde:2.20
 ```
-
-## Application upgrades
-
-After building a new server, you can try the upgrade script that comes with each release.
-Figure out which apps you want to upgrade.
-
-```bash
-docker-compose down
-docker-compose -w /srv/server/apps --rm upgrade APPDIRECTORY
-``` 
 
 ## Future enhancements
 
@@ -325,7 +315,7 @@ App deployment should be automated but at this time, sadly I just use "copy" at 
 ## Upgrading apps
 
 ```bash
-docker exec wabde_wabde_1 bash
+docker exec -ti wabde_wabde_1 bash
 node upgrade < previous_version > app_id
 ```
 
