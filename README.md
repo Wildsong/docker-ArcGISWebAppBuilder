@@ -256,6 +256,8 @@ If you want to back up your apps folder, make sure you also backup
 
 I tried automated builds but the ZIP file is stored in github LFS (Large File Store),
 and apparently they are not supporting that yet. So I do a manual push,
+I tag the git image and the docker image with the Esri version number. I use these
+commands.
 
 ```bash
 V=2.24
