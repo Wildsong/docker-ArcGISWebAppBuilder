@@ -167,7 +167,7 @@ I tried running WABDE in Docker Swarm but I've decided it is just too much troub
 
 ```bash
 docker-compose build
-# dont do this, docker stack deploy -c docker-compose.yml wabde
+# don't do this--- docker stack deploy -c docker-compose.yml wabde
 docker-compose up -d
 ```
 
@@ -258,8 +258,13 @@ I tried automated builds but the ZIP file is stored in github LFS (Large File St
 and apparently they are not supporting that yet. So I do a manual push,
 
 ```bash
-docker push wildsong/wabde:latest
-docker push wildsong/wabde:2.24
+V=2.24
+git tag -a $V -m 'Updated to $V'
+git push origin 2.24
+docker image push wildsong/wabde:latest
+ID=`docker container ls | grep wabde | cut -c 1-12`
+docker container commit $ID wildsong/wabde:$V
+docker image push wildsong/wabde:$V
 ```
 
 ## Future enhancements
