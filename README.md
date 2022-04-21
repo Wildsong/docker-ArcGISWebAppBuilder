@@ -4,13 +4,13 @@ Runs
 [Esri "ArcGIS Web AppBuilder (Developer edition)"](https://developers.arcgis.com/web-appbuilder/)
 (aka WABDE) in a
 [Docker container](https://hub.docker.com/repository/docker/wildsong/wabde).
-This version is based on version 2.22 (released October 2021).
+This version is based on version 2.24 (released April 2022).
 
 The main purpose of this Docker is to facilitate developing widgets
 and I intend to describe my workflow in this README. You can just use
 it to run WABDE and build apps, too.
 
-I have tested this process with WABDE versions 2.13-2.21 on Debian Linux.
+I have tested this process with WABDE versions 2.13-2.24 on Debian Linux.
 I've also done some limited testing on Windows 10 Desktop using Docker WSL2.
 
 
@@ -18,7 +18,7 @@ I've also done some limited testing on Windows 10 Desktop using Docker WSL2.
 
 The github repo contains a complete unmodified copy of Esri "ArcGIS
 Web AppBuilder (Developer edition)" in the file
-arcgis-web-appbuilder-2.20.zip. The file will be unpacked into a
+arcgis-web-appbuilder-2.24.zip. The file will be unpacked into a
 Docker image by the build process.
 
 Per Esri licensing, Esri allows redistribution of this software
@@ -92,8 +92,7 @@ copied during app creation.
 There are two ways to get a complete copy of the WABDE widgets. One is
 just to run this docker. On first run, the new container will copy the
 internal widgets folder (which came from the unpacked Esri ZIP file
-included in this archive) into a fresh new Docker volume called
-wabde_widgets.
+included in this archive) into a folder called "widgets".
 
 Once that's happened then you can install third party widgets into the
 Docker volume and they will be available in the app builder.
@@ -104,7 +103,6 @@ The other way is to clone the widgets github archive and bind mount
 the volume. You can do that with this.
 
 **The docker-compose.yml assumes you will use the github widgets.**
-
 
 ```bash
 git clone --recurse-submodules https://github.com/Wildsong/wabde-widgets widgets
@@ -261,7 +259,7 @@ and apparently they are not supporting that yet. So I do a manual push,
 
 ```bash
 docker push wildsong/wabde:latest
-docker push wildsong/wabde:2.20
+docker push wildsong/wabde:2.24
 ```
 
 ## Future enhancements
