@@ -3,7 +3,6 @@ version: '3.7'
 volumes:
   apps:
   db:
-  widgets:
       
 services:
   wabde:
@@ -26,15 +25,15 @@ services:
     # this is only used at upgrades, see the README.
       - ./apps_old:/srv/server/apps_old
 
-    # use this one to use only the standard widget set
-    #  - widgets:/srv/client/stemapp/widgets
-    # use this one to use the github widget set
       - ./widgets:/srv/client/stemapp/widgets
 
     # This saves me from having to reenter the API key
       - ./signininfo.json:/srv/server/signininfo.json
 
-    # For Docker Swarm, which I am not overly fond of at this time.
+    # for docker-compose
+    restart: unless-stopped
+
+# For Docker Swarm, which I am not overly fond of at this time.
 #    deploy:
 #      mode: global
 #      restart_policy:
@@ -42,3 +41,5 @@ services:
 #        delay: 5s
 #        window: 15s
 #        max_attempts: 10
+
+    
