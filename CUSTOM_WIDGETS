@@ -1,0 +1,7 @@
+When upgrading these have to get copied from the old client/stemapp/widgets/ folder to the new one.
+
+CC_eSearch/
+CC_PopupPanel/
+CC_Search/
+CC_Traverse/
+SaveSession/

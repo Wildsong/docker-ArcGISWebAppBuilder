@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "Style de commentaires sur la distance et la direction",
+  "showTabLabel": "Afficher tous les onglets",
+  "tabErrorMessage": "Sélectionnez au moins un onglet dans le groupe \"Style de commentaires sur la distance et la direction\"",
+  "lineLabel": "Ligne",
+  "circleLabel": "Cercle",
+  "ellipseLabel": "Ellipse",
+  "ringsLabel": "Anneaux",
+  "transparency": "Transparence",
+  "operationalLineLayerSelectLabel": "Sélectionnez une couche de polylignes opérationnelle pour obtenir des lignes et des anneaux",
+  "operationalPolygonLayerSelectLabel": "Sélectionnez une couche de polygones opérationnelle pour obtenir des cercles et des ellipses",
+  "helpIconPolylineTooltip": "La liste des couches opérationnelles est renseignée à l’aide des couches de la carte Web actuelle dont le type de géométrie est polyligne.",
+  "helpIconPolygonTooltip": "La liste des couches opérationnelles est renseignée à l’aide des couches de la carte Web actuelle dont le type de géométrie est polygone.",
+  "feedbackResultsLayerLabel": "Couche de résultats de commentaires sur la distance et la direction",
+  "editSymbologyHint": "Astuce : cliquez sur l’icône d’aperçu pour mettre à jour la symbologie",
+  "feedbackTextColorLabel": "Couleur de texte des étiquettes de commentaires",
+  "feedbackTextSizeLabel": "Taille de texte des étiquettes de commentaires",
+  "previewLabel": "Prévisualiser",
+  "lineSymbologyPopupTittle": "Symbologie linéaire",
+  "circleSymbologyPopupTittle": "Symbologie circulaire",
+  "ellipseSymbologyPopupTittle": "Symbologie en ellipse",
+  "ringSymbologyPopupTittle": "Symbologie en anneaux"
+});

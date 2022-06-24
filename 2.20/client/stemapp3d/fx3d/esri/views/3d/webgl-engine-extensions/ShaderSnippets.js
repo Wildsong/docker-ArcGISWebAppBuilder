@@ -1,0 +1,5 @@
+/**
+ * Copyright @ 2021 Esri.
+ * All rights reserved under the copyright laws of the United States and applicable international laws, treaties, and conventions.
+ */
+define(["require","exports","dojox/xml/parser","esri/views/3d/webgl-engine/lib/Util","../support/fx3dUtils"],function(t,e,r,n,s){var a=function(){function t(t){var e=s.constants.VertexAttrConstants;for(var r in e)this[e[r]]=s.constants.VertexAttrConstants[r];if(t)for(var n in t)this[n]=t[n]}return t.prototype._parse=function(t){for(var e=r.parse(t),s=e.getElementsByTagName("snippet"),a=/\$[a-zA-Z0-9_]+[ \t]*/,i=/[\$\s]+/g,o=0;o<s.length;o++){var l=s[o].getAttribute("name");n.assert(null==this[l]);for(var f=s[o].textContent;;){var p=f.match(a);if(null==p)break;var u=p[0].replace(i,""),v=this[u];n.assert(void 0!==v),f=f.replace(p[0],v)}this[l]=f}},t}();return a});

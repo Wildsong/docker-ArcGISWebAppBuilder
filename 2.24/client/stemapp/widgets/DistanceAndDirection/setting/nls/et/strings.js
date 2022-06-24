@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "Vahemaa ja suuna tagasiside laad",
+  "showTabLabel": "Kuva kõik vahekaardid",
+  "tabErrorMessage": "Valige jaotises Vahemaa ja suuna tagasiside laad vähemalt üks vahekaart",
+  "lineLabel": "Joon",
+  "circleLabel": "Ring",
+  "ellipseLabel": "Ellips",
+  "ringsLabel": "Ringid",
+  "transparency": "Läbipaistvus",
+  "operationalLineLayerSelectLabel": "Valige murdjoone töökiht joonte ja ringide tulemuste jaoks",
+  "operationalPolygonLayerSelectLabel": "Valige murdjoone töökiht ringide ja ellipsite tulemuste jaoks",
+  "helpIconPolylineTooltip": "Töökihtide nimekiri sisaldab kihte praeguselt veebikaardilt, mis on murdjoone geomeetria tüüpi.",
+  "helpIconPolygonTooltip": "Töökihtide nimekiri sisaldab kihte praeguselt veebikaardilt, mis on polügooni geomeetria tüüpi.",
+  "feedbackResultsLayerLabel": "Vahemaa ja suuna tagasiside tulemuste kiht",
+  "editSymbologyHint": "Vihje: sümbolite muutmiseks klõpsake eelvaateikooni",
+  "feedbackTextColorLabel": "Tagasisidesildi tekstivärv",
+  "feedbackTextSizeLabel": "Tagasisidesildi tekstisuurus",
+  "previewLabel": "Eelvaade",
+  "lineSymbologyPopupTittle": "Joonesümbol",
+  "circleSymbologyPopupTittle": "Ringisümbol",
+  "ellipseSymbologyPopupTittle": "Ellipsisümbol",
+  "ringSymbologyPopupTittle": "Ringide sümbol"
+});

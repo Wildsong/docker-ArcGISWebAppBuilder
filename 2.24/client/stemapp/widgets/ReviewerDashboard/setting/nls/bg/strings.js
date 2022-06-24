@@ -1,0 +1,22 @@
+define({
+  "drsSOEURL": "URL адрес на сървъра Data Reviewer",
+  "chartSection": "Брой секции/барове в диаграмата",
+  "selectByGeography": "Включване на филтър по география",
+  "selectUrl": "Сервизен слой за филтър по география",
+  "selectMapUrl": "Услуга за филтър по география",
+  "geometryServiceURL": "URL адрес на услуга по геометрия",
+  "includeFieldNames": "Избор на полета",
+  "fieldNames": "Имена на полета",
+  "lifecyclePhaseFieldName": "LIFECYCLEPHASE (ФАЗА НА ЖИЗНЕНИЯ ЦИКЪЛ)",
+  "setSource": "Настройване",
+  "defaultFieldName": "щателност (на преглед)",
+  "warning": "Неправилни входни данни",
+  "includeDefaultFieldName": "Трябва да бъде избрано име на поле по подразбиране",
+  "selectFieldWarning": "Поне едно поле трябва да бъде видимо",
+  "defaultFieldNotVisible": "Полето по подразбиране трябва да е видимо",
+  "batchJobCheckGroup": "batchjobcheckgroup (група за проверка на партидна работа)",
+  "defaultColumn": "По подразбиране",
+  "visibleColumn": "Видимост",
+  "fieldNameColumn": "Име на полето на таблото за управление",
+  "aliasColumn": "Псевдоним"
+});

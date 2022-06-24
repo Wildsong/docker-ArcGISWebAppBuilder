@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "Stil de reacție privind distanța și direcția",
+  "showTabLabel": "Afișare toate filele",
+  "tabErrorMessage": "Selectați cel puțin o filă din grupul „Stil feedback privind distanța și direcția”",
+  "lineLabel": "Linie",
+  "circleLabel": "Cerc",
+  "ellipseLabel": "Elipsă",
+  "ringsLabel": "Inele",
+  "transparency": "Transparență",
+  "operationalLineLayerSelectLabel": "Selectați un strat tematic operațional de linii poligonale pentru rezultatele de linii și inele",
+  "operationalPolygonLayerSelectLabel": "Selectați un strat tematic operațional de poligoane pentru rezultatele de cercuri și elipse",
+  "helpIconPolylineTooltip": "Lista cu straturi tematice operaționale este populată cu straturi tematice din harta web actuală, care au o geometrie de tip linie poligonală.",
+  "helpIconPolygonTooltip": "Lista cu straturi tematice operaționale este populată cu straturi tematice din harta web actuală, care au o geometrie de tip poligon.",
+  "feedbackResultsLayerLabel": "Strat tematic de rezultate feedback privind distanța și direcția",
+  "editSymbologyHint": "Sugestie: Faceți clic pe pictograma de previzualizare pentru a edita simbologia",
+  "feedbackTextColorLabel": "Culoare text etichetă feedback",
+  "feedbackTextSizeLabel": "Dimensiune text etichetă feedback",
+  "previewLabel": "Previzualizare",
+  "lineSymbologyPopupTittle": "Simbologie linie",
+  "circleSymbologyPopupTittle": "Simbologie cerc",
+  "ellipseSymbologyPopupTittle": "Simbologie elipsă",
+  "ringSymbologyPopupTittle": "Simbologie inele"
+});

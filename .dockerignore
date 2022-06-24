@@ -4,6 +4,7 @@
 signininfo*.json
 
 # These just take up tons of space
-apps/
-apps_agol/
-widgets/
+ARCHIVE/
+2.20/
+2.24/
+

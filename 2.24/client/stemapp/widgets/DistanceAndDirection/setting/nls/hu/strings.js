@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "Távolság és irány visszajelzési stílusa",
+  "showTabLabel": "Összes lap megtekintése",
+  "tabErrorMessage": "Kérjük, válasszon ki legalább egy lapot a „Távolság és irány visszajelzési stílusa” csoportból.",
+  "lineLabel": "Vonal",
+  "circleLabel": "Kör",
+  "ellipseLabel": "Ellipszis",
+  "ringsLabel": "Gyűrűk",
+  "transparency": "Átlátszóság",
+  "operationalLineLayerSelectLabel": "Válasszon operatív vonalláncos réteget a gyűrűk és a vonalak eredményei számára",
+  "operationalPolygonLayerSelectLabel": "Válasszon operatív poligonréteget a körök és az ellipszisek eredményei számára",
+  "helpIconPolylineTooltip": "Az operatív réteget a rendszer olyan rétegekkel tölti fel az aktuális webtérképből, amelyek vonallánc típusú geometriával rendelkeznek.",
+  "helpIconPolygonTooltip": "Az operatív réteget a rendszer olyan rétegekkel tölti fel az aktuális webtérképből, amelyek poligon típusú geometriával rendelkeznek.",
+  "feedbackResultsLayerLabel": "Távolság és irány visszajelzésének eredményrétege",
+  "editSymbologyHint": "Tipp: Kattintson az előnézet ikonra a szimbólumrendszer szerkesztéséhez.",
+  "feedbackTextColorLabel": "Visszajelzés feliratának színe",
+  "feedbackTextSizeLabel": "Visszajelzés feliratának mérete",
+  "previewLabel": "Előnézet",
+  "lineSymbologyPopupTittle": "Vonalas szimbólumrendszer",
+  "circleSymbologyPopupTittle": "Kör szimbólumrendszer",
+  "ellipseSymbologyPopupTittle": "Ellipszis szimbólumrendszer",
+  "ringSymbologyPopupTittle": "Gyűrűs szimbólumrendszer"
+});

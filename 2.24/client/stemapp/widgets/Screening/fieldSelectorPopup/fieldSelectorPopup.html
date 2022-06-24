@@ -1,0 +1,40 @@
+<div class="esriCTPopupNode" data-dojo-attach-point="popupNode">
+  <fieldset class="esriCTFieldSet esriCTDownloadTabFieldSet">
+    <legend class="esriCTFieldSetLegend">${nls.reportsTab.selectReportFieldTitle}</legend>
+    <div class="esriCTFieldsNode" data-dojo-attach-point="fieldsNode"></div>
+  </fieldset>
+  <fieldset class="esriCTFieldSet esriCTDownloadTabFieldSet">
+    <legend class="esriCTFieldSetLegend">${nls.reportsTab.sortingSettingsLegend}</legend>
+    <div data-dojo-attach-point="sortFieldSettingsNode">
+      <div class="esriCTRadioBtnContainer esriCTReportSettingsContainer">
+        <div class="esriCTRadioBtn esriCTEllipsis">
+          <input data-dojo-type="jimu/dijit/RadioBtn" data-dojo-props="group: 'g1'" type="radio" name="jimuradiobtn"
+            checked data-dojo-attach-point="ascRadioBtn" aria-label="${nls.reportsTab.ascendingLabel}" id="ascRadio">
+          <label class="esriCTRadioLabel" for="ascRadio">
+            ${nls.reportsTab.ascendingLabel}
+          </label>
+        </div>
+        <div class="esriCTRadioBtn esriCTEllipsis">
+          <input data-dojo-type="jimu/dijit/RadioBtn" data-dojo-props="group: 'g1'" type="radio" name="jimuradiobtn"
+            data-dojo-attach-point="descRadioBtn" aria-label="${nls.reportsTab.descendingLabel}" id="descRadio">
+          <label class="esriCTRadioLabel" for="descRadio">
+            ${nls.reportsTab.descendingLabel}
+          </label>
+        </div>
+      </div>
+      <div style="margin-top: 15px;">
+        <div class="esriCTRadioBtnContainer esriCTReportSettingsContainer">
+          <div class="esriCTSelectLabel esriCTEllipsis" title="${nls.reportsTab.sortFieldSelectLabel}">
+            ${nls.reportsTab.sortFieldSelectLabel}
+          </div>
+          <div class="esriCTSortFieldSelect">
+            <select class="esriCTDropBox" aria-label="${nls.reportsTab.sortFieldSelectLabel}"
+              data-dojo-type="jimu/dijit/formSelect" data-dojo-attach-point="fieldsDropdown">
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="esriCTHint">${nls.reportsTab.sortHint}</div>
+  </fieldset>
+</div>

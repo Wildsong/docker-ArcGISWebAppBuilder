@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "Afstand en richting feedbackstijl",
+  "showTabLabel": "Alle tabbladen weergeven",
+  "tabErrorMessage": "Selecteer ten minste één tabblad in de groep Afstand en richting feedbackstijl",
+  "lineLabel": "Lijn",
+  "circleLabel": "Cirkel",
+  "ellipseLabel": "Ellips",
+  "ringsLabel": "Ringen",
+  "transparency": "Transparantie",
+  "operationalLineLayerSelectLabel": "Selecteer een operationele polylijnlaag voor lijn- en ringresultaten",
+  "operationalPolygonLayerSelectLabel": "Selecteer een operationele polygoonlaag voor cirkel- en ellipsresultaten",
+  "helpIconPolylineTooltip": "De lijst met operationele lagen is gevuld met lagen van de huidige webmap van het type polygoongeometrie.",
+  "helpIconPolygonTooltip": "De lijst met operationele lagen is bevolkt met lagen van de huidige web map van het type polygoongeometrie.",
+  "feedbackResultsLayerLabel": "Laag afstand en richting feedbackresultaten",
+  "editSymbologyHint": "Hint: klik op het voorbeeldpictogram om de symbologie te bewerken",
+  "feedbackTextColorLabel": "Tekstkleur feedbacklabel",
+  "feedbackTextSizeLabel": "Tekstgrootte feedbacklabel",
+  "previewLabel": "Voorbeeld",
+  "lineSymbologyPopupTittle": "Lijnsymbologie",
+  "circleSymbologyPopupTittle": "Cirkelsymbologie",
+  "ellipseSymbologyPopupTittle": "Ellipssymbologie",
+  "ringSymbologyPopupTittle": "Ringen symbologie"
+});

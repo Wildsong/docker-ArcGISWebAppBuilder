@@ -1,0 +1,403 @@
+<!DOCTYPE html><html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><link href="rsrc/htmlhelp_simpletoc.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="rsrc/wg_codehilight.css" /><title>
+Report class
+</title></head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-622C23BE-F04C-4AEE-AF65-8019B5091357]--><body><div id="wrapper"><div class="pageheader"></div><div class="toc"><ol>
+<li class='toc-title toc-level1'><h3>Get started</h3></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000001w000000.htm'>Welcome</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000005r000000.htm'>Get started</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000007n000000.htm'>Run as a Windows service</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000054000000.htm'>Build your first app</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000084000000.htm'>Requirements</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000pt000000.htm'>Accessibility support</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000001q000000.htm'>Development overview</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000nm000000.htm'>About release versions</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000062000000.htm'>What's new</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000004r000000.htm'>Frequently asked questions</a></li>
+<li class='toc-title toc-level1'><h3>Working with apps</h3></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000017000000.htm'>Home page</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000003m000000.htm'>Create or import an app</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000004m000000.htm'>Edit  and launch an app</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000025000000.htm'>Choose a theme</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000002t000000.htm'>Select a map or scene</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000046000000.htm'>Add widgets</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000047000000.htm'>Widgets overview</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000044000000.htm'>Configure app attributes</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000036000000.htm'>Preview apps on smaller screens</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000004s000000.htm'>Export as a template</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000072000000.htm'>Edit or preview template</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000079000000.htm'>Use URL parameters</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000060000000.htm'>Upgrade apps</a></li>
+<li class='toc-title toc-level1'><h3>Configure 2D widgets</h3></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000053000000.htm'>About widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000009t000000.htm'>Add Data widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000061000000.htm'>Analysis widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000001s000000.htm'>Attribute Table widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000074000000.htm'>Batch Attribute Editor widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000003w000000.htm'>Basemap Gallery widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000004n000000.htm'>Bookmark widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000pw000000.htm'>Business Analyst widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000004t000000.htm'>Chart widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000015000000.htm'>Controller widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000003s000000.htm'>Coordinate widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000n3000000.htm'>Coordinate Conversion widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000n9000000.htm'>Cost Analysis widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000p2000000.htm'>Data Aggregation widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000003z000000.htm'>Directions widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000p4000000.htm'>Distance and Direction widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000008z000000.htm'>District Lookup widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000031000000.htm'>Draw widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000021000000.htm'>Edit widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000p3000000.htm'>Emergency Response Guide widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000m6000000.htm'>Extent Navigate widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000009s000000.htm'>Filter widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000mw000000.htm'>Full Screen widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000012000000.htm'>Geocoder widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000006r000000.htm'>GeoLookup widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000029000000.htm'>Geoprocessing widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000mp000000.htm'>Grid Overlay widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000p5000000.htm'>Gridded Reference Graphic widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000m3000000.htm'>Group Filter widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000073000000.htm'>Image Measurement widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000013000000.htm'>Home Button widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000063000000.htm'>Incident Analysis widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000mv000000.htm'>Infographic widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000091000000.htm'>Info Summary widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000007000000.htm'>Layer List widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000001r000000.htm'>Legend widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000043000000.htm'>Measurement widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000003q000000.htm'>My Location widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000095000000.htm'>Near Me widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000pv000000.htm'>Network Trace widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000009r000000.htm'>Oblique Viewer widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000019000000.htm'>Overview Map widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000n4000000.htm'>Parcel Drafter widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000001p000000.htm'>Print widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000nn000000.htm'>Public Notification  widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000000z000000.htm'>Query widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000094000000.htm'>Related Table Charts widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000075000000.htm'>Report Feature widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000076000000.htm'>Reviewer Dashboard widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000032000000.htm'>Scalebar widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000n1000000.htm'>Screening widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000065000000.htm'>Search widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000009m000000.htm'>Select widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000009n000000.htm'>Share widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000077000000.htm'>Situation Awareness widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000m5000000.htm'>Smart Editor widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000050000000.htm'>Splash widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000064000000.htm'>Stream widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000mm000000.htm'>Suitability Modeler widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000069000000.htm'>Summary widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000005z000000.htm'>Swipe widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000pp000000.htm'>Threat Analysis widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000005t000000.htm'>Time Slider widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000pq000000.htm'>Visibility widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000006q000000.htm'>Zoom Slider widget</a></li>
+<li class='toc-title toc-level1'><h3>Configure 3D widgets</h3></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000080000000.htm'>3DFx widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000008r000000.htm'>About widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000ms000000.htm'>Basemap Gallery widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000085000000.htm'>Compass widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000083000000.htm'>Coordinate widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000007z000000.htm'>Daylight widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000008p000000.htm'>Full Screen widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000008s000000.htm'>Home Button widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000007t000000.htm'>Layer List widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000m7000000.htm'>Legend widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000p7000000.htm'>Measurement widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000008t000000.htm'>My Location widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000007s000000.htm'>Navigate widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000008n000000.htm'>Search widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000p6000000.htm'>Share widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000007v000000.htm'>Slides widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000008v000000.htm'>Splash widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000008w000000.htm'>Zoom Slider widget</a></li>
+<li class='toc-title toc-level1'><h3>Widget development</h3></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000n6000000.htm'>Get started</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000002s000000.htm'>Naming conventions</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000034000000.htm'>In-panel and off-panel widgets</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000010000000.htm'>Deploy your widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000001t000000.htm'>Required files</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000078000000.htm'>Widget manifest</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000002n000000.htm'>Extend BaseWidget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000023000000.htm'>Required properties</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000001n000000.htm'>Define the template</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000004q000000.htm'>Configure the Demo widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000000v000000.htm'>Add i18n support</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000024000000.htm'>Make widgets user-friendly</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000027000000.htm'>Build your first app</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000003p000000.htm'>Communication to app container</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000002v000000.htm'>Widget properties</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000004p000000.htm'>Make widgets responsive</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000001m000000.htm'>Communication between widgets</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000000n000000.htm'>Dojo dijit</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000003v000000.htm'>Make widgets configurable in builder</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000057000000.htm'>Make widgets backward compatible</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000070000000.htm'>Create a controller widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000066000000.htm'>Widget life cycle</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000096000000.htm'>Add help for your widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000009v000000.htm'>Create a feature action in your widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000mz000000.htm'>Provide and consume data sources in widgets</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000p9000000.htm'>Best practices for unit testing</a></li>
+<li class='toc-title toc-level1'><h3>Theme development</h3></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000004000000.htm'>Theme elements</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000045000000.htm'>Create a  theme</a></li>
+<li class='toc-title toc-level1'><h3>3D development</h3></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000007w000000.htm'>3D development guide</a></li>
+<li class='toc-title toc-level1'><h3>Sample code</h3></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000014000000.htm'>Create a custom in-panel widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000n5000000.htm'>Create a ListView widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000mn000000.htm'>Create a custom widget using the Report dijit</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000m2000000.htm'>Create a new theme</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000092000000.htm'>Create a new style for a theme</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000093000000.htm'>Create a new default layout</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000090000000.htm'>Create a nondefault layout</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000m4000000.htm'>Create a new panel</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000099000000.htm'>Create a new layout widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000m0000000.htm'>Create a controller widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000009v000000.htm'>Create a feature action in your widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000097000000.htm'>Send a layer to the Attribute Table widget</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000042000000.htm'>Open multiple widgets simultaneously</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000002000000.htm'>Use other   libraries</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000000m000000.htm'>Change the URL of ArcGIS API for JavaScript</a></li>
+<li class='toc-title toc-level1'><h3>Deployment</h3></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000004v000000.htm'>Deploy your app</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000004z000000.htm'>Use proxy</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000007q000000.htm'>Web-tier authentication</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000004w000000.htm'>Custom widget and theme deployment</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000009q000000.htm'>Upgrade custom widgets and themes</a></li>
+<li class='toc-title toc-level1'><h3>Framework reference</h3></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000006t000000.htm'>CSS framework</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000098000000.htm'>FeatureActionManager class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000009z000000.htm'>FilterManager class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000071000000.htm'>LayerInfo class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000006m000000.htm'>LayerInfos class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000n8000000.htm'>LayerNode class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000n7000000.htm'>LayerStructure class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000059000000.htm'>PanelManager class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000m1000000.htm'>SelectionManager class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000005p000000.htm'>Utils class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000005m000000.htm'>WidgetManager class</a></li>
+<li class='toc-title toc-level1'><h3>dijit</h3></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000006w000000.htm'>FeaturelayerChooserFromMap class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000055000000.htm'>FeaturelayerServiceBrowser class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000009p000000.htm'>FeatureSetChooserForSingleLayer class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000006p000000.htm'>Filter class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000006s000000.htm'>ImageChooser class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000058000000.htm'>ItemSelector class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000006n000000.htm'>LayerChooserFromMap class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000005n000000.htm'>RendererChooser class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000m8000000.htm'>Report class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000mt000000.htm'>SnapShot class</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000056000000.htm'>SymbolChooser class</a></li>
+<li class='toc-title toc-level1'><h3>JSON reference</h3></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000016000000.htm'>App configuration</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000000p000000.htm'>Map configuration</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000037000000.htm'>Widget configuration</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000022000000.htm'>Widget pool configuration</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000000w000000.htm'>Widget on-screen configuration</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000000s000000.htm'>Panel configuration</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000048000000.htm'>Group configuration</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000mr000000.htm'>DataSource configuration</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000052000000.htm'>About</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000005q000000.htm'>Analysis</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000009000000.htm'>Attribute Table</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000011000000.htm'>Basemap Gallery</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000000r000000.htm'>Bookmark</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000001z000000.htm'>Chart</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000018000000.htm'>Coordinate</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000003r000000.htm'>Directions</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000002m000000.htm'>Draw</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000028000000.htm'>Edit</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000n0000000.htm'>Full Screen</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000006000000.htm'>Geocoder</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000002w000000.htm'>Geoprocessing</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000002q000000.htm'>Controller</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000049000000.htm'>Home Button</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000007p000000.htm'>Image Measurement</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000mq000000.htm'>Infographic</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000003n000000.htm'>Layer List</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000041000000.htm'>Legend</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000006z000000.htm'>Loading Page</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000000q000000.htm'>Measurement</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000005000000.htm'>My Location</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000m9000000.htm'>Near Me</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000009w000000.htm'>Oblique Viewer</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000040000000.htm'>Overview Map</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000039000000.htm'>Print</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000026000000.htm'>Query</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000007m000000.htm'>Report Feature</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000007r000000.htm'>Reviewer Dashboard</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000035000000.htm'>Scalebar</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000006v000000.htm'>Search</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000n2000000.htm'>Share</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000051000000.htm'>Splash</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000067000000.htm'>Stream</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000005w000000.htm'>Swipe</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w30000005v000000.htm'>Time Slider</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w300000068000000.htm'>Zoom Slider</a></li>
+<li class='toc-title toc-level1'><h3>What's new archive</h3></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000qm000000.htm'>What's new in version 2.23</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000q9000000.htm'>What's new in version 2.22</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000q8000000.htm'>What's new in version 2.21</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000q7000000.htm'>What's new in version 2.20</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000q6000000.htm'>What's new in version 2.19</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000q5000000.htm'>What's new in version 2.18</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000q4000000.htm'>What's new in version 2.17</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000q3000000.htm'>What's new in version 2.16</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000q2000000.htm'>What's new in version 2.15</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000q1000000.htm'>What's new in version 2.14</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000q0000000.htm'>What's new in version 2.13</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000pz000000.htm'>What's new in version 2.12</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000ps000000.htm'>What's new in version 2.11</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000pr000000.htm'>What's new in version 2.10</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000pn000000.htm'>What's new in version 2.9</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000pm000000.htm'>What's new in version 2.8</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000p8000000.htm'>What's new in version 2.7</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000nr000000.htm'>What's new in version 2.6</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000p0000000.htm'>What's new in version 2.5</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000nt000000.htm'>What's new in version 2.4</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000np000000.htm'>What's new in version 2.3</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000nq000000.htm'>What's new in version 2.2</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000nz000000.htm'>What's new in version 2.1</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000p1000000.htm'>What's new in version 2.0</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000nw000000.htm'>What's new in version 1.3</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000nv000000.htm'>What's new in version 1.2</a></li>
+<li class='toc-level1'><i>&#x02022;</i>&nbsp;<a href='03w3000000ns000000.htm'>What's new in version 1.1</a></li>
+</ol></div><div id="content"><div class="header"><h1>
+Report class
+</h1></div>
+<p id="GUID-224621A2-17CF-4DB9-963D-AE663E8BB36E">
+ The <span class="usertext">Report</span> class allows you to print a file with a map, tables, and supporting elements.
+</p>
+<div class="section1" id="ESRI_SECTION1_93BE91CC6DD14E669534C5A3319C9138" purpose="section1"><h2>AMD Module Require</h2><p id="GUID-C64F8E7D-DD82-407D-859F-4EA4775F9573"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;jimu/dijit/Report&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Report</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* code goes here */</span> <span class="p">});</span>
+</code></pre></div>
+</div></p></div><div class="section1" id="ESRI_SECTION1_AEF97777E8CA48B284C76FCA0A6D6711" purpose="section1"><h2>Constructor</h2><p id="GUID-B9616AF3-D98E-43EC-B644-79D374C51FBE"><div class="block_table" id="TABLE_FB3E3B7A87094BBB9C30997D7B6225B4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E6B42A3F-BC35-4C1D-8B7E-94B7146A53F6"><span class="usertext"> new Report(params)</span></p><p id="GUID-FB97692F-C7CC-4B82-94CE-515F58AF4239">  Creates a new Report dijit.</p><p id="GUID-66547053-0F13-493E-B31A-DBA963576D1A">Parameters:</p><p id="GUID-AE1CFE7F-AEBD-4722-957D-DA174231A482"> <span class="usertext">&lt;String&gt; printTaskUrl</span>—Required. URL of the print task.</p><p id="GUID-F2636975-00BD-4405-B615-071686016CBF"><span class="usertext"> &lt;String&gt; reportLogo</span>—Optional. URL of the logo image. The report logo placeholder is hidden unless a value is provided.</p><p id="GUID-A3CD2FCD-3379-4952-9444-E5BC83AC5ACA"><span class="usertext">&lt;Object&gt; reportLayout</span>—Optional. Contains details for page size and orientation. The default is as follows: </p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="p">{</span>
+  <span class="s2">&quot;pageSize&quot;</span><span class="o">:</span> <span class="nx">PageUtils</span><span class="p">.</span><span class="nx">PageSizes</span><span class="p">.</span><span class="nx">A4</span><span class="p">,</span>
+  <span class="s2">&quot;orientation&quot;</span><span class="o">:</span> <span class="nx">PageUtils</span><span class="p">.</span><span class="nx">Orientation</span><span class="p">.</span><span class="nx">Portrait</span>
+<span class="p">}</span>
+</code></pre></div>
+</div><p id="GUID-C308BD15-0134-46E3-B5B4-8CF3D643B5F7"><span class="usertext">&lt;Number&gt;  tableCols</span>—Optional. Can be used to define a set number of table columns for the report. It is overridden by <span class="usertext">tableCols</span> specified for individual print data objects. The default is 3.</p><p id="GUID-B8B668CC-6AAA-48BE-B890-1F1CA06E8F1E"><span class="usertext">&lt;Boolean&gt;  alignNumbersToRight</span>—Optional. Supports RTL and LTR. The default is false.</p><p id="GUID-3DC73021-04D0-4FC4-9276-383724ED43AD"><span class="usertext">&lt;Array&gt;  styleSheets</span>—Optional. Collection of style sheets to override default report styling. Default values are defined in the provided HTML template at <span class="usertext">jimu/dijit/templates/ReportTemplate.html</span>.</p><p id="GUID-F8008EB5-B436-4D09-9873-5075CBADEAB3"><span class="usertext">&lt;String&gt;  styleText</span>—Optional. CSS style text to be applied to the report header.</p><p id="GUID-70190791-0AC5-480A-A940-AD600A71E1B2"><span class="usertext">&lt;String&gt;  footNotes</span>—Optional. Values to add to the report footer.</p>
+
+
+<p id="GUID-0D51F826-D6BA-462C-8ED2-231DE1CBAC21">Example 1:</p><p id="GUID-52CEEF7F-94C2-435A-9733-DBCFDB1FFFFF">Use the <span purpose="ph" varid="ArcGISOnline">ArcGIS Online</span> print task within the report to generate a printer-ready version of the map.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s1">&#39;jimu/dijit/Report&#39;</span><span class="p">,</span> <span class="s1">&#39;jimu/dijit/PageUtils&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Report</span><span class="p">,</span> <span class="nx">PageUtils</span><span class="p">){</span>
+             <span class="kd">var</span> <span class="nx">report</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Report</span><span class="p">({</span>
+            <span class="nx">reportLogo</span><span class="o">:</span> <span class="s2">&quot;http://myserver/images/CompanyLogo.png&quot;</span><span class="p">,</span>
+            <span class="nx">footNotes</span><span class="o">:</span> <span class="s2">&quot;Report Generated by My Department&quot;</span><span class="p">,</span>
+            <span class="nx">printTaskUrl</span><span class="o">:</span> <span class="s2">&quot;http://utility.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task&quot;</span><span class="p">,</span>
+            <span class="nx">reportLayout</span><span class="o">:</span> <span class="p">{</span>
+              <span class="s2">&quot;pageSize&quot;</span><span class="o">:</span> <span class="nx">PageUtils</span><span class="p">.</span><span class="nx">PageSizes</span><span class="p">.</span><span class="nx">A4</span><span class="p">,</span>
+              <span class="s2">&quot;orientation&quot;</span><span class="o">:</span> <span class="nx">PageUtils</span><span class="p">.</span><span class="nx">Orientation</span><span class="p">.</span><span class="nx">Landscape</span>
+            <span class="p">},</span>
+            <span class="nx">styleSheets</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;http://myserver/css/reportDijitOverrides.css&quot;</span><span class="p">]</span>
+          <span class="p">});</span>
+          
+          <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[];</span>
+          <span class="nx">data</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+            <span class="nx">addPageBreak</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;map&quot;</span><span class="p">,</span>
+            <span class="nx">map</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">map</span>
+          <span class="p">}</span>
+
+          <span class="p">...</span>
+
+          <span class="nx">report</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s2">&quot;MyTitle&quot;</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+
+    <span class="p">});</span>
+</code></pre></div>
+</div><p id="GUID-B29C2AE4-D5F7-44D4-AB63-DE07144C0E5D">Example 2: </p><p id="GUID-150BC775-810D-4F85-9FF4-89AFE3D93144">Use a custom print task within the report to generate a printer-ready version of the map based on the defined <a target="_blank" class="xref" href="https://developers.arcgis.com/javascript/3/jsapi/printtemplate-amd.html" rel="https://developers.arcgis.com/javascript/3/jsapi/printtemplate-amd.html">ArcGIS PrintTemplate</a>.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>require([&#39;jimu/dijit/Report&#39;, &#39;jimu/dijit/PageUtils&#39;, &#39;esri/tasks/PrintTemplate&#39;], function(Report, PageUtils, PrintTemplate){
+          var report = new Report({
+            reportLogo: &quot;http://myserver/images/CompanyLogo.png&quot;,
+            footNotes: &quot;Report Generated by My Department&quot;,
+            printTaskUrl: &quot; http://myserver/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task&quot;,
+            reportLayout: {
+              &quot;pageSize&quot;: PageUtils.PageSizes.A4,
+              &quot;orientation&quot;: PageUtils.Orientation.Landscape
+            },
+            styleSheets: [&quot;http://myserver/css/reportDijitOverrides.css&quot;]
+          });
+
+          var printTemplate = new PrintTemplate(); 
+          printTemplate.layout = &quot;Custom Template From My Print Service&quot;;
+          printTemplate.format = &quot;PNG32&quot;;
+         
+          var data = [];
+          data.push({
+            addPageBreak: true,
+            type: &quot;map&quot;,
+            map: this.map,
+            printTemplate: printTemplate
+          }
+
+          ...
+
+          report.print(&quot;MyTitle&quot;, data);
+
+    });
+</code></pre></div>
+</div></td></tr></tbody><caption class="table_desc"></caption></table></div>
+</p></div><div class="section1" id="ESRI_SECTION1_DB717A20F24448299F74F6A35B9A1FA4" purpose="section1"><h2>Methods</h2><p id="GUID-2016CAD4-4421-456E-A04A-D08542A85AD6"><div class="block_table" id="TABLE_DB92988E224542E48B6881BBF7F131F9" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0BBF3EB9-3720-4AB0-BB91-0B574C737BB4"><span class="usertext"> print (reportTitle, printData)</span></p><p id="GUID-6278B44B-06E3-4D1F-89C4-D3BBF1151367"> Prints the provided data to an HTML page. The default HTML template is provided at <span class="usertext">jimu/dijit/templates/ReportTemplate.html</span>.</p><p id="GUID-C33A77C2-CB2C-4A95-B78C-2DD580176B9F">Parameters:</p><p id="GUID-85EC72BA-0CA3-4611-A327-CF264609E527"><span class="usertext"> &lt;reportTitle&gt; String</span>—Optional. The value to be displayed as the report title.</p><p id="GUID-4667695C-65F1-4A6B-BC55-816AD682BE39"><span class="usertext">  &lt;printData&gt; Array</span>—Required. Array of data objects that will be printed to the map. Supported types are map, table, and html.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div></p></div><div class="section1" id="ESRI_SECTION1_4C24C944D0BD43DEAE5BB7F102582C38" purpose="section1"><h2>Data objects</h2><p id="GUID-CF19CF25-A1B6-4F52-B646-C8C9EC959F2D"><div class="block_table" id="TABLE_0CA76B8797464D0F88B52226B48A2826" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2DB6CFEE-BAB5-471F-92BF-0E16E1CB12FB">MAP</p><p id="GUID-41F97CD2-9C98-4F31-B6AE-FFDB6F5FB6F1">A map object provides a way for you print an ArcGIS JavaScript map object in the report. When using a custom print service, provide an ArcGIS PrintTemplate to the MAP object to define the appropriate layout options to be used in the report.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  addPageBreak: Boolean,
+  type: String,
+  map: Object
+}
+ 
+{
+  addPageBreak: true,
+  type: &quot;map&quot;,
+  map: this.map
+}
+</code></pre></div>
+</div>
+
+
+<p id="GUID-99BD51E6-B2AD-4081-B835-2968B008E6A6">TABLE</p><p id="GUID-876FBA97-D112-4A62-8B9C-A89F575D6BB8">A table object provides a way for you print rows and columns of data in the report.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  title: String,
+  addPageBreak: Boolean,
+  type: String,
+  tableCols: Number,
+  data: {
+    showRowIndex: Boolean,
+    rows: Array,
+    cols: Array
+  }
+}
+ 
+ 
+{
+  title: “Impact Area by State”,
+  addPageBreak: false,
+  type: &quot;table&quot;,
+  tableCols: 3,
+  data: {
+    showRowIndex: false,
+    rows: [[“Colorado”, “14526”, “45”],[“California”, “32076”, “67”]],
+    cols: [“Name”, “Area”, “Count”]
+  }
+}
+</code></pre></div>
+</div><p id="GUID-B2BE5D93-CC36-4802-A195-A6424D5DCA0D">HTML</p><p id="GUID-380A2AAB-E0A4-4F51-8717-A12B5325CEA5">An HTML object provides a way for you to add HTML elements to the report.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  title: String
+  type: String,
+  data: String
+}
+ 
+{
+  title: &quot;Distribution of Impact by State&quot;,
+  type: &quot;html&quot;,
+  data: &#39;&lt;img id=&quot;chartImage&quot; style=&quot;width: 250px; height: 200px;&quot; src=&quot;http://myserver/images/graphic.png&quot;&gt;&#39;
+}
+</code></pre></div>
+</div><p id="GUID-D5030E6F-81C9-4982-83D5-909C0A8E4521">NOTE</p><p id="GUID-725F0460-96AB-4F35-8BDC-06B9EEA26152">A note object provides an editable text area that can be updated dynamically by the user in the report preview window prior to printing.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  type: String,
+}
+ 
+{
+  type: &quot;note&quot;,
+}
+</code></pre></div>
+</div></td></tr></tbody><caption class="table_desc"></caption></table></div> </p><p id="GUID-F244B1EC-487B-4C1B-A7F4-73D2707F5FEA">The following is the list of CSS class selectors that can be overridden to control aspects of report styling.</p><p id="GUID-9D15F7C9-6659-4715-B853-706289FB1269"> <div class="notes" id="GUID-177EFB5D-3B63-4F74-99B6-64131E16ACDE"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-B8FECE84-696C-4879-8476-A31C7BB16B91">Defaults are provided with the HTML template at <span class="usertext">jimu/dijit/templates/ReportTemplate.html</span>.</p></div></div> </p><p id="GUID-9AE9148C-AC8F-42E2-84A4-E6D12DC8898B"> .esriCTSectionTitle</p><p id="GUID-54F8A7EA-0DB8-410B-9D3F-F5611FC830AF"> .esriCTReportMapImg</p><p id="GUID-44D5DF43-9C17-483E-853F-F3727C489CA9"> .esriCTTable</p><p id="GUID-8B13312B-594F-42CD-A2AE-9BEB17265F9D"> .esriCTTable th</p><p id="GUID-7207B0AF-AFA2-4E9F-91CC-03AAB17EE7D9"> .esriCTTable td</p><p id="GUID-85992E03-C64E-4014-8C55-8E6F3F1E0756"> .esriCTDateContainer</p><p id="GUID-82AFCF19-619A-449C-AD2C-3082CDBAC286"> .esriCTAOIInfoDiv</p><p id="GUID-753DE706-B544-4761-AFCA-4431B3B93F9D"> .esriAOITitle</p><p id="GUID-80157337-5EF4-4B7D-ABEB-501897A86204"> .esriCTAOIArea</p><p id="GUID-128AD0D1-036E-4DA1-B07D-DF9E6DB96066"> .esriCTHTMLData</p><p id="GUID-570F628F-F00B-440F-99D5-0B834E995CAB"> .esriCTReportLogo</p><p id="GUID-9B9D3E5A-9AB9-494C-AE07-E542F3099AB7"> .esriCTPrintTitleDiv</p><p id="GUID-A2266A52-586E-4E4B-B3C4-C90AC178BD1C"> .esriCTReportMain</p><p id="GUID-6EDCF71A-61A8-4AB7-9619-8714BA9F6E9E"> .esriCTReportMap</p><p id="GUID-4FE4F16C-F9A5-4F65-B718-BC3CF67301A9"> .esriCTReportFooter</p><p id="GUID-397AEAAC-3DD7-4E72-AAFD-BD789A756D9B"> .esriCTReportHeader</p></div><div class="footer"> Copyright © 1995-2022 Esri. All rights reserved. </div></div></div></body></html>

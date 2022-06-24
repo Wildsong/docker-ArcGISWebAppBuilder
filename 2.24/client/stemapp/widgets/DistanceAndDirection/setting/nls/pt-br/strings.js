@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "Estilo de Comentário da Distância e Direção",
+  "showTabLabel": "Mostrar todas as guias",
+  "tabErrorMessage": "Selecione pelo menos uma guia no grupo \"Estilo de comentário de distância e direção\"",
+  "lineLabel": "Linha",
+  "circleLabel": "Círculo",
+  "ellipseLabel": "Elipse",
+  "ringsLabel": "Anéis",
+  "transparency": "Transparência",
+  "operationalLineLayerSelectLabel": "Selecione uma camada operacional de polilinha para resultados de linha e anéis",
+  "operationalPolygonLayerSelectLabel": "Selecione uma camada operacional de polígono para resultados de elipse e círculo",
+  "helpIconPolylineTooltip": "A lista de camada operacional é preenchida com camadas a partir do mapa da web atual que são do tipo de geometria de polilinha.",
+  "helpIconPolygonTooltip": "A lista de camada operacional é preenchida com camadas a partir do mapa da web atual que são do tipo de geometria de polígono.",
+  "feedbackResultsLayerLabel": "Camada de Resultados de Comentário de Distância e Direção",
+  "editSymbologyHint": "Dica: Clique no ícone de visualização para editar a simbologia",
+  "feedbackTextColorLabel": "Cor do texto do rótulo de comentário",
+  "feedbackTextSizeLabel": "Tamanho do texto do rótulo de comentário",
+  "previewLabel": "Visualizar",
+  "lineSymbologyPopupTittle": "Simbologia de linha",
+  "circleSymbologyPopupTittle": "Simbologia de círculo",
+  "ellipseSymbologyPopupTittle": "Simbologia de elipse",
+  "ringSymbologyPopupTittle": "Simbologia de anéis"
+});

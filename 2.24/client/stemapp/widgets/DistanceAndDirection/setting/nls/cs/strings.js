@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "Styl grafiky vzdálenosti a směru",
+  "showTabLabel": "Zobrazit všechny karty",
+  "tabErrorMessage": "Vyberte alespoň jednu kartu ve skupině \"Styl grafiky vzdálenosti a směru\"",
+  "lineLabel": "Linie",
+  "circleLabel": "Kruh",
+  "ellipseLabel": "Elipsa",
+  "ringsLabel": "Kružnice",
+  "transparency": "Průhlednost",
+  "operationalLineLayerSelectLabel": "Pokud chcete vytvořit linie nebo kružnice, vyberte pracovní vrstvu polylinií.",
+  "operationalPolygonLayerSelectLabel": "Pokud chcete vytvořit kružnice nebo elipsy, vyberte pracovní polygonovou vrstvu.",
+  "helpIconPolylineTooltip": "Seznam pracovních vrstev je vyplněn vrstvami polylinií z aktuální webové mapy.",
+  "helpIconPolygonTooltip": "Seznam provozních vrstev je vyplněn vrstvami z aktuální webové mapy, které jsou typu polygonové geometrie.",
+  "feedbackResultsLayerLabel": "Vrstva výsledků grafiky vzdálenosti a směru",
+  "editSymbologyHint": "Nápověda: Kliknutím na ikonu náhledu upravíte symboliku",
+  "feedbackTextColorLabel": "Barva textu popisku grafiky",
+  "feedbackTextSizeLabel": "Velikost textu popisku grafiky",
+  "previewLabel": "Náhled",
+  "lineSymbologyPopupTittle": "Symbolika linie",
+  "circleSymbologyPopupTittle": "Symbolika kruhu",
+  "ellipseSymbologyPopupTittle": "Symbolika elipsy",
+  "ringSymbologyPopupTittle": "Symbolika kružnice"
+});

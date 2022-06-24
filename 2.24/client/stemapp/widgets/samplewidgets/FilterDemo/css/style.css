@@ -1,0 +1,13 @@
+.jimu-widget-filter-demo{
+    height: 100%;
+}
+.jimu-widget-filter-demo .hidden{
+    display: none !important;
+}
+.jimu-widget-filter-demo .update-button{
+    line-height: 30px;
+    margin: 5px 3px;
+    color: #485566;
+    background: transparent;
+    border: 1px solid #485566;
+}

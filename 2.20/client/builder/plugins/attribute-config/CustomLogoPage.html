@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="preview-container jimu-float-leading">
+    <div data-dojo-type="jimu/dijit/ImageChooser" data-dojo-attach-point="imageChooser" class="image-node"
+    data-dojo-props="cropImage:false,showSelfImg:true,stretchImg:false,goldenWidth:30,goldenHeight:30,format:['image/gif','image/png','image/jpeg']"></div>
+
+    <div data-dojo-attach-point="noImage" class="no-image"></div>
+  </div>
+  <div class="separator jimu-float-leading"></div>
+  <div class="setting-container jimu-float-leading">
+    <div class="setting-item">
+      <div class="label">${nls.image}</div>
+      <div class="choose-image-btn" data-dojo-attach-point="chooseImageBtn">${nls.upload}</div>
+    </div>
+
+    <div class="setting-item">
+      <div class="label">${nls.altText}</div>
+      <input type="text" class="link-text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-props="required:true"
+        placeHolder="" data-dojo-attach-point="altText"/>
+    </div>
+
+    <div class="setting-item">
+      <div class="label">${nls.link}</div>
+      <input type="text" class="link-text" data-dojo-type="jimu/dijit/URLInput" data-dojo-props="required:false,rest:false"
+        placeHolder="" data-dojo-attach-point="linkText"/>
+    </div>
+  </div>
+</div>

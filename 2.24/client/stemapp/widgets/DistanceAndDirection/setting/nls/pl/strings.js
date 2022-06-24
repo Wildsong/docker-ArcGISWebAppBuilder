@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "Styl opinii o odległości i kierunku",
+  "showTabLabel": "Pokaż wszystkie karty",
+  "tabErrorMessage": "Wybierz co najmniej jedną kartę w grupie „Styl opinii o odległości i kierunku”",
+  "lineLabel": "Linia",
+  "circleLabel": "Okrąg",
+  "ellipseLabel": "Elipsa",
+  "ringsLabel": "Pierścienie",
+  "transparency": "Przezroczystość",
+  "operationalLineLayerSelectLabel": "Wybierz operacyjną warstwę poliliniową dla wyników w postaci linii i pierścieni.",
+  "operationalPolygonLayerSelectLabel": "Wybierz operacyjną warstwę poligonową dla wyników w postaci okręgów i elips.",
+  "helpIconPolylineTooltip": "Lista warstw operacyjnych jest zapełniana warstwami z bieżącej mapy internetowej o poliliniowym typie geometrii.",
+  "helpIconPolygonTooltip": "Lista warstw operacyjnych jest zapełniana warstwami z bieżącej mapy internetowej o poligonowym typie geometrii.",
+  "feedbackResultsLayerLabel": "Warstwa wyników opinii o odległości i kierunku",
+  "editSymbologyHint": "Wskazówka: Kliknij ikonę podglądu, aby edytować symbole",
+  "feedbackTextColorLabel": "Kolor tekstu etykiety opinii",
+  "feedbackTextSizeLabel": "Wielkość tekstu etykiety opinii",
+  "previewLabel": "Zobacz podgląd",
+  "lineSymbologyPopupTittle": "Symbole liniowe",
+  "circleSymbologyPopupTittle": "Symbole okręgów",
+  "ellipseSymbologyPopupTittle": "Symbole elips",
+  "ringSymbologyPopupTittle": "Symbole pierścieni"
+});

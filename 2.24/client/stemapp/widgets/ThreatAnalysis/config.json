@@ -1,0 +1,11 @@
+{
+  "generalSettings": {
+    "operationalLayer": {
+      "name": ""
+    },
+    "unit": "feet",
+    "defaultInputType": "interactive",
+    "layerToSelectFeatures": "",
+    "defaultThreatType": ""
+  }
+}

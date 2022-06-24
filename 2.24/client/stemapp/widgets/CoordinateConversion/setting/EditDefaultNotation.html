@@ -1,0 +1,16 @@
+<div class='coordinateContainer'>
+    <span class='jimu-widget-subtitle' data-dojo-attach-point='label1'></span>
+    <div class="controlGroup">
+        <div class="controlItem" style="padding-top: 10px;">
+            <input class="edit-default-notation-input" data-dojo-attach-point="notationString" />
+            </select>
+        </div>
+    </div>
+    <div class="esriCTHidden esriCTSignificantDigitNode" data-dojo-attach-point="significantDigitSettingNode">
+        <div class="esriCTSignificantDigitLabel" title="${nls.significantDigitLabel}">${nls.significantDigitLabel}</div>
+        <div class="esriCTSignificantDigitTextbox" style="width: 40%;">
+            <div data-dojo-attach-point="significantDigitsTextBox" data-dojo-type="dijit/form/NumberSpinner"
+                data-dojo-props="constraints:{min:0,max:100,places:0}" style="width:120px"></div>
+        </div>
+    </div>
+</div>

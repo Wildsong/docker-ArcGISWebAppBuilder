@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "거리 및 방향 피드백 스타일",
+  "showTabLabel": "모든 탭 표시",
+  "tabErrorMessage": "\"거리 및 방향 피드백 스타일\" 그룹에서 탭을 하나 이상 선택하세요.",
+  "lineLabel": "선형",
+  "circleLabel": "원",
+  "ellipseLabel": "타원",
+  "ringsLabel": "링",
+  "transparency": "투명도",
+  "operationalLineLayerSelectLabel": "라인 및 링 결과에 대한 운영 폴리라인 레이어 선택",
+  "operationalPolygonLayerSelectLabel": "원 및 타원 결과에 대한 운영 폴리곤 레이어 선택",
+  "helpIconPolylineTooltip": "운영 레이어 목록은 폴리라인 지오메트리 유형인 현재 웹맵의 레이어로 채워집니다.",
+  "helpIconPolygonTooltip": "운영 레이어 목록은 폴리곤 지오메트리 유형인 현재 웹맵의 레이어로 채워집니다.",
+  "feedbackResultsLayerLabel": "거리 및 방향 피드백 결과 레이어",
+  "editSymbologyHint": "힌트: 심볼을 편집하려면 미리 보기 아이콘을 클릭합니다.",
+  "feedbackTextColorLabel": "피드백 레이블 텍스트 색상",
+  "feedbackTextSizeLabel": "피드백 레이블 텍스트 크기",
+  "previewLabel": "미리 보기",
+  "lineSymbologyPopupTittle": "라인 심볼",
+  "circleSymbologyPopupTittle": "원형 심볼",
+  "ellipseSymbologyPopupTittle": "타원 심볼",
+  "ringSymbologyPopupTittle": "링 심볼"
+});

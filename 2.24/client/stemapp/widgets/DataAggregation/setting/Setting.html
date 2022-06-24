@@ -1,0 +1,65 @@
+<div class="main-settings">
+  <div class="main-section">
+    <div data-dojo-attach-point="tabDiv" class="esriCTFullHeight">
+      <!-- Target layer tab -->
+      <div class="esriCTTargetLayerTab" data-dojo-attach-point="targetLayerTabNode" class="esriCTFullHeight">
+        <div class="esriCTAddTargetLayerButton" data-dojo-attach-point="btnAddTargetLayerNode" role="button">
+          <div>
+            <span>${nls.addTargetLayersLabel}</span>
+          </div>
+        </div>
+        <!--=Layer Options-->
+        <div class="esriCTLayerListNode" data-dojo-attach-point="layerListNode"></div>
+        <div class="esriCTNoValidLayerWarning esriCTHidden" data-dojo-attach-point="noValidLayerWarningNode">
+          ${nls.needsEditablePointLayers}</div>
+      </div>
+      <!-- Location Settings tab -->
+      <div class="esriCTLocationSettingsTab" data-dojo-attach-point="locationSettingsTabNode" class="esriCTFullHeight">
+        <!--Geocode Options-->
+        <div data-dojo-attach-point="geocodeTabNode">
+          <div class="geocode-node">
+            <div data-dojo-attach-point="locatorOptions" style="display:block;">
+              <div class="add-button" role="button" data-dojo-attach-event="click:_onAddClick">
+                <div class="button">
+                  <span class="button-text">${nls.add}</span>
+                </div>
+              </div>
+              <div class="sources">
+                <div class="source-list jimu-float-leading">
+                  <div class="source-list-table" data-dojo-attach-point="sourceList"></div>
+                </div>
+                <div class="source-setting jimu-float-trailing" data-dojo-attach-point="sourceSettingNode"></div>
+                <table class="xy-table" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <td colspan="1" style="padding-top:22px;">
+                        <div>
+                          <div class="field-option-label" data-dojo-attach-point="enableXYField"
+                            title="${nls.configureXYFields}"></div>
+                          <div data-dojo-attach-point="editXYFields" class="edit-fields"></div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="1">
+                        <span class="tip">${nls.xyFieldHint}</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- General Settings tab -->
+      <div class="esriCTGeneralSettingsTab" data-dojo-attach-point="generalSettingsTabNode" class="esriCTFullHeight">
+        <div class="edit-description-title esriCTProvideTextLabel" title="${nls.introductoryText}">
+          ${nls.introductoryText}</div>
+        <div class="edit-description-box">
+          <div data-dojo-attach-point="editorDescription"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

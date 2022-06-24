@@ -1,0 +1,62 @@
+[2022-06-23T19:48:21.235] [INFO] repo - Read repository items: /srv/client/stemapp/widgets
+[2022-06-23T19:48:24.214] [INFO] repo - delete HTML.PopupPanel
+[2022-06-23T19:48:24.232] [INFO] repo - delete HTML.Traverse
+[2022-06-23T19:48:24.251] [INFO] repo - delete HTML.eSearch
+[2022-06-23T19:48:24.269] [INFO] repo - delete HTML.SaveSession
+[2022-06-23T19:48:24.272] [INFO] repo - Read repository items: /srv/client/stemapp/themes
+[2022-06-23T19:48:24.592] [INFO] repo - Read repository items: /srv/client/stemapp3d/widgets
+[2022-06-23T19:48:25.045] [INFO] repo - Read repository items: /srv/client/stemapp3d/themes
+[2022-06-23T20:55:46.193] [INFO] default - No token is found, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2022-06-23T21:00:47.051] [INFO] default - redirect  /webappbuilder/stemapp/index.html?id=28 to /webappbuilder/apps/28
+[2022-06-23T21:00:47.058] [INFO] default - redirect /webappbuilder/apps/28 to /webappbuilder/404.html
+[2022-06-23T21:01:00.928] [INFO] default - redirect  /webappbuilder/stemapp/index.html?id=28 to /webappbuilder/apps/28
+[2022-06-23T21:01:00.933] [INFO] default - redirect /webappbuilder/apps/28 to /webappbuilder/404.html
+[2022-06-23T21:06:03.674] [INFO] default - redirect  /webappbuilder/stemapp/index.html?id=17 to /webappbuilder/apps/17
+[2022-06-23T21:06:03.680] [INFO] default - redirect /webappbuilder/apps/17 to /webappbuilder/404.html
+[2022-06-23T21:06:25.929] [INFO] default - redirect  /webappbuilder/stemapp/index.html?id=13 to /webappbuilder/apps/13
+[2022-06-23T21:06:25.934] [INFO] default - redirect /webappbuilder/apps/13 to /webappbuilder/404.html
+[2022-06-23T21:22:41.354] [INFO] repo - Read repository items: /srv/client/stemapp/widgets
+[2022-06-23T21:22:44.301] [INFO] repo - Read repository items: /srv/client/stemapp/themes
+[2022-06-23T21:22:44.617] [INFO] repo - Read repository items: /srv/client/stemapp3d/widgets
+[2022-06-23T21:22:45.018] [INFO] repo - Read repository items: /srv/client/stemapp3d/themes
+[2022-06-23T21:22:56.363] [INFO] default - No token is found, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2022-06-23T21:23:21.326] [INFO] default - redirect  /webappbuilder/stemapp/index.html?id=28 to /webappbuilder/apps/28
+[2022-06-23T21:23:21.332] [INFO] default - redirect /webappbuilder/apps/28 to /webappbuilder/404.html
+[2022-06-23T21:47:30.435] [INFO] repo - Read repository items: /srv/client/stemapp/widgets
+[2022-06-23T21:47:33.880] [INFO] repo - Read repository items: /srv/client/stemapp/themes
+[2022-06-23T21:47:35.228] [INFO] repo - Read repository items: /srv/client/stemapp3d/widgets
+[2022-06-23T21:47:35.813] [INFO] repo - Read repository items: /srv/client/stemapp3d/themes
+[2022-06-23T21:47:44.313] [INFO] default - redirect  /webappbuilder/stemapp/index.html?id=28 to /webappbuilder/apps/28
+[2022-06-23T21:53:15.425] [DEBUG] utils - copy /srv/client/stemapp/jimu.js
+[2022-06-23T21:53:18.103] [DEBUG] utils - copy /srv/client/stemapp/images
+[2022-06-23T21:53:18.107] [DEBUG] utils - copy /srv/client/stemapp/libs
+[2022-06-23T21:53:18.337] [DEBUG] utils - copy /srv/client/stemapp/index.html
+[2022-06-23T21:53:18.339] [DEBUG] utils - copy /srv/client/stemapp/env.js
+[2022-06-23T21:53:18.340] [DEBUG] utils - copy /srv/client/stemapp/simpleLoader.js
+[2022-06-23T21:53:18.340] [DEBUG] utils - copy /srv/client/stemapp/init.js
+[2022-06-23T21:53:18.342] [DEBUG] utils - copy /srv/client/stemapp/web.config
+[2022-06-23T21:53:18.358] [DEBUG] utils - copy /srv/client/stemapp/dynamic-modules
+[2022-06-23T21:53:18.363] [DEBUG] utils - copy /srv/client/stemapp/readme.html
+[2022-06-23T21:53:18.374] [DEBUG] utils - copy /srv/client/stemapp/config-readme.txt
+[2022-06-23T21:53:18.376] [DEBUG] utils - copy /srv/client/stemapp/configs
+[2022-06-23T21:53:18.381] [DEBUG] utils - copy /srv/client/stemapp/.jshintrc
+[2022-06-23T21:53:18.382] [DEBUG] utils - copy /srv/client/stemapp/.jshintignore
+[2022-06-23T21:53:18.383] [DEBUG] utils - copy /srv/client/stemapp/3rd-party-license.txt
+[2022-06-23T21:53:18.385] [DEBUG] utils - copy /srv/client/stemapp/service-worker.js
+[2022-06-23T21:53:18.386] [DEBUG] utils - copy /srv/client/stemapp/service-worker-registration.js
+[2022-06-23T21:53:18.388] [DEBUG] utils - copy /srv/client/stemapp/browser-message
+[2022-06-23T21:53:18.396] [DEBUG] utils - copy /srv/client/stemapp/themes/FoldableTheme
+[2022-06-23T21:53:19.166] [DEBUG] utils - copy /srv/client/stemapp/widgets/Scalebar
+[2022-06-23T21:53:19.188] [DEBUG] utils - copy /srv/client/stemapp/widgets/Search
+[2022-06-23T21:53:19.209] [DEBUG] utils - copy /srv/client/stemapp/widgets/Coordinate
+[2022-06-23T21:53:19.229] [DEBUG] utils - copy /srv/client/stemapp/widgets/OverviewMap
+[2022-06-23T21:53:19.249] [DEBUG] utils - copy /srv/client/stemapp/widgets/HomeButton
+[2022-06-23T21:53:19.259] [DEBUG] utils - copy /srv/client/stemapp/widgets/MyLocation
+[2022-06-23T21:53:19.279] [DEBUG] utils - copy /srv/client/stemapp/widgets/AttributeTable
+[2022-06-23T21:53:19.302] [DEBUG] utils - copy /srv/client/stemapp/widgets/Splash
+[2022-06-23T21:53:19.324] [DEBUG] utils - copy /srv/client/stemapp/widgets/ZoomSlider
+[2022-06-23T21:53:19.334] [DEBUG] utils - copy /srv/client/stemapp/widgets/ExtentNavigate
+[2022-06-23T21:53:19.344] [DEBUG] utils - copy /srv/client/stemapp/widgets/FullScreen
+[2022-06-23T21:53:19.355] [DEBUG] utils - copy /srv/client/stemapp/widgets/Legend
+[2022-06-23T21:53:19.375] [DEBUG] utils - copy /srv/client/stemapp/widgets/LayerList
+[2022-06-23T21:54:57.050] [DEBUG] utils - copy /srv/client/stemapp/widgets/GridOverlay

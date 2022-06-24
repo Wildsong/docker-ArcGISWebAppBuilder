@@ -13,7 +13,6 @@ it to run WABDE and build apps, too.
 I have tested this process with WABDE versions 2.13-2.24 on Debian Linux.
 I've also done some limited testing on Windows 10 Desktop using Docker WSL2.
 
-
 ## Licenses
 
 The github repo contains a complete unmodified copy of Esri "ArcGIS
@@ -23,7 +22,7 @@ Docker image by the build process.
 
 Per Esri licensing, Esri allows redistribution of this software
 without modification.  For details, you can refer to these Esri
-licenses as referenced in their code. Look at 
+licenses as referenced in their code. Look at
 <http://js.arcgis.com/3.15/esri/copyright.txt> and
 <http://www.arcgis.com/apps/webappbuilder/copyright.txt>.
 
@@ -49,7 +48,7 @@ Note that you can set up a developer account for free, and that will work.
 
 ## Volumes for storage
 
-I tried using 'bind' mounts but they don't work for widgets; 
+I tried using 'bind' mounts but they don't work for widgets;
 only the Docker volumes work properly for that.
 
 You can use either bind mounts or volumes for apps and db. Currently
@@ -117,7 +116,7 @@ In fact, when you create an app, copies of the widgets happen and that
 includes the git version info. That means that if you want to modify
 a widget that's part of an app, you can always check changes back into
 git hub and then do a "git pull" in the widgets folder to resync them.
-I think this is pretty cool. 
+I think this is pretty cool.
 
 ### logs
 
@@ -143,19 +142,24 @@ mkdir widgets
 If you have altered anything in there or added extra custom or 3rd party
 widgets, it's up to you to preserve them.
 
-### App upgrades
+### Upgrades
 
-Refer to https://developers.arcgis.com/web-appbuilder/guide/upgrade-apps.htm
+After installing a new release of WABDE, you can use
+upgrade.js script to copy all the apps and build a new copy of the database.
 
-This is screwy, you need to have the complete old installation available to do this.
-I need to think about it some...
+2022-06-23 upgrade.js appears to do absolutely nothing at all.
 
-I was thinking something like this but it won't work based on those instructions.
+Refer to <https://developers.arcgis.com/web-appbuilder/guide/upgrade-apps.htm>
+
+WABDE has to be offline during the upgrade, so step one is
 
 ```bash
 docker-compose down
-mv apps apps_old
-docker-compose run wabde bash
+```
+
+```bash
+docker run --rm -it -v $PWD/2.20:/old -v $PWD/2.24:/srv wabde_wabde bash
+node upgrade /old 33
 ```
 
 ## Running WABDE
@@ -204,7 +208,7 @@ In Portal,
 * Type of application: Application
 * Purpose: Ready to use
 * API: Javascript
-* URL: https://hostname:3344/webappbuilder
+* URL: <https://hostname:3344/webappbuilder>
 * Title: whatever you like
 * Tags: whatever...
 Then you have to co into the settings for the new "Application"
@@ -214,9 +218,9 @@ and "register" to get an AppId. Under "App Registration",
 I have no idea which one. Avoid stupid frustrating URI redirect errors. It does not hurt
 to have too many.
 
-https://localhost:3344/ \
-https://hostname:3344/ \
-https://hostname.domain:3344/
+<https://localhost:3344/> \
+<https://hostname:3344/> \
+<https://hostname.domain:3344/>
 
 "hostname" can be "localhost" if you are only working on your local desktop.
 Otherwise it needs to be the name of the machine as you access it, that is, on my network
@@ -229,7 +233,7 @@ using cut and paste to copy it into the browser.
 
 I use a bind mount in the "bind" examples above, so I keep the signininfo.json file in the local filesystem.
 
-You can also just leave it inside the Docker container. 
+You can also just leave it inside the Docker container.
 Once you have successfully connected you can copy the file out to save it and put it back after upgrades, if you want. Instead of re-entering the ID you copy the file. Same amount of work, either way. Here is an example of how to back it up.
 
 ```bash
@@ -302,7 +306,6 @@ Once you have perfected your widget you can use git to deploy a copy
 into the widgets/ volume for inclusion into future projects directly
 via WABDE.
 
-
 ### 3D
 
 I have not thought about 3D apps yet so nothing here addresses it. It would
@@ -315,17 +318,5 @@ transfer files but I have not found one that I like yet. Please send suggestions
 
 ### App deployment
 
-App deployment should be automated but at this time, sadly I just use "copy" at this time.
-
-## Upgrading apps
-
-```bash
-docker exec -ti wabde_wabde_1 bash
-node upgrade < previous_version > app_id
-```
-
-except I don't happen to have the previous version, sigh.
-
-
-
+App deployment should be automated but at this time, sadly I just use download and unzip at this time.
 

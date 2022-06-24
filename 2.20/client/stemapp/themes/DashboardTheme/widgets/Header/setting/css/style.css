@@ -1,0 +1,19 @@
+.dashboard-header-setting {
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-header-setting .jimu-color-btn {
+  margin: 0 20px;
+  width: 100px;
+  height: 36px;
+  border: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.dashboard-header-setting .jimu-color-btn:hover {
+  border: 2px solid #24B5CC;
+}

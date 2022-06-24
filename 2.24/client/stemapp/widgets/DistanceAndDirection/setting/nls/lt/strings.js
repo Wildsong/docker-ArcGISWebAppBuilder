@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "Atstumų ir krypčių elementų stilius",
+  "showTabLabel": "Rodyti visus skirtukus",
+  "tabErrorMessage": "Pasirinkite bent vieną skirtuką grupėje „Atstumo ir krypties grįžtamojo ryšio stilius“",
+  "lineLabel": "Linija",
+  "circleLabel": "Apskritimas",
+  "ellipseLabel": "Elipsė",
+  "ringsLabel": "Žiedai",
+  "transparency": "Permatomumas",
+  "operationalLineLayerSelectLabel": "Pasirinkite darbinį polilinijų sluoksnį linijų ir žiedų rezultatams",
+  "operationalPolygonLayerSelectLabel": "Pasirinkite darbinį poligonų sluoksnį apskritimų ir epipsių rezultatams",
+  "helpIconPolylineTooltip": "Darbinio sluoksnio sąrašas automatiškai užpildytas dabartinio internetinio žemėlapio polilinijų geometrijos tipo sluoksniais.",
+  "helpIconPolygonTooltip": "Darbinio sluoksnio sąrašas automatiškai užpildytas dabartinio internetinio žemėlapio poligonų geometrijos tipo sluoksniais.",
+  "feedbackResultsLayerLabel": "Atstumo ir krypties grįžtamojo ryšio rezultatų sluoksnis",
+  "editSymbologyHint": "Patarimas. Norėdami redaguoti simbolizaciją, spustelėkite peržiūros piktogramą",
+  "feedbackTextColorLabel": "Grįžtamojo ryšio žymės teksto spalva",
+  "feedbackTextSizeLabel": "Grįžtamojo ryšio žymės teksto dydis",
+  "previewLabel": "Peržiūra",
+  "lineSymbologyPopupTittle": "Linijos simbolizacija",
+  "circleSymbologyPopupTittle": "Apskritimo simbolizacija",
+  "ellipseSymbologyPopupTittle": "Elipsės simbolizacija",
+  "ringSymbologyPopupTittle": "Žiedų simbolizacija"
+});

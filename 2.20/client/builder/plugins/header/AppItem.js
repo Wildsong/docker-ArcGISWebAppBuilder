@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.15/esri/copyright.txt and http://www.arcgis.com/apps/webappbuilder/copyright.txt for details.
+//>>built
+require({cache:{"url:builder/plugins/header/AppItem.html":'\x3ca\x3e\r\n  \x3cdiv class\x3d"thumbnail-icon" data-dojo-attach-point\x3d"thumbnailNode"\x3e\x3c/div\x3e\r\n  \x3cdiv class\x3d"label" data-dojo-attach-point\x3d"labelNode"\x3e\x3c/div\x3e\r\n\x3c/a\x3e'}});
+define("dojo/_base/declare dojo/_base/lang dojo/_base/html dojo/Evented dojo/on dijit/_WidgetBase dijit/_TemplatedMixin jimu/utils dojo/text!./AppItem.html".split(" "),function(d,e,b,f,g,h,k,l,m){return d([h,k,f],{templateString:m,baseClass:"app-item",postCreate:function(){if(window.isXT){var a=this.appItem.thumbnail;var c=this.appItem.name}else a=this.appItem.thumbnailUrl,c=this.appItem.title;a?b.setStyle(this.thumbnailNode,"background-image","url("+a+")"):b.addClass(this.thumbnailNode,"default");
+this.labelNode.innerHTML=l.sanitizeHTML(c);this.labelNode.title=c;this.own(g(this.domNode,"click",e.hitch(this,function(){this.emit("app-click",this.appItem)})))},setHref:function(a){a&&b.setAttr(this.domNode,"href",a)}})});

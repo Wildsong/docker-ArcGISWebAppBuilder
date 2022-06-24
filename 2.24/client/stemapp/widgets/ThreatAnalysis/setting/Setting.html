@@ -1,0 +1,92 @@
+<div>
+  <div data-dojo-attach-point="tabDiv" class="esriCTTabsDiv">
+    <div>
+      <div class="esriCTTabWrapper" data-dojo-attach-point="threatTypeTab">
+        <div class="esriCTThreatTypeNode" data-dojo-attach-point="threatTypeSettingsNode">
+          <!-- threat type button -->
+          <div class="esriCTAddBtnWrapper">
+            <div class="esriCTAddThreatTypeBtn" data-dojo-attach-point="addThreatTypeButton">
+              <span class="esriCTBtnAddIcon"></span>
+              <span class="esriCTBtnAddLabel">${nls.addThreatTypesLabel}</span>
+            </div>
+          </div>
+
+          <!-- threat types -->
+          <div class="esriCTThreatTypeWrapper esriCTThreatTableMaxHeight" data-dojo-attach-point="threatTypesTableNode">
+          </div>
+
+          <!-- measure of unit label -->
+          <div class="unitMeasureLabel" data-dojo-attach-point="unitMeasureLabel">{$nls.unitMeasureLabel}</div>
+        </div>
+      </div>
+
+      <div class="esriCTTabWrapper esriCTMiscTabWrapperWidth" data-dojo-attach-point="MiscTab">
+        <div class="esriCTMiscWrapper">
+
+          <div class="esriCTWrapper esriCTPadding10">
+            <div class="esriCTLabel">${nls.selectOpLayerLabel}</div>
+            <div class="esriCTDijitControl">
+              <div class="esriCTDijitWrapper">
+                <select class="esriCTDijitWidth" data-dojo-type="dijit/form/Select" data-dojo-attach-point="opLayerList">
+                </select>
+                <div title="${nls.helpIconTooltip}" class="jimu-icon helpBtn safari_only" data-dojo-attach-point="helpBtn"></div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="esriCTWrapper esriCTPadding10">
+            <div class="esriCTLabel">${nls.selectDefaultMeasurementLabel}</div>
+            <div class="esriCTDijitControl">
+              <div class="esriCTDijitWrapper">
+                <select class="esriCTDijitWidth" data-dojo-type="dijit/form/Select" data-dojo-attach-point="unitType">
+                  <option value="feet">${nls.feet}</option>
+                  <option value="meters">${nls.meters}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="esriCTWrapper esriCTPadding10">
+            <div class="esriCTLabel">${nls.defaultInputLocationLabel}</div>
+            <div class="esriCTDijitControl">
+              <div class="esriCTDijitWrapper">
+                <select class="esriCTDijitWidth" data-dojo-type="dijit/form/Select"
+                  data-dojo-attach-point="defaultInputLocation">
+                  <option value="interactive" selected="true">${nls.interactive}</option>
+                  <option value="manual_location" selected>${nls.fromCoord}</option>
+                  <option value="existing_features">${nls.existingFeature}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="esriCTWrapper esriCTPadding10">
+            <div class="esriCTLabel">${nls.defaultInputLayer}</div>
+            <div class="esriCTDijitControl">
+              <div class="esriCTDijitWrapper">
+                <select class="esriCTDijitWidth" data-dojo-type="dijit/form/Select"
+                  data-dojo-attach-point="defaultInputLayer">
+                </select>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="esriCTWrapper esriCTPadding10">
+            <div class="esriCTLabel">${nls.defaultThreatType}</div>
+            <div class="esriCTDijitControl">
+              <div class="esriCTDijitWrapper">
+                <select class="esriCTDijitWidth" data-dojo-type="dijit/form/Select"
+                  data-dojo-attach-point="defaultThreatType">
+                </select>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

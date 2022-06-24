@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "Stile del feedback di distanza e direzione",
+  "showTabLabel": "Mostra tutte le schede",
+  "tabErrorMessage": "Seleziona almeno una scheda nel gruppo \"Stile di feedback distanza e direzione\".",
+  "lineLabel": "Linea",
+  "circleLabel": "Cerchio",
+  "ellipseLabel": "Ellisse",
+  "ringsLabel": "Anelli",
+  "transparency": "Trasparenza",
+  "operationalLineLayerSelectLabel": "Selezionare un layer polilineare operativo per i risultati di linee e anelli",
+  "operationalPolygonLayerSelectLabel": "Selezionare un layer poligonale operativo per i risultati di cerchi ed ellissi",
+  "helpIconPolylineTooltip": "L'elenco dei layer operativi è popolato con i layer della mappa Web corrente che sono di tipo a geometria polilineare.",
+  "helpIconPolygonTooltip": "L'elenco dei layer operativi è popolato con i layer della mappa Web corrente che sono di tipo a geometria poligonale.",
+  "feedbackResultsLayerLabel": "Layer dei risultati del feedback di distanza e direzione",
+  "editSymbologyHint": "Suggerimento: Clicca sull'icona di anteprima per modificare la simbologia",
+  "feedbackTextColorLabel": "Colore del testo dell'etichetta di feedback",
+  "feedbackTextSizeLabel": "Dimensione del testo dell'etichetta di feedback",
+  "previewLabel": "Anteprima",
+  "lineSymbologyPopupTittle": "Simbologia della linea",
+  "circleSymbologyPopupTittle": "Simbologia del cerchio",
+  "ellipseSymbologyPopupTittle": "Simbologia dell'ellissi",
+  "ringSymbologyPopupTittle": "Simbologia degli anelli"
+});

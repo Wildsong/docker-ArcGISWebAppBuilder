@@ -1,0 +1,22 @@
+define({
+  "_widgetLabel": "Табло за управление за рецензенти",
+  "spatialFilterSelection": "Филтрирайте резултатите по география",
+  "drawSelectionArea": "Начертайте област за избор на резултат на картата",
+  "currentSelection": "Показване на резултати само в текущия обхват на картата",
+  "censusBlockGroup": "Показване на резултатите по география",
+  "noSpatialFilter": " Не използвайте пространствен филтър",
+  "reviewerSessionFilter": "Филтрирайте резултатите по сесия на рецензента",
+  "selectAttributeFilters": "Изберете информация за показване",
+  "phaseFieldName": "lifecyclephase (фаза на жизнения цикъл)",
+  "statusFieldName": "lifecyclestatus (състояние на жизнения цикъл)",
+  "allSessions": "Всички сесии",
+  "dashboardTab": "Табло за управление",
+  "filtersTab": "Настройки",
+  "noResults": "Няма намерени резултати",
+  "resultsBy": "Резултати по: ",
+  "reviewed": "Преглед",
+  "corrected": "Коригиране",
+  "verified": "Проверка",
+  "OtherCategory": "Друго",
+  "backButton": "Назад"
+});

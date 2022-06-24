@@ -1,0 +1,201 @@
+﻿/*
+ | Copyright 2017 Esri
+ |
+ | Licensed under the Apache License, Version 2.0 (the "License");
+ | you may not use this file except in compliance with the License.
+ | You may obtain a copy of the License at
+ |
+ |    http://www.apache.org/licenses/LICENSE-2.0
+ |
+ | Unless required by applicable law or agreed to in writing, software
+ | distributed under the License is distributed on an "AS IS" BASIS,
+ | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ | See the License for the specific language governing permissions and
+ | limitations under the License.
+ */
+define({
+  "searchSourceSetting": {
+    "title": "Настройки за търсене и буфер",
+    "mainHint": "Можете да активирате текстови търсения на адреси и обекти, цифровизиране на геометрия и буфериране."
+  },
+  "addressSourceSetting": {
+    "title": "Слоеве с адреси",
+    "mainHint": "Можете да посочите кои слоеве на надписи на адресата са налични."
+  },
+  "notificationSetting": {
+    "title": "Опции за известяване",
+    "mainHint": "Можете да определите кои видове известия са налични."
+  },
+  "groupingLabels": {
+    "addressSources": "Слой, който да се използва за избор на слоеве на адресата",
+    "averyStickersDetails": "Стикери Avery(r)",
+    "csvDetails": "Файл със стойности, разделени със запетая (CSV)",
+    "drawingTools": "Инструменти за чертане за посочена област",
+    "featureLayerDetails": "Слой на обект",
+    "geocoderDetails": "Геокодер",
+    "labelFormats": "Налични формати на надписи",
+    "printingOptions": "Опции за отпечатани страници с етикети",
+    "searchSources": "Източници за търсене",
+    "stickerFormatDetails": "Параметри на страница с етикети"
+  },
+  "hints": {
+    "alignmentAids": "Знаци, добавени към страницата с етикети, за да Ви помогнат да подравните страницата с принтера.",
+    "csvNameList": "Списък с имена на полета, разделени със запетая, с отчитане на големи и малки букви",
+    "horizontalGap": "Разстояние между два етикета в един ред",
+    "insetToLabel": "Разстояние между страната на надписа и началото на текста",
+    "labelFormatDescription": "Как се представя стилът на етикета в списъка с опции за формат на изпълнимия модул",
+    "labelFormatDescriptionHint": "Tooltip за допълване на описанието в списъка с опции за форматиране",
+    "labelHeight": "Височина на всеки етикет на страницата",
+    "labelWidth": "Широчина на всеки етикет на страницата",
+    "localSearchRadius": "Определя радиуса на област около текущия център на картата, която се използва за повишаване на ранга на кандидатите за геокодиране, така че кандидатите, които са най-близо до местоположението, да бъдат върнати първи",
+    "rasterResolution": "100 пиксела на инч приблизително съответства на разделителната способност на екрана. Колкото по-висока е разделителната способност, толкова повече памет е необходима на браузъра. Браузърите се различават по способността си да се справят елегантно с големи нужди от памет.",
+    "selectionListOfOptionsToDisplay": "Отбелязаните елементи се показват като опции в изпълнимия модул; променете подредбата по желание",
+    "verticalGap": "Разстояние между два етикета в една колона",
+    "reviewButtonHint": "Позволява на потребителите да прегледат окончателния избор на избрания слой на адресата"
+  },
+  "propertyLabels": {
+    "bufferDefaultDistance": "Стандартно буферно разстояние",
+    "bufferUnits": "Буферни единици, които да се предоставят в изпълнимия модул",
+    "countryRegionCodes": "Кодове за държава или район",
+    "description": "Описание",
+    "descriptionHint": "Съвет за описание",
+    "displayField": "Поле за показване",
+    "drawingToolsFreehandPolygon": "произволен полигон",
+    "drawingToolsLine": "линия",
+    "drawingToolsPoint": "точка",
+    "drawingToolsPolygon": "полигон",
+    "drawingToolsPolyline": "полилиния",
+    "enableLocalSearch": "Активиране на локално търсене",
+    "exactMatch": "Точно съвпадение",
+    "fontSizeAlignmentNote": "Размер на шрифта за бележка относно полетата за печат",
+    "gridDarkness": "Затъмнение на мрежата",
+    "gridlineLeftInset": "Вмъкване на лява линия на мрежа",
+    "gridlineMajorTickMarksGap": "Големи отметки на всички",
+    "gridlineMinorTickMarksGap": "Малки отметки на всички",
+    "gridlineRightInset": "Вмъкване на дясна линия на мрежа",
+    "labelBorderDarkness": "Етикет за граница на тъмнина",
+    "labelBottomEdge": "Долен край на етикетите на страница",
+    "labelFontSize": "Размер на шрифт",
+    "labelHeight": "Височина на етикет",
+    "labelHorizontalGap": "Хоризонтална празнина",
+    "labelInitialInset": "Вмъкване към текст на етикет",
+    "labelLeftEdge": "Ляв ъгъл на етикетите на страница",
+    "labelMaxLineCount": "Максимален брой линии в етикет",
+    "labelPageHeight": "Височина на страница",
+    "labelPageWidth": "Широчина на страница",
+    "labelRightEdge": "Десен ъгъл на етикетите на страница",
+    "labelsInAColumn": "Брой етикети в колона",
+    "labelsInARow": "Брой етикети в ред",
+    "labelTopEdge": "Горен край на етикетите на страница",
+    "labelVerticalGap": "Вертикална празнина",
+    "labelWidth": "Широчина на етикет",
+    "limitSearchToMapExtent": "Търсене само в ограничаващия правоъгълник на текущата карта",
+    "maximumResults": "Максимален брой резултати",
+    "maximumSuggestions": "Максимален брой предположения",
+    "minimumScale": "Минимален мащаб",
+    "name": "Име",
+    "percentBlack": "% черно",
+    "pixels": "пиксели",
+    "pixelsPerInch": "пиксели на инч",
+    "placeholderText": "Текст за заместване",
+    "placeholderTextForAllSources": "Заместващ текст за търсене във всички източници",
+    "radius": "Радиус",
+    "rasterResolution": "Резолюция на растер",
+    "searchFields": "Търсене на полета",
+    "showAlignmentAids": "Показване на помощни средства за подравняване на страница",
+    "showGridTickMarks": "Показване на отметки в мрежата",
+    "showLabelOutlines": "Показване на контурите на етикетите",
+    "showPopupForFoundItem": "Показване на изскачащи прозорци за намерените обекти или местоположения",
+    "tool": "Инструменти",
+    "units": "Мерни единици",
+    "url": "URL адрес",
+    "urlToGeometryService": "URL за услуга за геометрия",
+    "useRelatedRecords": "Използване на свързани записи",
+    "useSecondarySearchLayer": "Използване на вторичен слой за избор",
+    "useSelectionDrawTools": "Използване на инструменти за избор при рисуване",
+    "useVectorFonts": "Използване на векторни шрифтове (само латински шрифтове)",
+    "addCSVHeader": "Добавяне на заглавие на колона (само за CSV)",
+    "zoomScale": "Мащаб на зуум",
+    "reviewCheckboxLabel": "Показване на бутона за преглед в изпълнимия модул"
+  },
+  "buttons": {
+    "addAddressSource": "Добавяне на слой, който съдържа надписи с адреси в изскачащите прозорци",
+    "addLabelFormat": "Добавяне на формат на надпис",
+    "addSearchSource": "Добавяне на източник за търсене",
+    "set": "Настройване"
+  },
+  "placeholders": {
+    "averyExample": "напр. етикет Avery(r) ${averyPartNumber}",
+    "countryRegionCodes": "напр. USA, CHN",
+    "descriptionCSV": "Стойности, разделени със запетая (CSV)",
+    "descriptionPDF": "Етикет във формат PDF ${heightLabelIn} x ${widthLabelIn} инча; ${labelsPerPage} на страница"
+  },
+  "tooltips": {
+    "getWebmapFeatureLayer": "Получаване на слой на обект от уеб карта",
+    "openCountryCodes": "Натиснете, за да получите повече информация за кодовете",
+    "openFieldSelector": "Натиснете, за да отворите селектора на полето",
+    "setAndValidateURL": "Задайте и настройте URL адрес"
+  },
+  "problems": {
+    "noAddresseeLayers": "Моля, изберете най-малко един слой на адресат",
+    "noBufferUnitsForDrawingTools": "Моля, конфигурирайте най-малко една буферна единица за инструментите за чертане",
+    "noBufferUnitsForSearchSource": "Моля, конфигурирайте най-малко една буферна единица за източник за търсене „${sourceName}“.",
+    "noGeometryServiceURL": "Моля, конфигурирайте URL адреса към услугата за геометрия.",
+    "noNotificationLabelFormats": "Моля, посочете поне един формат на надписа за известие.",
+    "noSearchSourceFields": "Моля, конфигурирайте най-малко едно или повече полета за търсене „${sourceName}“.",
+    "noSearchSourceURL": "Моля, конфигурирайте URL адрес за източник за търсене „${sourceName}“.",
+    "noSearchSourcesConfigured": "Моля, конфигурирайте най-малко един източник за търсене.",
+    "noSearchSourceFeaureLayerConfigured": "Моля, конфигурирайте поне един слой от обекти като източник на търсене за използване на инструменти за чертане."
+  },
+  "querySourceSetting": {
+    "sourceSetting": "Настройки за търсене в източника",
+    "instruction": "Добавете и конфигурирайте услуги за геокодиране или слоеве на обекти като източници на търсене. Тези посочени източници определят какво може да се търси в полето за търсене.",
+    "add": "Добавяне на нов източник",
+    "addGeocoder": "Добавяне на декодер",
+    "geocoder": "Геокодер",
+    "setLayerSource": "Задаване на източник на слой",
+    "setGeocoderURL": "Задаване на URL адрес на геокодер",
+    "searchableLayer": "Слой на обект",
+    "name": "Име",
+    "countryCode": "Код (-ове) на държава или район",
+    "countryCodeEg": "вкл. ",
+    "countryCodeHint": "Ако оставите тази стойност празна, ще търсите във всички държави и райони.",
+    "generalSetting": "Общи настройки",
+    "allPlaceholder": "Текст на заместител за търсене във всички: ",
+    "showInfoWindowOnSelect": "Показване на изскачащи прозорци за намерените обекти или местоположения",
+    "showInfoWindowOnSelect2": "Показване на изскачащи прозорци, когато е намерен обекта или местоположението.",
+    "searchInCurrentMapExtent": "Търсене само в ограничаващия правоъгълник на текущата карта",
+    "zoomScale": "Мащаб на зуум",
+    "locatorUrl": "URL адрес на геокодер",
+    "locatorName": "Име на геокодер",
+    "locatorExample": "Пример",
+    "locatorWarning": "Тази версия на услугата за геокодиране не се поддържа. Изпълнимият модул поддържа услуга за геокодиране с версия 10.1 и по-нова.",
+    "locatorTips": "Предложенията не са налични, тъй като услугата за геокодиране не поддържа възможността за предлагане.",
+    "layerSource": "Източник на слой",
+    "searchLayerTips": "Предложенията не са налични, тъй като услугата за обекти не поддържа възможност за разбиване на страници.",
+    "placeholder": "Текст за заместване",
+    "searchFields": "Полета за търсене",
+    "displayField": "Поле за показване",
+    "exactMatch": "Точно съвпадение",
+    "maxSuggestions": "Максимален брой предположения",
+    "maxResults": "Максимален брой резултати",
+    "enableLocalSearch": "Активиране на локално търсене",
+    "minScale": "Минимално мащабиране",
+    "minScaleHint": "Когато мащабът на картата е по-голям от този мащаб, ще се приложи локално търсене",
+    "radius": "Радиус",
+    "radiusHint": "Задава радиус на област около текущия център на картата, която се използва за повишаване на ранга на кандидатите за геокодиране, така че кандидатите, най-близки до местоположението, да бъдат върнати първи",
+    "meters": "Метри",
+    "setSearchFields": "Задаване на полета за търсене",
+    "set": "Настройване",
+    "fieldSearchable": "могат да се търсят",
+    "fieldName": "Име",
+    "fieldAlias": "Псевдоним",
+    "ok": "Ок",
+    "cancel": "Отказ",
+    "invalidUrlTip": "URL адресът ${URL} е невалиден или е недостъпен.",
+    "locateResults": "Откриване на резултати",
+    "panTo": "Преместване към",
+    "zoomToScale": "Зумиране за мащабиране",
+    "locatorError": "Локаторът трябва да поддържа локализиране с една линия."
+  }
+});

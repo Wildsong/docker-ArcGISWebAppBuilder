@@ -1,0 +1,24 @@
+.formatInput {
+  background: transparent !important;
+  color: #ffffff;
+}
+
+.selectFormat {
+  background: transparent !important;
+  color: #ffffff;
+}
+
+.formatText {
+  color: #ffffff;
+}
+
+.jimu-widget-DistanceAndDirection-symbolChooserPopup .jimu-symbol-chooser .symbol-section {
+  width: 97%
+}
+
+.jimu-widget-TabLine .esriCTLabelSettings .dijitTextBox,
+.jimu-widget-TabEllipse .esriCTLabelSettings .dijitTextBox,
+.jimu-widget-TabRange .esriCTLabelSettings .dijitTextBox,
+.jimu-widget-TabCircle .esriCTLabelSettings .dijitTextBox  {
+  width: calc(100% - 160px) !important;
+}

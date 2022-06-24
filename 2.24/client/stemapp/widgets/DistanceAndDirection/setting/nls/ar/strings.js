@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "نمط ملاحظات المسافة والاتجاه",
+  "showTabLabel": "إظهار كل علامات التبويب",
+  "tabErrorMessage": "يرجى تحديد علامة تبويب واحدة على الأقل في مجموعة \"نمط ملاحظات المسافة والاتجاه\"",
+  "lineLabel": "خط",
+  "circleLabel": "دائرة",
+  "ellipseLabel": "قطع ناقص",
+  "ringsLabel": "حلقات",
+  "transparency": "الشفافية",
+  "operationalLineLayerSelectLabel": "تحديد طبقة خط متصل تشغيلية لنتائج الحلقات والخط",
+  "operationalPolygonLayerSelectLabel": "تحديد طبقة مضلع تشغيلية لنتائج المجسم الناقص",
+  "helpIconPolylineTooltip": "يتم ملء قائمة الطبقة التشغيلية بالطبقات من خريطة الويب الحالية التي تكون من نوع شكل الخط المتصل الهندسي.",
+  "helpIconPolygonTooltip": "يتم ملء الطبقة التشغيلية بالطبقات من خريطة الويب الحالية التي تكون من نوع شكل المضلع الهندسي.",
+  "feedbackResultsLayerLabel": "طبقة نتائج نمط ملاحظات المسافة والاتجاه",
+  "editSymbologyHint": "تلميح: انقر فوق رمز المعاينة لتحرير الترميز",
+  "feedbackTextColorLabel": "لون نص تسمية الملاحظات",
+  "feedbackTextSizeLabel": "حجم نص تسمية الملاحظات",
+  "previewLabel": "معاينة",
+  "lineSymbologyPopupTittle": "الترميز الخطي",
+  "circleSymbologyPopupTittle": "ترميز دائري",
+  "ellipseSymbologyPopupTittle": "ترميز قطع ناقص",
+  "ringSymbologyPopupTittle": "ترميز حلقي"
+});

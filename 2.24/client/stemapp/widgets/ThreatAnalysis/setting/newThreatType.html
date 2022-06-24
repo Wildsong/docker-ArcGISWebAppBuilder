@@ -1,0 +1,32 @@
+<div class="esriCTPopupContainer"> 
+
+  <div class="esriCTWrapper">
+    <div class="esriCTDeafultIconWrapper">
+      <span class="esriCTDefaultLabel">${nls.chooseDefaultThreatTypeIconLabel}</span>
+      <div class="esriCTDefaultIcon" data-dojo-attach-point="defaultThreatTypeIcon"
+        title="${nls.defaultThreatTypeIconTooltip}"></div>
+    </div>
+  </div>
+
+  <div class="esriCTWrapper">
+    <div class="esriCTLabel">${nls.threatTypeLabel}</div>
+    <div class="esriCTDijitControl">
+      <div class="esriCTDijitWrapper">
+        <div class="esriCTDijitWrapper" data-dojo-attach-point="threatTypeTextBox"
+          data-dojo-type="dijit/form/ValidationTextBox" trim="true" required="true">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="esriCTAddBtnWrapper">
+    <div class="esriCTAddZoneBtn" data-dojo-attach-point="addZoneButton">
+      <span class="esriCTBtnAddIcon"></span>
+      <span class="esriCTBtnAddLabel">${nls.addThreatZoneButtonLabel}</span>
+    </div>
+
+    </div>
+    <div class="esriCTWrapper esriCTZonesTableMaxHeight" data-dojo-attach-point="threatZonesTableNode">
+  </div>
+
+</div>

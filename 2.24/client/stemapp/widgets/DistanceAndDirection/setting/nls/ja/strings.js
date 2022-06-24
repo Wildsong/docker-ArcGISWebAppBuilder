@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "距離と方向のフィードバック スタイル",
+  "showTabLabel": "すべてのタブを表示",
+  "tabErrorMessage": "[距離と方向のフィードバック スタイル] グループから少なくも 1 つのタブを選択してください。",
+  "lineLabel": "線分",
+  "circleLabel": "円 (Circle)",
+  "ellipseLabel": "楕円 (Ellipse)",
+  "ringsLabel": "複数のリング",
+  "transparency": "透過表示",
+  "operationalLineLayerSelectLabel": "ラインおよびリングの結果のための操作ポリライン レイヤーを選択",
+  "operationalPolygonLayerSelectLabel": "円および楕円の結果のための操作ポリゴン レイヤーを選択",
+  "helpIconPolylineTooltip": "操作レイヤー リストは、現在の Web マップから、ポリライン ジオメトリ タイプであるレイヤーを使用して設定されます。",
+  "helpIconPolygonTooltip": "操作レイヤー リストは、現在の Web マップから、ポリゴン ジオメトリ タイプであるレイヤーを使用して設定されます。",
+  "feedbackResultsLayerLabel": "距離と方向のフィードバック結果レイヤー",
+  "editSymbologyHint": "ヒント: プレビュー アイコンをクリックしてシンボルを編集",
+  "feedbackTextColorLabel": "フィードバック ラベルのテキストの色",
+  "feedbackTextSizeLabel": "フィードバック ラベルのテキストのサイズ",
+  "previewLabel": "プレビュー",
+  "lineSymbologyPopupTittle": "ライン シンボル",
+  "circleSymbologyPopupTittle": "円シンボル",
+  "ellipseSymbologyPopupTittle": "楕円シンボル",
+  "ringSymbologyPopupTittle": "リング シンボル"
+});

@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "Estil de comentaris de distància i direcció",
+  "showTabLabel": "Mostra totes les pestanyes",
+  "tabErrorMessage": "Seleccioneu almenys una pestanya al grup \"Estil de comentaris de distància i direcció\"",
+  "lineLabel": "Línia",
+  "circleLabel": "Cercle",
+  "ellipseLabel": "El·lipse",
+  "ringsLabel": "Anells",
+  "transparency": "Transparència",
+  "operationalLineLayerSelectLabel": "Seleccioneu una capa de polilínia operativa per als resultats de la línia i els anells",
+  "operationalPolygonLayerSelectLabel": "Seleccioneu una capa de polígon operativa per als resultats del cercle i l'el·lipse",
+  "helpIconPolylineTooltip": "La llista de capes operatives s'emplena amb capes del mapa web actual amb el tipus de geometria de polilínia.",
+  "helpIconPolygonTooltip": "La llista de capes operatives s'emplena amb capes del mapa web actual amb el tipus de geometria de polígon.",
+  "feedbackResultsLayerLabel": "Capa de resultats d'estil de comentaris de distància i direcció",
+  "editSymbologyHint": "Suggeriment: feu clic a la icona de visualització prèvia per editar la simbologia",
+  "feedbackTextColorLabel": "Color del text de l'etiqueta de comentaris",
+  "feedbackTextSizeLabel": "Mida del text de l'etiqueta de comentaris",
+  "previewLabel": "Visualització prèvia",
+  "lineSymbologyPopupTittle": "Simbologia de línia",
+  "circleSymbologyPopupTittle": "Simbologia de cercle",
+  "ellipseSymbologyPopupTittle": "Simbologia d'el·lipse",
+  "ringSymbologyPopupTittle": "Simbologia d'anells"
+});

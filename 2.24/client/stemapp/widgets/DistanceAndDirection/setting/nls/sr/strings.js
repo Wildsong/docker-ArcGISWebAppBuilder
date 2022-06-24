@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "Rastojanje i smer stila povratnih informacija",
+  "showTabLabel": "Prikaži sve kartice",
+  "tabErrorMessage": "Odaberite najmanje jednu karticu u grupi \"Stil povratnih informacija o rastojanju i smeru\"",
+  "lineLabel": "Linija",
+  "circleLabel": "Krug",
+  "ellipseLabel": "Elipsa",
+  "ringsLabel": "Prstenovi",
+  "transparency": "Prozirnost",
+  "operationalLineLayerSelectLabel": "Izaberite operativni polilinijski sloj za rezultate za liniju i prsten",
+  "operationalPolygonLayerSelectLabel": "Izaberite operativni poligonski sloj za rezultate za krug i elipsu",
+  "helpIconPolylineTooltip": "Lista operativnih slojeva se popunjava slojevima iz trenutne veb mape koji su tipa polilinijske geometrije.",
+  "helpIconPolygonTooltip": "Lista operativnih slojeva se popunjava slojevima iz trenutne veb mape koji su tipa poligonalne geometrije.",
+  "feedbackResultsLayerLabel": "Sloj rezultata povratnih informacija o rastojanju i smeru",
+  "editSymbologyHint": "Podsetnik: kliknite na ikonicu za pregled da biste uredili simbologiju",
+  "feedbackTextColorLabel": "Boja teksta oznake povratnih informacija",
+  "feedbackTextSizeLabel": "Veličina teksta oznake povratnih informacija",
+  "previewLabel": "Pregled",
+  "lineSymbologyPopupTittle": "Simbologija linija",
+  "circleSymbologyPopupTittle": "Simbologija kruga",
+  "ellipseSymbologyPopupTittle": "Simbologija elipse",
+  "ringSymbologyPopupTittle": "Simbologija prstenova"
+});

@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "Стил на обратна връзка за разстояние и посока",
+  "showTabLabel": "Показване на всички раздели",
+  "tabErrorMessage": "Моля, изберете поне един раздел в групата „Стил на обратна връзка за разстоянието и посоката“.",
+  "lineLabel": "Линия",
+  "circleLabel": "Окръжност",
+  "ellipseLabel": "Елипса",
+  "ringsLabel": "Кръг",
+  "transparency": "Прозрачност",
+  "operationalLineLayerSelectLabel": "Избиране на оперативен слой на полилиния за резултати от линии и кръгове.",
+  "operationalPolygonLayerSelectLabel": "Избиране на оперативен полигонен слой за резултати за окръжност и елипса",
+  "helpIconPolylineTooltip": "Списъкът на оперативния слой е попълнен със слоеве от текущата уеб карта, които са тип полилинейна геометрия.",
+  "helpIconPolygonTooltip": "Списъкът на оперативния слой е попълнен със слоеве от текущата уеб карта, които са тип полигонна геометрия.",
+  "feedbackResultsLayerLabel": "Резултатен слой на обратна връзка за разстояние и посока",
+  "editSymbologyHint": "Съвет: Натиснете върху иконата за преглед, за да редактирате символогията.",
+  "feedbackTextColorLabel": "Цвят на текста за обратна връзка",
+  "feedbackTextSizeLabel": "Размер на текста за обратна връзка",
+  "previewLabel": "Предварителен преглед",
+  "lineSymbologyPopupTittle": "Симвология на линия",
+  "circleSymbologyPopupTittle": "Симвология на окръжност",
+  "ellipseSymbologyPopupTittle": "Симвология на елипса",
+  "ringSymbologyPopupTittle": "Симвология на кръгове"
+});

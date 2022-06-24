@@ -1,0 +1,23 @@
+<div data-a11y-label-by="dashboard_header_label dashboard_header_title dashboard_header_subtitle">
+  <div class="header-section jimu-float-leading" data-dojo-attach-point="headerNode">
+    <div class="logo jimu-float-leading jimu-leading-margin1" data-dojo-attach-point="logoNode">
+      <a data-dojo-attach-point="logoLinkNode" target="_blank">
+        <img data-dojo-attach-point="logoIconNode" data-dojo-attach-event="onload:_onLogoLoad">
+      </a>
+    </div>
+    <div class="titles jimu-float-leading jimu-leading-margin1" data-dojo-attach-point="titlesNode">
+      <div class="screen-readers-only" data-a11y-label-id="dashboard_header_label">${label}</div>
+      <h1 class="jimu-title" data-dojo-attach-point="titleNode" data-a11y-label-id="dashboard_header_title"></h1>
+      <h2 class="jimu-subtitle" data-dojo-attach-point="subtitleNode" data-a11y-label-id="dashboard_header_subtitle"></h2>
+    </div>
+    <div class="links jimu-float-leading jimu-leading-margin25" data-dojo-attach-point="linksNode">
+      <div class="dynamic-section jimu-float-leading" data-dojo-attach-point="dynamicLinksNode"></div>
+      <div class="signin-section jimu-float-leading" data-dojo-attach-point="signInSectionNode">
+        <a href="#" class="jimu-link" data-dojo-attach-event="onclick:_onSigninClick"
+        data-dojo-attach-point="signinLinkNode">${nls.signin}</a>
+        <a href="" target="_blank" class="jimu-link" data-dojo-attach-event="onclick:_onUserNameClick" data-dojo-attach-point="userNameLinkNode"></a>
+        <a href="#" class="jimu-link" data-dojo-attach-event="onclick:_onSignoutClick" data-dojo-attach-point="signoutLinkNode">${nls.signout}</a>
+      </div>
+    </div>
+  </div>
+</div>

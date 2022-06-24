@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "סגנון משוב מרחק וכיוון",
+  "showTabLabel": "הצג את כל הלשוניות",
+  "tabErrorMessage": "בחר לפחות לשונית אחת בקבוצה \"סגנון משוב מרחק וכיוון\"",
+  "lineLabel": "קו",
+  "circleLabel": "מעגל",
+  "ellipseLabel": "אליפסה",
+  "ringsLabel": "טבעות",
+  "transparency": "שקיפות",
+  "operationalLineLayerSelectLabel": "בחר שכבת פולי קו תפעולית עבור תוצאות קו וטבעת",
+  "operationalPolygonLayerSelectLabel": "בחר שכבת פוליגון תפעולית עבור תוצאות מעגל ואליפסה",
+  "helpIconPolylineTooltip": "הרשימה של שכבת התפעול מתמלאת בשכבות מה-Web Map הנוכחית, שסוג הגיאומטריה שלהן הוא פוליגון.",
+  "helpIconPolygonTooltip": "הרשימה של שכבת התפעול מתמלאת בשכבות מה-Web Map הנוכחית, שסוג הגיאומטריה שלהן הוא פוליגון.",
+  "feedbackResultsLayerLabel": "שכבת תוצאות של משוב מרחק וכיוון",
+  "editSymbologyHint": "רמז: לחץ על צלמית התצוגה המקדימה כדי לערוך את הסימבולוגיה",
+  "feedbackTextColorLabel": "צבע טקסט של תווית המשוב",
+  "feedbackTextSizeLabel": "גודל טקסט של תווית המשוב",
+  "previewLabel": "תצוגה מקדימה",
+  "lineSymbologyPopupTittle": "סימבולוגיית קווים",
+  "circleSymbologyPopupTittle": "סימבולוגיית עיגולים",
+  "ellipseSymbologyPopupTittle": "סימבולוגיית אליפסות",
+  "ringSymbologyPopupTittle": "סימבולוגיית טבעות"
+});

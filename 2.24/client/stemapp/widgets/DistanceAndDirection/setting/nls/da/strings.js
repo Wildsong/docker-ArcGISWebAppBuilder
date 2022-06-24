@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "Typografi på feedback for afstand og retning",
+  "showTabLabel": "Vis alle faner",
+  "tabErrorMessage": "Vælg mindst én fane i gruppen \"Typografi på feedback for afstand og retning\"",
+  "lineLabel": "Linje",
+  "circleLabel": "Cirkel",
+  "ellipseLabel": "Ellipse",
+  "ringsLabel": "Ringe",
+  "transparency": "Gennemsigtighed",
+  "operationalLineLayerSelectLabel": "Vælg et operationelt polylinje-lag til linje- og ringe-resultater",
+  "operationalPolygonLayerSelectLabel": "Vælg et operationelt polylinje-lag til cirkel- og ellipse-resultater",
+  "helpIconPolylineTooltip": "Listen med operationelle lag består af lag fra det aktuelle webkort, der er af geometritypen polylinje.",
+  "helpIconPolygonTooltip": "Listen med operationelle lag består af lag fra det aktuelle webkort, der er af geometritypen polygon.",
+  "feedbackResultsLayerLabel": "Resultatlag for feedback på afstand og retning",
+  "editSymbologyHint": "Tip: Klik på forhåndsvisningsikonet for at redigere symbologien",
+  "feedbackTextColorLabel": "Tekstfarve for feedbacketiket",
+  "feedbackTextSizeLabel": "Tekststørrelse for feedbacketiket",
+  "previewLabel": "Eksempel",
+  "lineSymbologyPopupTittle": "Linjesymbologi",
+  "circleSymbologyPopupTittle": "Cirkelsymbologi",
+  "ellipseSymbologyPopupTittle": "Ellipsesymbologi",
+  "ringSymbologyPopupTittle": "Ringsymbologi"
+});

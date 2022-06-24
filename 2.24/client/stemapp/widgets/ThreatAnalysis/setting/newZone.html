@@ -1,0 +1,40 @@
+<div>
+
+  <div class="esriCTPopupContainer">
+
+    <div class="esriCTWrapper">
+      <div class="esriCTLabel">${nls.descriptionLabel}</div>
+      <div class="esriCTDijitControl">
+        <div class="esriCTDijitWrapper">
+          <div class="esriCTDijitWrapper" data-dojo-attach-point="zoneDescriptionTextBox"
+            data-dojo-type="dijit/form/ValidationTextBox" aria-label="${nls.descriptionLabel}" trim="true" required="true">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="esriCTWrapper">
+      <div class="esriCTLabel" data-dojo-attach-point="zoneDistanceLabel"></div>
+      <div class="esriCTDijitControl">
+        <div class="esriCTDijitWrapper">
+          <div class="esriCTDijitWrapper" data-dojo-attach-point="zoneDistanceTextBox"
+          data-dojo-type="dijit/form/NumberTextBox" data-dojo-props="constraints:{min: 0.01}" trim="true" required="true">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="esriCTWrapper">
+      <div class="esriCTSymbologyLabel" title="${nls.outline}">${nls.outline}</div>
+      <div class="colorPicker Line" id="outlineColor" data-dojo-attach-point="outlineColorPicker">
+      </div>
+    </div>
+
+    <div class="esriCTWrapper">
+      <div class="esriCTSymbologyLabel" title="${nls.fill}">${nls.fill}</div>
+      <div class="colorPicker Fill" id="fillColor" data-dojo-attach-point="fillColorPicker"></div>
+    </div>
+
+  </div>
+
+</div>

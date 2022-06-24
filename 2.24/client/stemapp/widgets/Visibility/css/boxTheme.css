@@ -1,0 +1,17 @@
+.jimu-widget-visibility-control .editBtn {
+  margin-top: -23px;
+}
+
+.jimu-widget-visibility-symbologySettings .noResize .dijitSelectLabel {
+  width: 50px;
+}
+
+.jimu-widget-visibility-symbologySettings .dijitSelect .dijitInputField {
+  margin-right: 0px;
+}
+
+@-moz-document url-prefix() {
+  .jimu-widget-visibility-control .esriCTSliderWrapper {
+    width: calc(100% - 289px);
+  }
+}

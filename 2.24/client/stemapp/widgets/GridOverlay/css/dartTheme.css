@@ -1,0 +1,61 @@
+.grid-overlay-widget {
+  margin: 0 -10px;
+}
+
+.grid-overlay-setting .grid-overlay-setting-style tr {
+  background-color: transparent;
+}
+
+.grid-overlay-setting .sectionTitle {
+  font-size: 12px;
+}
+
+.grid-overlay-setting .settings-section>tbody>tr:nth-child(2n+1) {
+  font-size: 12px;
+}
+
+.grid-overlay-setting .settings-section>tbody>tr>td:first-child {
+  width: 100%;
+}
+
+.grid-overlay-setting .esriCTColumnTitle {
+  font-size: 12px;
+}
+
+.grid-overlay-setting .grid-overlay-setting-style td {
+  padding: 3px;
+}
+
+.grid-overlay-setting .sliderValue {
+  font-size: 11px;
+}
+
+.grid-overlay-setting .grid-overlay-setting-color-picker {
+  width: 70%;
+  height: 30px;
+}
+
+.grid-overlay-setting .grid-overlay-setting-color-picker-text {
+  font-size: 12px;
+}
+
+.grid-overlay-setting .label-section>tbody>tr>td:first-child {
+  width: 80px;
+}
+
+.grid-overlay-setting .dijitTextBox {
+  width: 70%;
+  margin: 0 2px;
+}
+
+.grid-overlay-setting .jimu-ellipsis {
+  white-space: normal;
+}
+
+.jimu-rtl .grid-overlay-setting .esriCTDartThemePadding {
+  padding-left: 10px;
+}
+
+ .grid-overlay-setting .esriCTDartThemePadding {
+  padding-right: 10px;
+}

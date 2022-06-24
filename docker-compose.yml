@@ -1,45 +1,18 @@
 version: '3.7'
 
-volumes:
-  apps:
-  db:
-      
 services:
   wabde:
-    image: wildsong/wabde:latest
     build:
+      # This will be in the inventory as "wabde_wabde"
       context: .
-      dockerfile: Dockerfile
-    command: [ "node", "server.js" ]
+      dockerfile: ./Dockerfile
     environment:
       - TZ=Americas/Los_Angeles
     ports:
       - 3344:3344
     volumes:
-      - db:/srv/server/db
-
-    # I think this might be for Windows, but then again I don't use Windows. ;-) 
-    #  - apps:/srv/server/apps
-    # use this to allow access via Visual Studio Code.
-      - ./apps:/srv/server/apps
-    # this is only used at upgrades, see the README.
-      - ./apps_old:/srv/server/apps_old
-
-      - ./widgets:/srv/client/stemapp/widgets
-
+      - ./2.24:/srv
     # This saves me from having to reenter the API key
       - ./signininfo.json:/srv/server/signininfo.json
-
-    # for docker-compose
+    command: [ "node", "server.js" ]
     restart: unless-stopped
-
-# For Docker Swarm, which I am not overly fond of at this time.
-#    deploy:
-#      mode: global
-#      restart_policy:
-#        condition: any
-#        delay: 5s
-#        window: 15s
-#        max_attempts: 10
-
-    

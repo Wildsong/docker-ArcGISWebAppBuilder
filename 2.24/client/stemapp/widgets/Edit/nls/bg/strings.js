@@ -1,0 +1,21 @@
+define({
+  "_widgetLabel": "Редактиране",
+  "_featureAction_Edit": "Редактиране",
+  "title": "Изберете шаблон, за да създадете обекти",
+  "pressStr": "Натиснете ",
+  "ctrlStr": " CTRL ",
+  "snapStr": " за да активирате прилепване",
+  "close": "Затваряне",
+  "featureLayers": "Обектни слоеве",
+  "searchTemplates": "Търсене на шаблони",
+  "noAvailableTempaltes": "Няма налични шаблони",
+  "noCanCreateLayerAreCurrentlyVisible": "Понастоящем не се виждат слоеве, които могат да се създават.",
+  "layersAreInvisibleOrOutOfScaleRange": "Слоевете са невидими или извън обхвата на мащаба.",
+  "relatedTables": "Свързани таблици:",
+  "relatedRecords": "Свързани записи:",
+  "noRelatedRecotds": "Няма намерени свързани записи.",
+  "startToDraw": "Натиснете, за да започнете да чертаете",
+  "startToAddPoint": "Натиснете, за да добавите точка",
+  "editRelatedFeature": "Редактиране на свързан обект",
+  "duplicateValueWarning": " Не може да се вмъкне дублирана стойност в ${fieldName} на ${tableName}. Дублираната стойност е: ${value}"
+});

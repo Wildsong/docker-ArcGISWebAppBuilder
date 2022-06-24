@@ -1,0 +1,21 @@
+.jimu-widget-visibility-control .editBtn {
+  margin-top: -23px;
+}
+
+.jimu-widget-visibility-control .esriCTSliderLabelHeight {
+  height:2.9em !important;
+}
+
+.jimu-widget-visibility-symbologySettings .dijitValidationTextBoxError .dijitValidationContainer {
+  padding: 5px 5px 0px 0px;
+  width: 8px;
+}
+
+.jimu-widget-visibility-symbologySettings .dijitTextBox .dijitInputField {
+  padding: 5px 4px;
+}
+
+.jimu-rtl .jimu-widget-visibility-symbologySettings .dijitSlider .dijitSliderRightBumper {
+  margin-right: -2px;
+  margin-left: 4px
+}

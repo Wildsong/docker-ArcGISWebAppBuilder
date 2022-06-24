@@ -1,0 +1,5 @@
+/**
+ * Copyright @ 2022 Esri.
+ * All rights reserved under the copyright laws of the United States and applicable international laws, treaties, and conventions.
+ */
+define(["dojo/_base/declare","dojox/xml/parser","esri/views/3d/webgl-engine/lib/Util","./constraints"],function(e,t,r,n){var s=e(null,{declaredClass:"esri.views.3d.webgl-engine-extensions.ShaderSnippets",constructor:function(e){var t=n.VertexAttrConstants;for(var r in t)this[t[r]]=n.VertexAttrConstants[r];if(e)for(var s in e)this[s]=e[s]},_parse:function(e){for(var n=t.parse(e),s=n.getElementsByTagName("snippet"),a=/\$[a-zA-Z0-9_]+[ \t]*/,i=/[\$\s]+/g,o=0;o<s.length;o++){var l=s[o].getAttribute("name");r.assert(null==this[l]);for(var v=s[o].textContent;;){var c=v.match(a);if(null==c)break;var d=c[0].replace(i,""),f=this[d];r.assert(void 0!==f),v=v.replace(c[0],f)}this[l]=v}}});return s});

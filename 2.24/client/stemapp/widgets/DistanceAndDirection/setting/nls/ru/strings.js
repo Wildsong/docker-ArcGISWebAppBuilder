@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "Стиль отзыва расстояния и направления",
+  "showTabLabel": "Показать все вкладки",
+  "tabErrorMessage": "Выберите хотя бы одну вкладку в группе \"Стиль отзыва расстояния и направления\"",
+  "lineLabel": "Линия",
+  "circleLabel": "Окружность",
+  "ellipseLabel": "Эллипс",
+  "ringsLabel": "Кольца",
+  "transparency": "Прозрачность",
+  "operationalLineLayerSelectLabel": "Выберите операционный полилинейный слой для результатов линий и колец",
+  "operationalPolygonLayerSelectLabel": "Выберите операционный полигональный слой для результатов круга и эллипса",
+  "helpIconPolylineTooltip": "Список операционных слоев заполнен слоями текущей веб-карты с типом геометрии - полилиния.",
+  "helpIconPolygonTooltip": "Список операционных слоев заполнен слоями текущей веб-карты с типом геометрии - полигон.",
+  "feedbackResultsLayerLabel": "Слой результатов отзыва расстояния и направления",
+  "editSymbologyHint": "Подсказка: Щелкните значок предварительного просмотра, чтобы отредактировать символы",
+  "feedbackTextColorLabel": "Цвет текста надписи отзыва",
+  "feedbackTextSizeLabel": "Размер текста надписи отзыва",
+  "previewLabel": "Предварительный просмотр",
+  "lineSymbologyPopupTittle": "Символы линий",
+  "circleSymbologyPopupTittle": "Символы окружностей",
+  "ellipseSymbologyPopupTittle": "Символы эллипсов",
+  "ringSymbologyPopupTittle": "Символы колец"
+});

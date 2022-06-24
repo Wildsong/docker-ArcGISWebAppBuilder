@@ -1,0 +1,56 @@
+<div style="padding-right: 20px;">
+  <fieldset class="esriCTFieldSet esriCTDownloadTabFieldSet">
+    <legend class="esriCTFieldSetLegend">${nls.analysisTab.addFieldsPopupTitle}</legend>
+    <div data-dojo-attach-point="tableArea" class="esriCTLayerFieldSelector esriCTReportSettingsContainer">
+      <div data-dojo-attach-point="btnAddField" class="esriCTBtnAddSection">
+        <span class="esriCTBtnAddIcon"></span>
+        <span class="esriCTBtnAddLabel" data-dojo-attach-point="addFieldLabel">
+          ${nls.analysisTab.addFieldsLabel}</span>
+      </div>
+      <div class="esriCTGroupByFieldContainer">
+        <div data-dojo-type="jimu/dijit/CheckBox" data-dojo-attach-point="groupByFieldCheckBox"
+          class="esriCTGroupByFieldCheckBox" checked="true"></div>
+        <div class="esriCTGroupByFieldColumnLabel">
+          ${nls.analysisTab.allowGroupingLabel}
+        </div>
+        <div class="esriCTHint">${nls.analysisTab.groupingHintDescription}</div>
+      </div>
+      <div class="esriCTHidden esriCTNoLayersOrFieldsForAnalysisLabel" data-dojo-attach-point="lblNoValidFields">
+        ${nls.analysisTab.noValidFieldsForAnalysis}
+      </div>
+      <div data-dojo-attach-point="fieldTable"></div>
+    </div>
+  </fieldset>
+  <fieldset class="esriCTFieldSet esriCTDownloadTabFieldSet">
+    <legend class="esriCTFieldSetLegend">${nls.analysisTab.sortingSettingsLegend}</legend>
+    <div data-dojo-attach-point="sortFieldSettingsNode">
+      <div class="esriCTRadioBtnContainer esriCTReportSettingsContainer">
+        <div class="esriCTRadioBtn">
+          <input data-dojo-type="jimu/dijit/RadioBtn" data-dojo-props="group: 'g1'" type="radio" name="jimuradiobtn"
+            data-dojo-attach-point="ascRadioBtn" aria-label="${nls.analysisTab.ascendingLabel}">
+          <label class="esriCTRadioLabel" for="ascRadio">
+            ${nls.analysisTab.ascendingLabel}
+          </label>
+        </div>
+        <div class="esriCTRadioBtn">
+          <input data-dojo-type="jimu/dijit/RadioBtn" data-dojo-props="group: 'g1'" type="radio" name="jimuradiobtn"
+            data-dojo-attach-point="descRadioBtn" aria-label="${nls.analysisTab.descendingLabel}">
+          <label class="esriCTRadioLabel" for="descRadio">
+            ${nls.analysisTab.descendingLabel}
+          </label>
+        </div>
+      </div>
+      <div style="margin-top: 15px;">
+        <div class="esriCTRadioBtnContainer esriCTReportSettingsContainer">
+          <div class="esriCTSelectLabel esriCTEllipsis" title="${nls.analysisTab.sortFieldSelectLabel}">
+            ${nls.analysisTab.sortFieldSelectLabel}
+          </div>
+          <div>
+            <select class="esriCTDropBox esriCTSortFieldSelectLabelWidth" data-dojo-type="dijit/form/Select" data-dojo-attach-point="fieldsDropdown">
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>

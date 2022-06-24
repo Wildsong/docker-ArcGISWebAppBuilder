@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "Stil for tilbakemelding for avstand og retning",
+  "showTabLabel": "Vis alle kategorier",
+  "tabErrorMessage": "Velg minst én kategori i gruppen for tilbakemelding på avstand og retning",
+  "lineLabel": "Linje",
+  "circleLabel": "Sirkel",
+  "ellipseLabel": "Ellipse",
+  "ringsLabel": "Ringer",
+  "transparency": "Gjennomsiktighet",
+  "operationalLineLayerSelectLabel": "Velg et operativt polylinjelag for linje- og ringresultater",
+  "operationalPolygonLayerSelectLabel": "Velg et operativt polygonlag for sirkel- og ellipseresultater",
+  "helpIconPolylineTooltip": "Listen med operative lag fylles med lagene fra gjeldende webkart som er av geometritypen polylinje.",
+  "helpIconPolygonTooltip": "Listen med operative lag fylles med lagene fra gjeldende webkart som er av geometritypen polygon.",
+  "feedbackResultsLayerLabel": "Resultatlaget for tilbakemelding på avstand og retning",
+  "editSymbologyHint": "Tips: Klikk på ikonet for forhåndsvisning for å redigere symbologien",
+  "feedbackTextColorLabel": "Tekstfarge på tilbakemeldingsetikett",
+  "feedbackTextSizeLabel": "Tekststørrelse på tilbakemeldingsetikett",
+  "previewLabel": "Forhåndsvisning",
+  "lineSymbologyPopupTittle": "Linjesymbologi",
+  "circleSymbologyPopupTittle": "Sirkelsymbologi",
+  "ellipseSymbologyPopupTittle": "Ellipsesymbologi",
+  "ringSymbologyPopupTittle": "Ringersymbologi"
+});

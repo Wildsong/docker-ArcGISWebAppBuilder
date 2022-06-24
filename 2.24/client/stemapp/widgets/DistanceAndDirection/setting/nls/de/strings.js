@@ -1,0 +1,23 @@
+define({
+  "feedbackStyleLabel": "Entfernung und Richtung - Darstellungs-Style",
+  "showTabLabel": "Alle Registerkarten anzeigen",
+  "tabErrorMessage": "Wählen Sie mindestens eine Registerkarte in der Gruppe \"Entfernung und Richtung – Darstellungs-Style\" aus.",
+  "lineLabel": "Linie",
+  "circleLabel": "Kreis",
+  "ellipseLabel": "Ellipse",
+  "ringsLabel": "Ringe",
+  "transparency": "Transparenz",
+  "operationalLineLayerSelectLabel": "Operationalen Polylinien-Layer für linien- und ringförmige Ergebnisse auswählen",
+  "operationalPolygonLayerSelectLabel": "Operationalen Polygon-Layer für kreis- und ellipsenförmige Ergebnisse auswählen",
+  "helpIconPolylineTooltip": "Die Liste der operationalen Layer wird mit Layern der aktuellen Webkarte, die einen Polylinien-Geometrietyp aufweisen, gefüllt.",
+  "helpIconPolygonTooltip": "Die Liste der operationalen Layer wird mit Layern der aktuellen Webkarte, die einen Polygon-Geometrietyp aufweisen, gefüllt.",
+  "feedbackResultsLayerLabel": "Ergebnisausgabe-Layer für \"Entfernung und Richtung\"",
+  "editSymbologyHint": "Hinweis: Klicken Sie auf das Vorschausymbol, um die Symbolisierung zu bearbeiten.",
+  "feedbackTextColorLabel": "Textfarbe für Ausgabebeschriftungen",
+  "feedbackTextSizeLabel": "Textgröße für Ausgabebeschriftungen",
+  "previewLabel": "Vorschau",
+  "lineSymbologyPopupTittle": "Liniensymbolisierung",
+  "circleSymbologyPopupTittle": "Kreissymbolisierung",
+  "ellipseSymbologyPopupTittle": "Ellipsensymbolisierung",
+  "ringSymbologyPopupTittle": "Ringsymbolisierung"
+});

@@ -1,0 +1,201 @@
+﻿/*
+ | Copyright 2017 Esri
+ |
+ | Licensed under the Apache License, Version 2.0 (the "License");
+ | you may not use this file except in compliance with the License.
+ | You may obtain a copy of the License at
+ |
+ |    http://www.apache.org/licenses/LICENSE-2.0
+ |
+ | Unless required by applicable law or agreed to in writing, software
+ | distributed under the License is distributed on an "AS IS" BASIS,
+ | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ | See the License for the specific language governing permissions and
+ | limitations under the License.
+ */
+define({
+  "searchSourceSetting": {
+    "title": "Nastavenie vyhľadávania a obalovej zóny (buffer)",
+    "mainHint": "Môžete aktivovať vyhľadávanie adries a pvkov, digitalizáciu geometrií a majoritného prevzorkovania."
+  },
+  "addressSourceSetting": {
+    "title": "Vrstva adries",
+    "mainHint": "Viete stanoviť, ktoré vrstva(y) označenia adresáta sú dostupné."
+  },
+  "notificationSetting": {
+    "title": "Možnosti oznámení",
+    "mainHint": "Môžete stanoviť, ktoré druhy oznámení sú dostupné."
+  },
+  "groupingLabels": {
+    "addressSources": "Vrstva určená na voľbu vrstiev adresáta",
+    "averyStickersDetails": "Nálepky Avery(r)",
+    "csvDetails": "Súbor hodnôt oddelených čiarkami (CSV)",
+    "drawingTools": "Nástroje kreslenia na určenie oblasti",
+    "featureLayerDetails": "Vrstvy prvkov",
+    "geocoderDetails": "Geokodér",
+    "labelFormats": "Dostupné formáty označení",
+    "printingOptions": "Možnosti pre tlač strány s označeniami",
+    "searchSources": "Zdroje vyhľadávania",
+    "stickerFormatDetails": "Parametre strany s označeniami"
+  },
+  "hints": {
+    "alignmentAids": "Značky pridané na stranu s označeniami, aby vám pomohli zarovnať stranu vo vašej tlačiarni",
+    "csvNameList": "Čiarkou oddelený zoznam mien stĺpcov rozlišújúcich malé a veľké písmená",
+    "horizontalGap": "Priestor medzi dvoma označeniami v riadku",
+    "insetToLabel": "Priestor medzi bočným okrajom označenia a začiatkom textu",
+    "labelFormatDescription": "Ako je štýl označenia zobrazený v zozname formátovacích možností v rámci widgetu",
+    "labelFormatDescriptionHint": "Tooltip na doplnenie opisu v zozname formátovacích možností formátu",
+    "labelHeight": "Výška každého označenia na strane",
+    "labelWidth": "Šírka každého označenia na strane",
+    "localSearchRadius": "Určuje polomer oblasti okolo aktuálneho stredu mapy, ktorý sa používa na zvýšenie poradia kandidátov na geokódovanie, aby sa kandidátske záznamy najbližšie k umiestneniu vrátili ako prvé.",
+    "rasterResolution": "100 pixelov na palec sa približne zhoduje s rozlíšením obrazovky. Čím vyššie rozlíšenie, tým viac pamäte prehliadača je potrebnej. Prehliadače sa líšia v ich schopnosti plynule zvládať vysoké pamäťové požiadavky.",
+    "selectionListOfOptionsToDisplay": "Označené položky sú zobrazené ako možnosti widgetu; zmente usporiadanie podľa vašej predstavy.",
+    "verticalGap": "Priestor medzi dvomi označeniami v stĺpci",
+    "reviewButtonHint": "Povolí užívateľom skontrolovať konečný výber na zvolenej vrstve adresáta"
+  },
+  "propertyLabels": {
+    "bufferDefaultDistance": "Predvolená šírka obalovej zóny (buffer)",
+    "bufferUnits": "Jednotky šírky obalovej zóny (buffer) vo widgete",
+    "countryRegionCodes": "Kódy krajiny alebo regiónu",
+    "description": "Opis",
+    "descriptionHint": "Nápoveda popisu",
+    "displayField": "Stĺpec pre zobrazovanie",
+    "drawingToolsFreehandPolygon": "Polygón kreslený voľnou rukou",
+    "drawingToolsLine": "línia",
+    "drawingToolsPoint": "bod",
+    "drawingToolsPolygon": "polygón",
+    "drawingToolsPolyline": "lomená čiara",
+    "enableLocalSearch": "Aktivovať lokálne vyhľadávanie",
+    "exactMatch": "Presná zhoda",
+    "fontSizeAlignmentNote": "Veľkosť písma pre poznámku o tlačiarenských okrajoch",
+    "gridDarkness": "Tmavosť mriežky",
+    "gridlineLeftInset": "Vloženie línie mriežky zľava",
+    "gridlineMajorTickMarksGap": "Hlavná značka každých",
+    "gridlineMinorTickMarksGap": "Malá značka každých",
+    "gridlineRightInset": "Vloženie línie mriežky sprava",
+    "labelBorderDarkness": "Tmavosť obrysu označenia",
+    "labelBottomEdge": "Spodná hrana označení na strane",
+    "labelFontSize": "Veľkosť písma",
+    "labelHeight": "Výška označenia",
+    "labelHorizontalGap": "Vodorovná medzera",
+    "labelInitialInset": "Vloženie do textu označenia",
+    "labelLeftEdge": "Ľavá hrana označení na strane",
+    "labelMaxLineCount": "Maximálny počet riadkov v označení",
+    "labelPageHeight": "Výška strany",
+    "labelPageWidth": "Šírka strany",
+    "labelRightEdge": "Pravá hrana označení na strane",
+    "labelsInAColumn": "Počet označení v stĺpci",
+    "labelsInARow": "Počet označení v riadku",
+    "labelTopEdge": "Horná hrana označení na strane",
+    "labelVerticalGap": "Zvislá medzera",
+    "labelWidth": "Šírka označenia",
+    "limitSearchToMapExtent": "Vyhľadávať iba v aktuálnom rozsahu mapy",
+    "maximumResults": "Maximum výsledkov",
+    "maximumSuggestions": "Maximum návrhov",
+    "minimumScale": "Minimálna mierka",
+    "name": "Meno",
+    "percentBlack": "% čiernej",
+    "pixels": "pixle",
+    "pixelsPerInch": "pixle na palec",
+    "placeholderText": "Zástupný text",
+    "placeholderTextForAllSources": "Zástupný text pre vyhľadávanie všetkých zdrojov",
+    "radius": "Polomer",
+    "rasterResolution": "Rastrové rozlíšenie",
+    "searchFields": "Polia pre vyhľadávanie",
+    "showAlignmentAids": "Ukázať značky zarovnania na strane",
+    "showGridTickMarks": "Ukázať označovacie políčka mriežky",
+    "showLabelOutlines": "Ukázať obrysy označenia",
+    "showPopupForFoundItem": "Zobraziť kontextové okno pre nájdený prvok alebo umiestnenie",
+    "tool": "Nástroje",
+    "units": "Jednotky",
+    "url": "URL",
+    "urlToGeometryService": "URL pre službu geometrie",
+    "useRelatedRecords": "Použiť jeho relačné záznamy",
+    "useSecondarySearchLayer": "Použiť vrstvu druhotného výberu",
+    "useSelectionDrawTools": "Použiť",
+    "useVectorFonts": "Použiť vektorové písmo (Len latinské písma)",
+    "addCSVHeader": "Pridať názov stĺpca (len CSV)",
+    "zoomScale": "Mierka priblíženia",
+    "reviewCheckboxLabel": "Ukázať tlačidlo posúdenia vo widgete"
+  },
+  "buttons": {
+    "addAddressSource": "Pridať vrstvu obsahujúcu označenia v jej kontextovom okne",
+    "addLabelFormat": "Pridať formát označenia",
+    "addSearchSource": "Pridajte zdroj vyhľadávania",
+    "set": "Nastaviť"
+  },
+  "placeholders": {
+    "averyExample": "napr., Avery(r) označenie${averyPartNumber}",
+    "countryRegionCodes": "napr., USA,CHN",
+    "descriptionCSV": "Hodnoty oddelené čiarkami (CSV)",
+    "descriptionPDF": "PDF označenie ${heightLabelIn} x ${widthLabelIn} palcov; ${labelsPerPage} na stranu"
+  },
+  "tooltips": {
+    "getWebmapFeatureLayer": "Získať prvkovú vrstvu z webovej mapy",
+    "openCountryCodes": "Kliknite pre získanie ďaľších informácií o kódoch",
+    "openFieldSelector": "Kliknite pre otvorenie výberovníka stĺpcov",
+    "setAndValidateURL": "Nastavte a overte URL"
+  },
+  "problems": {
+    "noAddresseeLayers": "Prosím, zadajte aspoň jednu vrstvu adresáta",
+    "noBufferUnitsForDrawingTools": "Prosím, nakonfigurujte aspoň jednu jednotku obalovej zóny (buffer) pre nástroje na kreslenie",
+    "noBufferUnitsForSearchSource": "Prosím, nakonfigurujte aspoň jednu jednotku obalovej zóny (buffer) pre zdroj vyhľadávania \"${sourceName}\"",
+    "noGeometryServiceURL": "Prosím, nakonfigurujte URL do geometrickej služby",
+    "noNotificationLabelFormats": "Prosím, zadajte aspoň jednen formát označenia upozornenia",
+    "noSearchSourceFields": "Prosím, nakonfigurujte jeden alebo viac vyhľadávacích stĺpcov pre zdroj vyhľadávania \"${sourceName}\"",
+    "noSearchSourceURL": "Prosím, nakonfigurujte URL pre zdroj vyhľadávania \"${sourceName}\"",
+    "noSearchSourcesConfigured": "Prosím, nakonfigurujte aspoň jeden zdroj vyhľadávania",
+    "noSearchSourceFeaureLayerConfigured": "Prosím, nakonfigurujte aspoň jednu vrstvu prvkov ako zdroj vyhľadávania pre použitie nástrojov na kreslenie"
+  },
+  "querySourceSetting": {
+    "sourceSetting": "Nastavenia zdroja vyhľadávania",
+    "instruction": "Pridať a konfigurovať geokódovaciu službu alebo vrstvy prvkov ako zdroje vyhľadávania. Tieto špecifikované zdroje určujú, čo sa dá vyhľadávať v rámci vyhľadávacieho poľa.",
+    "add": "Pridať zdroj vyhľadávania",
+    "addGeocoder": "Pridať geokodér",
+    "geocoder": "Geokodér",
+    "setLayerSource": "Nastaviť zdroj vrstvy",
+    "setGeocoderURL": "Nastaviť URL geokodéru",
+    "searchableLayer": "Vrstvy prvkov",
+    "name": "Meno",
+    "countryCode": "Kód krajiny alebo regiónu",
+    "countryCodeEg": "napr. ",
+    "countryCodeHint": "Ak ponecháte túto hodnotu prázdnu, bude sa vyhľadávať vo všetkých krajinách a regiónoch",
+    "generalSetting": "Všeobecné nastavenia",
+    "allPlaceholder": "Zástupný text pre vyhľadávanie vo všetkých zdrojoch: ",
+    "showInfoWindowOnSelect": "Zobraziť kontextové okno pre nájdený prvok alebo umiestnenie",
+    "showInfoWindowOnSelect2": "Zobraziť kontextové okno keď bude nájdený prvok alebo umiestnenie.",
+    "searchInCurrentMapExtent": "Vyhľadávať iba v aktuálnom rozsahu mapy",
+    "zoomScale": "Mierka priblíženia",
+    "locatorUrl": "URL geokodéra",
+    "locatorName": "Názov geokodéra",
+    "locatorExample": "Príklad",
+    "locatorWarning": "Táto verzia geokódovacej služby nie je podporovaná. Widget podporuje geokódovaciu službu 10.1 a vyššiu.",
+    "locatorTips": "Návrhy nie sú k dipozícii, pretože geokódovacia služba nepodporuje možnosť návrhov.",
+    "layerSource": "Zdroj vrstvy",
+    "searchLayerTips": "Návrhy nie sú k dispozícii, pretože prvková služba nepodporuje stránkovanie.",
+    "placeholder": "Zástupný text",
+    "searchFields": "Stĺpce pre vyhľadávanie",
+    "displayField": "Stĺpec pre zobrazovanie",
+    "exactMatch": "Presná zhoda",
+    "maxSuggestions": "Maximum návrhov",
+    "maxResults": "Maximum výsledkov",
+    "enableLocalSearch": "Aktivovať lokálne vyhľadávanie",
+    "minScale": "Minimálna mierka",
+    "minScaleHint": "Keď je mierka mapy väčšia, než táto mierka, použije sa lokálne vyhľadávanie",
+    "radius": "Polomer",
+    "radiusHint": "Určuje polomer oblasti okolo aktuálneho stredu mapy, ktorý sa používa na zvýšenie poradia kandidátov na geokódovanie, aby sa kandidátske záznamy najbližšie k umiestneniu vrátili ako prvé.",
+    "meters": "Metre",
+    "setSearchFields": "Nastaviť polia vyhľadávania",
+    "set": "Nastaviť",
+    "fieldSearchable": "vyhľadávateľné",
+    "fieldName": "Meno",
+    "fieldAlias": "Alias",
+    "ok": "OK",
+    "cancel": "Zrušiť",
+    "invalidUrlTip": "URL ${URL} je neplatná alebo nedostupná.",
+    "locateResults": "Vyhľadajte výsledky",
+    "panTo": "Posun na",
+    "zoomToScale": "Priblíženie na mierku",
+    "locatorError": "Lokátor musí podporovať vyhľadávanie podľa adresy zadanej do jedného poľa"
+  }
+});

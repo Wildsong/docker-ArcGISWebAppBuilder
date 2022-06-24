@@ -1,0 +1,97 @@
+<div style="width:100%;height:100%;" class="nihilo">
+  <div class="tabConfigurationContainer">
+
+    <fieldset class="esriCTFieldSet">
+      <legend class="esriCTFieldSetLegend">${nls.feedbackStyleLabel}</legend>
+      <div style="margin: 20px;">
+        <div class="esriCTHalfWidth">
+          <div class="esriCTWrapper">
+            <div>
+              <div class="check" data-dojo-attach-point="showAllTabChk" data-dojo-type="jimu/dijit/CheckBox"
+                title="${nls.showTabLabel}" label="${nls.showTabLabel}"></div>
+            </div>
+          </div>
+
+          <div class="esriCTWrapper esriCTHeight esriCTMargin25">
+            <div class="esriCTColumn">
+              <div class="check" data-dojo-attach-point="lineTabChk" data-dojo-type="jimu/dijit/CheckBox"
+                title="${nls.lineLabel}" label="${nls.lineLabel}"></div>
+            </div>
+            <div class="esriCTColumn esriCTPreviewTextColor">${nls.previewLabel}</div>
+            <div class="esriCTColumn">
+              <div class="esriCTPreviewField" data-dojo-attach-point="lineSymbolNode">
+              </div>
+            </div>
+          </div>
+
+          <div class="esriCTWrapper esriCTHeight esriCTHeight esriCTMargin25">
+            <div class="esriCTColumn">
+              <div class="check" data-dojo-attach-point="circleTabChk" data-dojo-type="jimu/dijit/CheckBox"
+                title="${nls.circleLabel}" label="${nls.circleLabel}"></div>
+            </div>
+            <div class="esriCTColumn esriCTPreviewTextColor">${nls.previewLabel}</div>
+            <div class="esriCTColumn">
+              <div class="esriCTPreviewField" data-dojo-attach-point="circleSymbolNode">
+              </div>
+            </div>
+          </div>
+
+          <div class="esriCTWrapper esriCTHeight esriCTMargin25">
+            <div class="esriCTColumn">
+              <div class="check" data-dojo-attach-point="ellipseTabChk" data-dojo-type="jimu/dijit/CheckBox"
+                title="${nls.ellipseLabel}" label="${nls.ellipseLabel}"></div>
+            </div>
+            <div class="esriCTColumn esriCTPreviewTextColor">${nls.previewLabel}</div>
+            <div class="esriCTColumn">
+              <div class="esriCTPreviewField" data-dojo-attach-point="ellipseSymbolNode">
+              </div>
+            </div>
+          </div>
+
+          <div class="esriCTWrapper esriCTHeight esriCTMargin25">
+            <div class="esriCTColumn">
+              <div class="check" data-dojo-attach-point="ringTabChk" data-dojo-type="jimu/dijit/CheckBox"
+                title="${nls.ringsLabel}" label="${nls.ringsLabel}"></div>
+            </div>
+            <div class="esriCTColumn esriCTPreviewTextColor">${nls.previewLabel}</div>
+            <div class="esriCTColumn">
+              <div class="esriCTPreviewField" data-dojo-attach-point="ringSymbolNode">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="esriCTHintCheck">${nls.editSymbologyHint}</div>
+
+        <div class="esriCTWrapper" style="display: flex;">
+          <div class="esriCTLabel">${nls.feedbackTextColorLabel}</div>
+          <div>
+            <div class="colorPicker" data-dojo-attach-point="labelColorPickerNode"></div>
+          </div>
+        </div>
+
+        <div class="esriCTWrapper" style="display: flex;">
+          <div class="esriCTLabel">${nls.feedbackTextSizeLabel}</div>
+          <div>
+            <div class="esriCTDisplayInline" data-dojo-attach-point="labelTextSizeSpinnerNode"></div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="esriCTFieldSet">
+      <legend class="esriCTFieldSetLegend">${nls.feedbackResultsLayerLabel}</legend>
+      <div class="miscellaneousTabContainer">
+        <label class="opLayerlabelSettings">${nls.operationalLineLayerSelectLabel}</label>
+        <select class="opLayerSelectSettings" data-dojo-attach-point="opLineLayerList"></select>
+        <div title="${nls.helpIconPolylineTooltip}" class="jimu-icon helpBtn safari_only"
+          data-dojo-attach-point="helpLineBtn">
+        </div>
+        <label class="opLayerlabelSettings">${nls.operationalPolygonLayerSelectLabel}</label>
+        <select class="opLayerSelectSettings" data-dojo-attach-point="opPolygonLayerList"></select>
+        <div title="${nls.helpIconPolygonTooltip}" class="jimu-icon helpBtn safari_only"
+          data-dojo-attach-point="helpPolygonBtn">
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
