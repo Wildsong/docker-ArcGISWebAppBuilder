@@ -6,3 +6,5 @@ signininfo*.json
 2*/server/db/*
 2*/server/logs/*
 ARCHIVE/
+
+__pycache__
