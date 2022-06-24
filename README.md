@@ -46,83 +46,28 @@ so I backed off to 11 for now. WABDE requires at least 4.2 so we're good there.
 
 Note that you can set up a developer account for free, and that will work.
 
-## Volumes for storage
+## Set up
 
-I tried using 'bind' mounts but they don't work for widgets;
-only the Docker volumes work properly for that.
+To deal with the fact that you have to "migrate" from an
+old version to a new version I ended up redoing a lot of this project. I used to keep this stuff in separate Docker volumes and gave up when figuring out how to use the upgrade procedures.
 
-You can use either bind mounts or volumes for apps and db. Currently
-I use bind mounts for apps because it lets me easily develop widgets
-using Visual Studio Code. (VS Code can see directly into the apps/
-folder.)
+There are now release directories (currently for 2.20 and 2.24)
+and inside each release directory there are widget and app folders.
 
-### apps and db volumes
+Look in 2.24 for example you will see an unzipped version of the
+WABDE files, and there will be files that change in these:
 
-The apps that are generated will be in "apps". There is a separate
-folder that has to be kept in sync, "db".
+    client/stemapp/widgets/
+    server/apps/
+    server/logs/
+    server/db/
 
-I am trying to put the data that needs to be persisted into volumes
-so that it can be upgraded across version updates from Esri, which happen
-roughly quarterly I think.
+When you install a new version you have to install any 
+customized or third party widgets
+you have added. I keep a list in CUSTOM_WIDGETS
 
-Apps and db are empty at first run so they are pretty easy to deal with.
-There's also "widgets".
-
-For editing, I put apps into a bind (local) mounted directory, called
-"apps".  I've also tried putting it in a Docker volume but then it
-gets lost in Docker space, which I think is a pain in Linux.
-
-The volume db is in Docker space but it's fine.
-
-### Widgets volume
-
-Feel free to write to me and ask questions about this as I am still
-making it up as I go.
-
-I have a separate git project for widgets, this allows me to fork them
-and add third party widgets as needed.
-
-In normal operation WABDE expects to find widgets in the "client" side
-of WABDE then copies them to "server" side into the apps folder when
-use WABDE to create an app.  Normally any widgets you see in "apps"
-folders started life in the client "widgets" collection and they were
-copied during app creation.
-
-There are two ways to get a complete copy of the WABDE widgets. One is
-just to run this docker. On first run, the new container will copy the
-internal widgets folder (which came from the unpacked Esri ZIP file
-included in this archive) into a folder called "widgets".
-
-Once that's happened then you can install third party widgets into the
-Docker volume and they will be available in the app builder.
-
-#### Git version of Widgets
-
-The other way is to clone the widgets github archive and bind mount
-the volume. You can do that with this.
-
-**The docker-compose.yml assumes you will use the github widgets.**
-
-```bash
-git clone --recurse-submodules https://github.com/Wildsong/wabde-widgets widgets
-```
-
-This is ideal for development because all the widgets can
-be directly edited by (for example) Visual Studio Code, and they are
-under full revision control. Each widget can be managed separately
-and you can fork and modify them for your own purposes.
-
-In fact, when you create an app, copies of the widgets happen and that
-includes the git version info. That means that if you want to modify
-a widget that's part of an app, you can always check changes back into
-git hub and then do a "git pull" in the widgets folder to resync them.
-I think this is pretty cool.
-
-### logs
-
-You can create a separate logs folder if you want. I have not worked
-with WABDE long enough in one container to know what happens over
-time. Log files might grow endlessly. Caveat emptor.
+In theory you must run upgrade.js to copy the apps from the old release to the new one, I will try that on the next release.
+So far I have just copied everything and it seems to work.
 
 ## Upgrades
 
@@ -142,7 +87,7 @@ mkdir widgets
 If you have altered anything in there or added extra custom or 3rd party
 widgets, it's up to you to preserve them.
 
-### Upgrades
+### App upgrades
 
 After installing a new release of WABDE, you can use
 upgrade.js script to copy all the apps and build a new copy of the database.
@@ -171,26 +116,15 @@ I tried running WABDE in Docker Swarm but I've decided it is just too much troub
 
 ```bash
 docker-compose build
-# don't do this--- docker stack deploy -c docker-compose.yml wabde
 docker-compose up -d
 ```
 
-The docker-compose.yml file uses bind mounts of the apps and widgets
-folders instead of Docker volumes.  This allows adding more widgets
-directly into ./widgets, and allows accessing the widgets folders for
-development in apps/*/widgets.  It also bind mounts the
-signininfo.json file to store the server and api key information.
+The docker-compose.yml file uses a bind mount of 2.24
+instead of Docker volumes.  This allows adding more widgets
+directly into client/stemapp/widgets, and allows accessing the widgets folders for development in apps/*/widgets.
 
-Here is an example YML file shows that you can have the configuration
-set up for an ArcGIS Online account at the same time, and start
-whichever one you want to use.  It bind mounts "apps_agol" instead of
-"apps", and keeps a separate db/ volume for the databases.  It also
-bind mounts the signininfo-agol.json onto the container's
-signininfo.json file.
-
-```
-docker-compose -f docker-agol.yml up 
-```
+It also bind mounts the signininfo.json file 
+to store the server and api key information.
 
 ### Setting the App Id from Portal
 
@@ -256,26 +190,19 @@ back to the "unsigned state".
 If you want to back up your apps folder, make sure you also backup
 (and restore) the db/apps file. They have to match.
 
-## Docker Hub
+## App deployment
 
-I tried automated builds but the ZIP file is stored in github LFS (Large File Store),
-and apparently they are not supporting that yet. So I do a manual push,
-I tag the git image and the docker image with the Esri version number. I use these
-commands.
+App deployment should be automated but at this time, sadly I just use download and unzip at this time.
 
-```bash
-V=2.24
-git tag -a $V -m 'Updated to $V'
-git push origin 2.24
-docker image push wildsong/wabde:latest
-ID=`docker container ls | grep wabde | cut -c 1-12`
-docker container commit $ID wildsong/wabde:$V
-docker image push wildsong/wabde:$V
-```
+Somewhere around version 2.20, they broke the update process. We added some widgets to an existing project
+and saved it and then deployed and all the Widget icons were broken. This is because the builder
+started leaving explicit icon tags in the config.json file.
 
-## Future enhancements
+The Python toolbox "WABDE_toolbox.pyt" that is included in this repo will fix that by stripping them out.
 
-### Development workflow
+After deploying, run the tool on the new config.json file.
+
+## Development workflow
 
 I just started with this part today, stay tuned. It's the whole reason the project exists.
 
@@ -291,32 +218,11 @@ Step 3, you can put the template into the widgets volume if you want,
 to avoid hand editing apps/2/config.json or you can break down and
 just edit that file. It's not that hard.
 
-I needed to have write access to the apps/ volume, so I switched to
-using a bind mount for apps, it's just easier for this. On Linux you
-probably have to change ownership because things created by WABDE will
-be owned by root. For example, "sudo chown -R bwilson apps/2/widgets".
-
 Step 4, run your app. You should be able to open the widget and see
 its generic HTML code.
 
 Step 5, edit, test, repeat, you know this endless cycle. Push changes
 to git as needed.
 
-Once you have perfected your widget you can use git to deploy a copy
-into the widgets/ volume for inclusion into future projects directly
-via WABDE.
 
-### 3D
-
-I have not thought about 3D apps yet so nothing here addresses it. It would
-at a minimum probably require a separate widgets volume.
-
-### File management
-
-I have played with adding a web-based file manager so that users could directly
-transfer files but I have not found one that I like yet. Please send suggestions.
-
-### App deployment
-
-App deployment should be automated but at this time, sadly I just use download and unzip at this time.
 
