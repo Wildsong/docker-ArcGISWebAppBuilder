@@ -420,7 +420,12 @@ define([
     //var portalUrl = this.appConfig.portalUrl;
     portalUtils.getPortalSelfInfo(portalUrl).then(lang.hitch(this, function(portalSelf) {
       //title:"ArcGIS Online Basemaps" AND owner:esri_en
-      var groupQueryString = portalSelf.basemapGalleryGroupQuery;
+  
+      // BRIAN WILSON DID THIS TO FORCE IT TO USE OUR CUSTOM BASEMAP GALLERY
+      //var groupQueryString = portalSelf.basemapGalleryGroupQuery; // Original version
+      //var groupQueryString = "title:CC Basemap Gallery for Web Maps"; // Force it to use the named group
+      var groupQueryString = "id:c8249f276d564b9bba0001128bce3787"; // This is the same but using the id code.
+
       if (portalSelf.useVectorBasemaps === true && portalSelf.vectorBasemapGalleryGroupQuery) {
         // Use vector basemap
         groupQueryString = portalSelf.vectorBasemapGalleryGroupQuery;
