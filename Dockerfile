@@ -11,7 +11,7 @@ WORKDIR /srv
 USER 1000:1000
 
 VOLUME /srv
-EXPOSE 3344/tcp
 
 # Server will not start unless current directory is "server".
 WORKDIR /srv/server
+
