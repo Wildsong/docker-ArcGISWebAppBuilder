@@ -1,4 +1,9 @@
-version: '3.7'
+version: "3.9"
+
+networks:
+  proxy:
+    name: ${NETWORK_NAME}
+    external: true
 
 services:
   wabde:
@@ -14,5 +19,9 @@ services:
       - ./2.24:/srv
     # This saves me from having to reenter the API key
       - ./signininfo.json:/srv/server/signininfo.json
-    command: [ "node", "server.js" ]
+    command: ["node", "server.js", "-port=3344"]
+    networks:
+      proxy:
+        aliases:
+          - wabde
     restart: unless-stopped
