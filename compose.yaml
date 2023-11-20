@@ -1,0 +1,16 @@
+services:
+  wabde:
+    build:
+      # This will be in the inventory as "wabde_wabde"
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - TZ=Americas/Los_Angeles
+    ports:
+      - 3344:3344
+    volumes:
+      - ./2.29:/srv
+    # This saves me from having to reenter the API key
+      - ./signininfo.json:/srv/server/signininfo.json
+    command: ["node", "server.js", "-port=3344"]
+    restart: unless-stopped
