@@ -11,8 +11,8 @@
     "jenkins-test": "mocha --reporter mocha-jenkins-reporter --timeout 60s --recursive test/*/test*.js"
   },
   "devDependencies": {
-    "mocha": "4.0.1",
-    "mocha-jenkins-reporter": "0.3.10",
+    "mocha": "10.2.0",
+    "mocha-jenkins-reporter": "0.4.8",
     "superagent": "3.8.2"
   },
   "dependencies": {
